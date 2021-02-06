@@ -1,0 +1,34 @@
+server.js
+
+	40: replace SFTP email host URL
+	44: replace email username
+	45: replace email password
+	756: replace email address
+
+
+views/landing.pug
+
+	13: replace socket.io library URL
+	279: replace socket URL
+
+
+views/home.pug
+
+	13: replace socket.io library URL
+
+
+public/js/dataSignalling.js
+
+	13: replace hostname in socket URL
+	19-31: possibility to add ICE servers (STUN or TURN server URLs)
+
+
+public/js/cms.js
+
+	5: replace socket URL
+	96: replace redirect URL
+	293: replace redirect URL
+	708: replace URL
+	1468: replace URL
+	1473: replace URL
+	1703: replace redirect URL

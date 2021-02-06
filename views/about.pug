@@ -1,0 +1,143 @@
+head
+    meta(charset="utf-8")
+    meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+    title Common.Garden
+    meta(name='author' content='Common.Garden')
+    meta(name='description' content='Online gallery')
+    meta(property='og:title' content='Common.Garden')
+    meta(property='og:site_name' content='Common.Garden')
+    meta(name='viewport' content='initial-scale=0.5, width=device-width')
+    link(rel='stylesheet' href='/avatars.css')
+    link(rel='stylesheet' href='/show.css')
+    script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+    script(src="https://common.garden/socket.io/socket.io.js")
+    style.
+        body {
+            display: flex;
+        }
+        .info {
+            margin: auto;
+            position: relative;
+            width: 80vw;
+            max-width: 700px;
+        }
+        h1 {
+            text-align: center;
+            font-weight: normal;
+            font-size: 40px;
+        }
+        p {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+        a {
+            color: inherit;
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -100px;
+            padding-top: 50px;
+            padding-left: 10px;
+            width: 100px;
+            height: 100vh;
+            background: hsl(133,50%,68%);
+            z-index: 1;
+            box-sizing: border-box;
+            transition: left 0.3s;
+        }
+        .menu.active {
+            left: 0;
+        }
+        .menuItem {
+            padding: 3px;
+        }
+        .button {
+            position: absolute;
+            left: 115px;
+            top: 10px;
+            width: 30px;
+            height: 30px;
+            transition: left 0.3s;
+            cursor: pointer;
+        }
+        .hamburger {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            margin-top: 13px;
+            height: 4px;
+            background: #fff;
+            border-radius: 2px;
+            transition: background 0.3s;
+        }
+        .hamburger:before {
+            position: absolute;
+            left: 0;
+            top: -11px;
+            width: 30px;
+            content: "";
+            height: 4px;
+            background: #fff;
+            border-radius: 2px;
+            transition: transform 0.3s, width 0.3s;
+            transform-origin: left center;
+        }
+        .hamburger:after {
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 30px;
+            content: "";
+            height: 4px;
+            background: #fff;
+            border-radius: 2px;
+            transition: background 0.3s;
+            transition: transform 0.3s, width 0.3s;
+            transform-origin: left center;
+        }
+        .menu.active .button {
+            left: 15px;
+        }
+        .menu.active .hamburger {
+            background: rgba(255,255,255,0);
+        }
+
+        .menu.active .hamburger:before {
+            transform: rotate(45deg);
+            width: 31px;
+        }
+        .menu.active .hamburger:after {
+            transform: rotate(-45deg);
+            width: 31px;
+        }
+body
+    .menu
+        .button(onclick="this.parentElement.classList.toggle('active');")
+            .hamburger
+
+        .menuItem <a href="https://common.garden">Home</a>
+        .menuItem <a href="mailto:sentinel@common.garden">Contact</a>
+        .menuItem <a href="https://common.garden/static/TermsOfService.pdf">Terms of service</a>
+
+    .info
+        h1 About common.garden
+            p.
+                Common.garden is a grass roots, artist run platform, open for anyone to create a space for the casual meeting. Make your own garden in seconds.<br><br>
+                In your garden you can watch a video together while you catch up with friends, create an exhibition and have an opening celebration, a quiz, or just hang out for a while.<br>
+                Whenever another visitor (don’t forget to invite your friends) is near, a connection is made, and a conversation can be had!
+                Everyone is welcome to have a garden they like.<br><br>
+
+                Without the pressure of camera’s, seeing yourself while talking to others, environments can be created in which the coincidental meetup is nurtured. Create an event in which you get to feel like running into friends, not just staring into a grid of people talking from the privacy of their homes.<br><br>
+
+                Created during the first wave of lockdowns in 2020, between Amsterdam and Berlin as a response to the slow response to create new and original on-line meeting spaces of cultural institutions. <br><br>
+
+                Resisting the capitalisation of the ever so necessary social dynamics that had been taking place over the last decade and a half by large tech corporations, common.garden respects privacy, allows pseudonyms, and does not sell your data.<br><br>
+
+                If you have any questions about the platform, or wish to use our advanced features (panel conversations, multi room presentations, custom set ups) <a href="mailto:sentinel@common.garden">please contact us</a>.<br><br>
+
+                Developed during <a href="https://www.eyebeam.org/rapidresponse/" target="_blank">Rapid Response for a Better Digital Future by Eyebeam</a>, in collaboration with <a href="https://www.upstreamgallery.nl/" target="_blank">Upstream Gallery</a>, <a href="https://officeimpart.com/" target="_blank">Office Impart</a>, and many more. Awarded with the <a href="https://artegenerali.com/de/dlaa" target="_blank">DLAA prize by Arte Generali 2020</a>.
+

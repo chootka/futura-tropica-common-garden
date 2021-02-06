@@ -1,0 +1,103 @@
+head
+    meta(charset="utf-8")
+    meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+    title Common.Garden
+    meta(name='author' content='Common.Garden')
+    meta(charset='utf-8')
+    meta(name='description' content='Online gallery')
+    meta(property='og:title' content='Common.Garden')
+    meta(property='og:site_name' content='Common.Garden')
+    meta(name='viewport' content='initial-scale=0.5, width=device-width')
+    link(rel='stylesheet' href='/avatars.css')
+    link(rel='stylesheet' href='/show.css')
+    link(rel='stylesheet' href='/cms.css')
+    script(src="https://webrtc.github.io/adapter/adapter-latest.js")
+    script(src="https://common.garden/socket.io/socket.io.js")
+    script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+    script.
+        let startDate = "#{date}";
+    style(class="cmsStyle")
+body
+
+    .fade
+    .popUp
+        h1 Welcome to your garden!
+        h2.loading Looking for content...
+    .show
+    .map
+        .cmsAvatar
+    .devWarn This CMS is still in development. Pages created using this CMS may be change or be removed in the future.
+    .inspector
+        .inspectorToggle(onclick="toggleInspector();")
+            .icon.visible i
+            .icon.hidden X
+        .inspectorBody
+    .inspectorPadding
+
+    .contextmenu.article
+        .copy(onclick="copy();") Copy
+        .cut(onclick="cut();") Cut
+        .paste(onclick="paste();") Paste
+        hr
+        .backward(onclick="backward();") Send Backward
+        .forward(onclick="forward();") Bring Forward
+        .back(onclick="back();") Send to Back
+        .front(onclick="front();") Bring to Front
+        hr
+        .delete(onclick="deleteElement();") Delete
+
+    .contextmenu.background
+        .paste(onclick="paste();") Paste
+
+    .GUIcontainer
+        .GUI.newGUI.roundGUI(onclick="newMenu();") +
+            .GUI.bubble
+                .iconContainer
+                    article.icon(onclick="addElement('video');")
+                        h4 🎬
+                        h5 Embedded video
+                    article.icon(onclick="addElement('image');")
+                        h4 🖼
+                        h5 Image
+                    article.icon(onclick="addElement('iframe');")
+                        h4 &lt; &#47; &gt;
+                        h5 Custom iframe
+                    article.icon(onclick="addElement('text');")
+                        h4 Abc
+                        h5 Text box
+                    article.icon.borderless(onclick="addElement('textBorderless');")
+                        h4 Abc
+                        h5 Text field
+                    article.icon(onclick="addElement('chat');")
+                        h4 💬
+                        h5 Chat box
+                    article.icon(onclick="addElement('slideshowLocal');")
+                        h4 🖼
+                        h5 Slideshow
+                    article.icon(onclick="addElement('shape');")
+                        h4 🟩🟣
+                        h5 Custom Shapes
+                    article.icon(onclick="addElement('portal');")
+                        h4 ⚫️
+                        h5 Portal
+                    article.icon(onclick="addElement('puzzle');")
+                        h4 🧩
+                        h5 Jigsaw Puzzle
+                    article.icon(onclick="addElement('quiz');")
+                        h4 🅰️🅱️
+                        h5 Quiz
+                    article.icon.disabled
+                        h4 💻
+                        h5 Screen share
+                    article.icon.disabled
+                        h4 📝
+                        h5 Shared notepad
+        .GUI.undoGUI.buttonGUI.disabled(onclick="undo();") Undo
+        .GUI.saveGUI.buttonGUI.disabled(onclick="save();") Save
+        .GUI.revertGUI.buttonGUI.disabled(onclick="revert();") Revert
+        .GUI.deleteGUI.buttonGUI.inactive(onclick="deleteElement();") Delete
+        .GUI.visitGUI.buttonGUI(onclick="visitSite();") Visit
+
+    script(src="js/cms.js")
+    script(src="js/showdata2.js")
+    script(src="js/defaultShow.js")
