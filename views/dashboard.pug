@@ -43,7 +43,7 @@ body
         const disableAudio = false;
         let subdomainAlias = "#{subdomainAlias}";
 
-        const socket = io('/');
+        const socket = io('https://public.futura-tropica.network/');
 
         socket.emit("setUsername", "netrunner" + (Math.random()*420666));
         //- unMuteYouTube();
