@@ -79,6 +79,8 @@ a {
     justify-content: center;
 
     height: 100vh;
+
+    z-index: 999;
 }
 .dot {
     background-color: #bbb;
