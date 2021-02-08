@@ -1,7 +1,6 @@
 const peers = document.getElementById('peers');
 
-// fetch('http://90.187.37.21:5001/api/v0/swarm/peers', { tropics.net router
-fetch('http://10.8.0.3:5001/api/v0/swarm/peers', {
+fetch('https://10.8.0.3:5001/api/v0/swarm/peers', {
     method: 'POST'
 })
     .then(res => res.json())
@@ -17,7 +16,7 @@ fetch('http://10.8.0.3:5001/api/v0/swarm/peers', {
 
             if (!t || !t.length) continue;
 
-            peers.innerHTML += '<a class="peer" href="http://' + t[0] + '"><span class="dot"></span></a>';
+            peers.innerHTML += '<a class="peer" href="https://' + t[0] + '"><span class="dot"></span></a>';
         }
 
 
