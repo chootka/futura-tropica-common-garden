@@ -177,6 +177,7 @@ function socketsInRoom(room) {
 
 io.on("connection", function(socket) {
     customLog("Connection from " + socket.id);
+    console.log("io.on connections", socket.id);
     let angle = Math.floor(Math.random() * 6);
     let hue = Math.floor(Math.random() * 360);
     let hue2 = Math.floor(Math.random() * 360);
