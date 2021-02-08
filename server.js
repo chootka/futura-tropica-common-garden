@@ -11,7 +11,7 @@ const ws = require('ws');
 // const bcrypt = require('bcrypt');
 // const formidable = require('formidable');
 
-const defaultShow = require("./private/default.json");
+// const defaultShow = require("./private/default.json");
 // const words = require("./private/words.json");
 
 let maxRoomSize = 200;
@@ -28,7 +28,7 @@ let maxRoomSize = 200;
 //     chatboxes = JSON.parse(data);
 // });
 
-let subdomains = [];
+// let subdomains = [];
 
 let logStreams = [];
 
@@ -73,7 +73,7 @@ server.on('error', (err) => {
 });
 
 app.get("/", (req, res) => {
-    res.render("landing");
+    res.render("dashboard");
     // const domain = req.headers.host;
     // let subdomain = domain.substr(0, domain.indexOf('.'));
 
@@ -193,30 +193,30 @@ io.on("connection", function(socket) {
     socket.emit("setId", { id: socket.id, hue: hue, hue2: hue2, bright: bright, bright2: bright2, angle: angle, reqTime: Date.now() });
 
     socket.on("setRoom", function(data) {
-        if (socketsInRoom(data.room) < maxRoomSize || data.admin) {
+        // if (socketsInRoom(data.room) < maxRoomSize || data.admin) {
             customLog("Socket wants to join room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room");
             socket.join(data.room);
             customLog("Socket has joined room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room. " + socket.room);
             socket.room = data.room;
     //        socket.subdomain = data.room;
             customLog(socket.id + " is on subdomain '" + socket.room + "'");
-            let subdomainIndex = subdomains.map(e => e.name).indexOf(data.room);
+            // let subdomainIndex = subdomains.map(e => e.name).indexOf(data.room);
 
-            if (subdomainIndex < 0) {
-                let subdomain = {
-                    name: data.room,
-                    admins: [],
-                    viewers: []
-                }
-                subdomains.push(subdomain);
-            }
+            // if (subdomainIndex < 0) {
+            //     let subdomain = {
+            //         name: data.room,
+            //         admins: [],
+            //         viewers: []
+            //     }
+            //     subdomains.push(subdomain);
+            // }
 
-            customLog("Subdomains:");
-            customLog(JSON.stringify(subdomains));
+            // customLog("Subdomains:");
+            // customLog(JSON.stringify(subdomains));
             socket.emit("setupStreaming");
-        } else {
-            socket.emit("roomFull");
-        }
+        // } else {
+        //     socket.emit("roomFull");
+        // }
     });
 
     socket.on("test", function() {
@@ -265,13 +265,13 @@ io.on("connection", function(socket) {
         io.to(socket.room).emit("unmute", socket.id);
     });
 
-    socket.on("checkPass", function(pass) {
-        if (pass === adminPass) {
-            socket.emit("passOk");
-        } else {
-            socket.emit("passWrong");
-        }
-    })
+    // socket.on("checkPass", function(pass) {
+    //     if (pass === adminPass) {
+    //         socket.emit("passOk");
+    //     } else {
+    //         socket.emit("passWrong");
+    //     }
+    // })
 
     socket.on("presenterId", function(presenterId) {
         socket.presenterId = presenterId;
@@ -286,25 +286,25 @@ io.on("connection", function(socket) {
     });
 
 
-    socket.on("getPages", function() {
+    // socket.on("getPages", function() {
 
-        let rooms = io.sockets.adapter.rooms;
-        let shows = [];
-        for (let key in rooms) {
-            if (rooms.hasOwnProperty(key)) {
-                if (!rooms[key].sockets.hasOwnProperty(key)) {
-                    console.log(key);
-                    shows.push({
-                        name: key,
-                        users: Object.keys(rooms[key].sockets).length
-                    });
-                }
-            }
-        }
-        socket.emit("allPages", shows);
+    //     let rooms = io.sockets.adapter.rooms;
+    //     let shows = [];
+    //     for (let key in rooms) {
+    //         if (rooms.hasOwnProperty(key)) {
+    //             if (!rooms[key].sockets.hasOwnProperty(key)) {
+    //                 console.log(key);
+    //                 shows.push({
+    //                     name: key,
+    //                     users: Object.keys(rooms[key].sockets).length
+    //                 });
+    //             }
+    //         }
+    //     }
+    //     socket.emit("allPages", shows);
         
-        console.log(io.sockets.adapter.rooms);
-    });
+    //     console.log(io.sockets.adapter.rooms);
+    // });
 
 
 //////////////////////////////////////////

@@ -1,0 +1,35 @@
+{
+   "opening":false,
+   "hideTour":true,
+   "title":"Futura Tropica Netroots",
+   "backgroundColor":[],
+   "textColor":[],
+   "borderColor":[],
+   "frameBackground":[],
+   "screensize":{
+      "width":"100vw",
+      "height":"100vh"
+   },
+   "works":[
+      {
+         "title":"Empty video",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"https://www.youtube.com/embed/QSEqf_mqjCA?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
+         "top":"254",
+         "left":"479",
+         "width":360,
+         "height":270,
+         "INTERCEPT_videoType":"YouTube",
+         "youtubeSync":true,
+         "showVolume":false,
+         "youtube":true,
+         "lock4_3":true
+      }
+   ],
+   "borderWidth":"3",
+   "customCss":"",
+   "visitors":224,
+   "private":false
+}

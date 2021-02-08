@@ -80,9 +80,9 @@ function setupStreaming() {
     console.log("setupStreaming called!");
 
     // only alow popUp to close after server added user to subdomain
-    let form = document.querySelector(".popUp form");
-    form.addEventListener('submit', closePopUp);
-    document.querySelector(".popUp .enterButton").classList.remove("disabled");
+    // let form = document.querySelector(".popUp form");
+    // form.addEventListener('submit', closePopUp);
+    // document.querySelector(".popUp .enterButton").classList.remove("disabled");
 }
 
 

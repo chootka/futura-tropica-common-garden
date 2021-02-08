@@ -2,15 +2,15 @@ let users = [];
 
 let muted = true;
 
-const parts = location.hostname.split('.');
-let subdomain = parts.shift();
+// const parts = location.hostname.split('.');
+let subdomain = 'public'; //parts.shift();
 
 if (typeof subdomainAlias !== 'undefined') {
     subdomain = subdomainAlias;
 }
 
 // replace with correct hostname
-const socket = io(subdomain + '.localhost:8887');
+// const socket = io(subdomain + '.localhost:8887');
 
 
 let id;
@@ -34,6 +34,7 @@ let myUser;
 let myMapUser;
 
 socket.on("setId", function(data) {
+    console.log("dataSignalling, setId, data", data);
     reqTime = data.reqTime;
     localReqTime = new Date().getTime();
     if (!id) {
@@ -54,6 +55,9 @@ socket.on("setId", function(data) {
         mapElem.id = "mapUser" + id;
         mapElem.className = "mapUser myMapUser";
         document.body.querySelector(".map").appendChild(mapElem);
+
+        console.log("elem for myUser", elem);
+        console.log("elem for myMapUser", mapElem);
 
         myUser = elem;
         myMapUser = mapElem;

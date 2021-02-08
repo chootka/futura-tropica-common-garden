@@ -1,0 +1,65 @@
+head
+    meta(charset="utf-8")
+    meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+
+    title Futura Tropica Netroots
+
+    meta(name='author' content='Futura Tropica x Common.Garden')
+    meta(name='description' content='Futura Tropica Public Dashboard')
+    meta(property='og:title' content='Futura Tropica x Common.Garden')
+    meta(property='og:site_name' content='Futura Tropica x Common.Garden')
+    meta(name='viewport' content='initial-scale=0.5, width=device-width')
+
+    link(rel='stylesheet' href='/avatars.css')
+    link(rel='stylesheet' href='/dashboard.css')
+
+    script(src="js/adapter-latest.js")
+    script(src="http://localhost:8887/socket.io/socket.io.js")
+    
+    //- script(src="js/jquery-3.5.1.min.js")
+    //- script(src="js/vimeo-player.js")
+
+body
+    .title
+        svg(viewBox="0 0 500 500")
+            path(id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97")
+            text(width="500")
+                textPath(xlink:href="#curve")
+                    || Futura Tropica |
+    #peers
+    .title.inverted
+        svg(viewBox="0 0 500 500")
+            path(id="curve2" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97")
+            text(width="500")
+                textPath(xlink:href="#curve2" startOffset="50")
+                    | &mdash; networks &mdash;
+
+    .avatarContainer
+    .map
+
+    
+    script.
+        // Set this to true to turn off audio feature
+        const disableAudio = false;
+        let subdomainAlias = "#{subdomainAlias}";
+
+        const socket = io('localhost:8887');
+
+        socket.emit("setUsername", "netrunner" + (Math.random()*420666));
+        //- unMuteYouTube();
+            
+        inShow = true;
+        document.querySelector(".map").classList.remove("hidden");
+    script(src="js/jquery-1.7.1.min.js")
+    script(src="js/jquery-ui-1.8.17.custom.min.js")
+    script(src="js/script005.min.js")
+    script(src="js/dataSignalling.js")
+    script(src="js/avatars.js")
+    script(src="js/audiochat.js")
+    script(src="js/staticAudioRooms.js")
+    script(src="js/showdata.js")
+    script(src="js/youtube_sync.js")
+    //- script(src="js/kurento-utils.js")
+    script(src="js/iframe_api.js")
+    script(src="js/peers.js")
+        

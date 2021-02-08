@@ -1,0 +1,105 @@
+@font-face {
+    font-family: "coolvetica";
+    src: url("fonts/coolvetica_rg.ttf") format("truetype");
+}
+body {
+    background: linear-gradient(269deg, #2b2b2b, #ecece5, #303030);
+    background-size: 600% 600%;
+
+    -webkit-animation: dashboard 28s ease infinite;
+    -moz-animation: dashboard 28s ease infinite;
+    animation: dashboard 28s ease infinite;
+
+    font-family: coolvetica, sans-serif;
+
+    height: 100vh;
+}
+path {
+    fill: transparent;
+}
+
+text {
+    fill: #ebc467;
+    letter-spacing: .1em;
+    text-align: center;
+
+    transform: scale(1.4, 1) translate(-70px);
+}
+a {
+    text-decoration: none;
+}
+
+@-webkit-keyframes float {
+  from { -webkit-transform: rotate(0deg) translate3d(6px, 0, 0) rotate(0deg); }
+  to { -webkit-transform: rotate(360deg) translate3d(6px, 0, 0) rotate(-360deg); }
+}
+
+@keyframes float {
+  from { transform: rotate(0deg) translate3d(6px, 0, 0) rotate(0deg); }
+  to { transform: rotate(360deg) translate3d(6px, 0, 0) rotate(-360deg); }
+}
+
+@-webkit-keyframes dashboard {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 51% }
+    100% { background-position: 0% 50% }
+}
+@-moz-keyframes dashboard {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 51% }
+    100% { background-position: 0% 50% }
+}
+@keyframes dashboard {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 51% }
+    100% { background-position: 0% 50% }
+}
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    font-size: 3em;
+}
+.title.inverted {
+    bottom: -60px;
+
+    transform: scale(-1);
+}
+#peers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+}
+.dot {
+    background-color: #bbb;
+    border-radius: 50%;
+
+    display: inline-block;
+
+    height: 87px;
+    width: 87px;
+
+    margin: 0 80px;
+}
+.peer:nth-child(odd) {
+    -webkit-animation: float 8s infinite linear;    
+    animation: float 8s infinite linear;  
+
+    margin-top: -8px;
+}
+.peer:nth-child(even) {
+    -webkit-animation: float 9s infinite linear;    
+    animation: float 9s infinite linear; 
+
+    margin-top: 4px;  
+}   
