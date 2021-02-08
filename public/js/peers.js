@@ -1,6 +1,6 @@
 const peers = document.getElementById('peers');
 
-fetch('https://10.8.0.3:5001/api/v0/swarm/peers', {
+fetch('//10.8.0.3:5001/api/v0/swarm/peers', {
     method: 'POST'
 })
     .then(res => res.json())
@@ -16,7 +16,7 @@ fetch('https://10.8.0.3:5001/api/v0/swarm/peers', {
 
             if (!t || !t.length) continue;
 
-            peers.innerHTML += '<a class="peer" href="https://' + t[0] + '"><span class="dot"></span></a>';
+            peers.innerHTML += '<a class="peer" href="//' + t[0] + '"><span class="dot"></span></a>';
         }
 
 
