@@ -9,12 +9,12 @@ let inShow = false;
 
 let mobile = false;
 
-// let userGUI = document.createElement("div");
-// userGUI = document.createElement("div");
-// userGUI.innerHTML = "";
-// userGUI.className = "GUI disconectGUI inactive";
-// userGUI.style.zIndex = 999;
-// document.body.querySelector(".GUIcontainer").appendChild(userGUI);
+let userGUI = document.createElement("div");
+userGUI = document.createElement("div");
+userGUI.innerHTML = "";
+userGUI.className = "GUI disconectGUI inactive";
+userGUI.style.zIndex = 999;
+document.body.querySelector(".GUIcontainer").appendChild(userGUI);
 
 let map = document.querySelector(".map")
 
@@ -101,9 +101,6 @@ window.setInterval(function() {
 }, 200);
 
 window.setInterval(function() {
-
-    if (!myUser) return; 
-    
     myUser.style.left = currentX + "px";
     myUser.style.top = currentY + "px";
 }, 50);
@@ -126,27 +123,27 @@ function updatePosition(message) {
 }
 
 // disconect non admin users after long time of inactivity
-// if (window.location.search != "?admin") {
-//     window.setInterval(function() {
-//     //    console.log("last update was at " + lastUpdate + " it is now " + Math.floor(Date.now() / 1000))
-//         if (lastUpdate <= Math.floor(Date.now() / 1000) - warnTimeout && lastUpdate > Math.floor(Date.now() / 1000) - disconnectTimeout && inShow) {
-//             if (document.querySelector(".disconectGUI").classList.contains("inactive")) {
-//                 document.querySelector(".alert").play();
-//             }
-//             document.querySelector(".disconectGUI").classList.remove("inactive")
-//             document.querySelector(".disconectGUI").innerHTML = "Are you still there? Move your avatar to keep from getting disconnected";
-//             console.log("Warning, keep moving or be disconnected!");
+if (window.location.search != "?admin") {
+    window.setInterval(function() {
+    //    console.log("last update was at " + lastUpdate + " it is now " + Math.floor(Date.now() / 1000))
+        if (lastUpdate <= Math.floor(Date.now() / 1000) - warnTimeout && lastUpdate > Math.floor(Date.now() / 1000) - disconnectTimeout && inShow) {
+            if (document.querySelector(".disconectGUI").classList.contains("inactive")) {
+                document.querySelector(".alert").play();
+            }
+            document.querySelector(".disconectGUI").classList.remove("inactive")
+            document.querySelector(".disconectGUI").innerHTML = "Are you still there? Move your avatar to keep from getting disconnected";
+            console.log("Warning, keep moving or be disconnected!");
 
-//         } else if (lastUpdate <= Math.floor(Date.now() / 1000) - disconnectTimeout && inShow) {
-//             document.querySelector(".disconectGUI").style.opacity = 1;
-//             document.querySelector(".disconectGUI").innerHTML = "Disconnecting...";
-//             console.log("Timeout, disconnect user!");
-//             window.location.reload();
-//         } else {
-//             // document.querySelector(".disconectGUI").classList.add("inactive");
-//         }
-//     }, 5000);
-// }
+        } else if (lastUpdate <= Math.floor(Date.now() / 1000) - disconnectTimeout && inShow) {
+            document.querySelector(".disconectGUI").style.opacity = 1;
+            document.querySelector(".disconectGUI").innerHTML = "Disconnecting...";
+            console.log("Timeout, disconnect user!");
+            window.location.reload();
+        } else {
+            document.querySelector(".disconectGUI").classList.add("inactive");
+        }
+    }, 5000);
+}
 socket.on("reload", function() {
     console.log("Server restarted, reloading page...");
     window.location.reload();

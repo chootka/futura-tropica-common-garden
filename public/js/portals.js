@@ -17,7 +17,7 @@ window.setInterval(function() {
                     myUser.style.opacity = 0;
                     map.style.opacity = 0;
                     if (portals[i].timer > 2) {
-                        window.location.href = "https://" + portals[i].destination + ".futura-tropica?username=" + username + "&terms=" + inShow;
+                        window.location.href = "https://" + portals[i].destination + ".common.garden?username=" + username + "&terms=" + inShow;
                     }
                     portals[i].timer ++;
                 } else {

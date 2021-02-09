@@ -1,6 +1,6 @@
 const peers = document.getElementById('peers');
 
-fetch('/api/v0/swarm/peers', {
+fetch('http://localhost/api/v0/swarm/peers', {
     method: 'POST'
 })
     .then(res => res.json())

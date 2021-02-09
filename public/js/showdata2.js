@@ -46,9 +46,9 @@ function setBody() {
     map.style.height = (showJSON.screensize.height / mapscale) + "px";
 
     if (JSON.stringify(showJSON) == saveState) {
-        document.title = showJSON.title + " - cms.futura-tropica";
+        document.title = showJSON.title + " - cms.common.garden";
     } else {
-        document.title = showJSON.title + "* - cms.futura-tropica";
+        document.title = showJSON.title + "* - cms.common.garden";
     }
     document.body.style.width = showJSON.screensize.width + "px";
     document.body.style.height = showJSON.screensize.height + "px";

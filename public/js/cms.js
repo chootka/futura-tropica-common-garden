@@ -93,8 +93,7 @@ function checkCode(event) {
     code = document.querySelector(".passWindowBox form input[type=text]").value;
     if (code === null) {
         // replace with correct redirect URL
-        // window.location.href = "https://" + subdomain + ".common.garden";
-        window.location.href = "https://public.futura-tropica.network";
+        window.location.href = "https://" + subdomain + ".common.garden";
     }
     socket.emit("checkCodeCMS", code, subdomain);
 }
@@ -291,7 +290,7 @@ socket.on("subdomainTaken", function() {
     let passWindow = document.querySelector(".passWindow");
     if (passWindow != null) {
         // replace redirect URL
-        passWindow.innerHTML = "<div class='passWindowBox'><p><br><br><br>This subdomain has been registered by another user.<br><a href='https://public.futura-tropica.network/'>Return to main page</a></div>";
+        passWindow.innerHTML = "<div class='passWindowBox'><p><br><br><br>This subdomain has been registered by another user.<br><a href='https://common.garden'>Return to main page</a></div>";
     }
 });
 
@@ -706,8 +705,7 @@ function setInspector(elem) {
         } else {
             content += "</div><div class='pageContainer page2'>";
         }
-        content += "<h2>Name for public.futura-tropica.network:</h2>"
-        // content += "<h2>Name for " + subdomain + ".common.garden:</h2>"
+        content += "<h2>Name for " + subdomain + ".common.garden:</h2>"
         content += "<input type='text' class='h1' name='title' value='" + showJSON.title + "'>";
         content += "<hr></hr>";
         content += "<h2>Visitor count: <span class='tooltip'>?<div class='tooltipPopup'>The total amount of people who have entered the page. This includes people who visited the more than once.</div></span></h2>"
@@ -1467,13 +1465,12 @@ function paste() {
 }
 
 function visitSite() {
-    window.open("https://public.futura-tropica.network/");
-    // window.open("https://" + subdomain + ".common.garden");
+    window.open("https://" + subdomain + ".common.garden");
     // replace URL
 }
 
 function exitCMS() {
-    window.location.href = "https://public.futura-tropica.network/";
+    window.location.href = "https://common.garden";
     // replace URL
 }
 
@@ -1703,7 +1700,7 @@ function party2() {
     }
     save();
     let passWindow = document.querySelector(".passWindow");
-    passWindow.innerHTML = "<div class='passWindowBox tut'><p>Your watch party is now setup!</p><input name='cancel' type='button' class='party2' value='keep editing' onclick='party3();'><input name='enter' type='button' class='party2 r' value='visit page' onclick='window.location.href = \"https://public.futura-tropica.network\";'></div>";
+    passWindow.innerHTML = "<div class='passWindowBox tut'><p>Your watch party is now setup!</p><input name='cancel' type='button' class='party2' value='keep editing' onclick='party3();'><input name='enter' type='button' class='party2 r' value='visit page' onclick='window.location.href = \"https://" + subdomain + ".common.garden\";'></div>";
     // replace redirect URL
 }
 
