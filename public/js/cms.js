@@ -1,8 +1,7 @@
 let subdomain = window.location.search.substr(1,window.location.search.length);
 let loading = document.querySelector(".loading");
 
-// update socket URL
-const socket = io('localhost:8887');
+const socket = io('/');
 
 let showJSON;
 let showdata = "../shows/" + subdomain + ".json";
