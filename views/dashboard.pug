@@ -73,7 +73,9 @@ body
         let subdomain = subdomainAlias = "public";
 
         // automatically running the functions that would be run on  close of pop up
-        socket.emit("setUsername", "netrunner" + (Math.random()*420666));
+        const username = 
+        console.log("set username", "netrunner" + (Math.random()*420666));
+        socket.emit("setUsername", username);
         //- unMuteYouTube();
             
         inShow = true;
