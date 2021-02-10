@@ -12,7 +12,7 @@ let localStream;
 
 let constraints = {
     audio: true,
-    video: false
+    video: true
 };
 
 
@@ -391,7 +391,7 @@ function handleRemoteStreamAdded(event) {
 
         if (index >= 0) {
             console.log("Found element to add stream to: " + users[index].name);
-            let player = document.createElement("audio");
+            let player = document.createElement("video");
             player.srcObject = event.stream;
             player.classList.add("remoteAudio");
             player.autoplay = true;
