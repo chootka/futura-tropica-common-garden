@@ -3,7 +3,7 @@ let users = [];
 let muted = true;
 
 // const parts = location.hostname.split('.');
-let subdomain = "public"; //parts.shift();
+// let subdomain = parts.shift();
 
 console.log("dataSignalling.js, subdomainAlias", subdomainAlias);
 
