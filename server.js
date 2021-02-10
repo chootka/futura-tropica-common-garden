@@ -181,7 +181,7 @@ function socketsInRoom(room) {
 
 
 io.on("connection", function(socket) {
-    customLog("Connection from " + socket.id);
+    customLog("[0] Connection from " + socket.id);
     let angle = Math.floor(Math.random() * 6);
     let hue = Math.floor(Math.random() * 360);
     let hue2 = Math.floor(Math.random() * 360);
@@ -196,7 +196,7 @@ io.on("connection", function(socket) {
     socket.muted = true;
     socket.admin = false;
 
-    customLog("emit setId");
+    customLog("[1] emit setId");
     socket.emit("setId", { id: socket.id, hue: hue, hue2: hue2, bright: bright, bright2: bright2, angle: angle, reqTime: Date.now() });
 
     socket.on("setRoom", function(data) {
@@ -233,7 +233,7 @@ io.on("connection", function(socket) {
     socket.on("setUsername", function(name) {
         socket.name = name;
 //        socket.broadcast.emit("newUser", { id: socket.id, hue: hue, name: socket.name, muted: socket.muted });
-        customLog("setUsername", name);
+        customLog("[2] setUsername", name);
         customLog("setUsername, io.sockets.connected", io.sockets.connected);
 
         customLog("setUsername socket.id", socket.id);
