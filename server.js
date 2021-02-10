@@ -246,9 +246,12 @@ io.on("connection", function(socket) {
         for (let i in io.sockets.connected) {
             let s = io.sockets.connected[i];
 
-            customLog("connected socket, s.id", s.id);
-            customLog("connected socket, s.name", s.name);
-            customLog("connected socket, s.room", s.room);
+            customLog("connected socket, s.id");
+            customLog(s.id);
+            customLog("connected socket, s.name");
+            customLog(s.name);
+            customLog("connected socket, s.room");
+            customLog(s.room);
             if (socket.id != s.id && s.name != "#none" && s.room == socket.room) {
 
                 customLog("Telling " + socket.id + "(" + socket.room + ") to create user " + s.id + "(" + s.room + ") with name " + s.name);
