@@ -234,11 +234,17 @@ io.on("connection", function(socket) {
         socket.name = name;
 //        socket.broadcast.emit("newUser", { id: socket.id, hue: hue, name: socket.name, muted: socket.muted });
         customLog("setUsername", name);
+        customLog("setUsername, io.sockets.connected", io.sockets.connected);
+
+        customLog("setUsername socket.id", socket.id);
+        customLog("setUsername socket.room", socket.room);
 
         for (let i in io.sockets.connected) {
             let s = io.sockets.connected[i];
 
-            customLog("connected socket", s);
+            customLog("connected socket, s.id", s.id);
+            customLog("connected socket, s.name", s.name);
+            customLog("connected socket, s.room", s.room);
             if (socket.id != s.id && s.name != "#none" && s.room == socket.room) {
 
                 customLog("Telling " + socket.id + "(" + socket.room + ") to create user " + s.id + "(" + s.room + ") with name " + s.name);
