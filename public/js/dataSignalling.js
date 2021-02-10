@@ -35,11 +35,11 @@ let config = {
 let myUser;
 let myMapUser;
 
-function setUser() {
+function joinUser() {
     // automatically running the functions that would be run on  close of pop up
     const username = "netrunner" + Math.floor((Math.random()*420666));
     socket.emit("setUsername", username);
-    //- unMuteYouTube();
+    unMuteYouTube();
                 
     inShow = true;
     document.querySelector(".map").classList.remove("hidden");
@@ -79,15 +79,16 @@ socket.on("setId", function(data) {
         if (window.location.search != "?admin") {
             socket.emit("setRoom", { room: subdomain });
         } else {
+            console.log("admin true");
             socket.emit("setRoom", { room: subdomain, admin: true});
         }
 
-        if (window.location.search.includes("username") && window.location.search.includes("terms=true")) {
-            console.log("Auto-joining");
+        // if (window.location.search.includes("username") && window.location.search.includes("terms=true")) {
+            // console.log("Auto-joining");
             // closePopUp();
-        }
+        // }
 
-        setUser();
+        joinUser();
 
     } else {
 //        console.log(" ");

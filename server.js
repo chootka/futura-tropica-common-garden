@@ -181,7 +181,6 @@ function socketsInRoom(room) {
 
 
 io.on("connection", function(socket) {
-    customLog("[0] Connection from " + socket.id);
     let angle = Math.floor(Math.random() * 6);
     let hue = Math.floor(Math.random() * 360);
     let hue2 = Math.floor(Math.random() * 360);
@@ -196,11 +195,9 @@ io.on("connection", function(socket) {
     socket.muted = true;
     socket.admin = false;
 
-    customLog("[1] emit setId");
     socket.emit("setId", { id: socket.id, hue: hue, hue2: hue2, bright: bright, bright2: bright2, angle: angle, reqTime: Date.now() });
 
     socket.on("setRoom", function(data) {
-        customLog("[2] setRoom");
         if (socketsInRoom(data.room) < maxRoomSize || data.admin) {
             customLog("Socket wants to join room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room");
             socket.join(data.room);
@@ -234,25 +231,10 @@ io.on("connection", function(socket) {
     socket.on("setUsername", function(name) {
         socket.name = name;
 //        socket.broadcast.emit("newUser", { id: socket.id, hue: hue, name: socket.name, muted: socket.muted });
-        customLog("[3] setUsername");
-        customLog(name);
-        customLog("setUsername, io.sockets.connected");
-        customLog(io.sockets.connected);
-
-        customLog("setUsername socket.id");
-        customLog(socket.id);
-        customLog("setUsername socket.room");
-        customLog(socket.room);
 
         for (let i in io.sockets.connected) {
             let s = io.sockets.connected[i];
 
-            customLog("connected socket, s.id");
-            customLog(s.id);
-            customLog("connected socket, s.name");
-            customLog(s.name);
-            customLog("connected socket, s.room");
-            customLog(s.room);
             if (socket.id != s.id && s.name != "#none" && s.room == socket.room) {
 
                 customLog("Telling " + socket.id + "(" + socket.room + ") to create user " + s.id + "(" + s.room + ") with name " + s.name);
