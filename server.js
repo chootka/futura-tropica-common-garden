@@ -233,11 +233,15 @@ io.on("connection", function(socket) {
     socket.on("setUsername", function(name) {
         socket.name = name;
 //        socket.broadcast.emit("newUser", { id: socket.id, hue: hue, name: socket.name, muted: socket.muted });
-        customLog("[2] setUsername", name);
-        customLog("setUsername, io.sockets.connected", io.sockets.connected);
+        customLog("[2] setUsername");
+        customLog(name);
+        customLog("setUsername, io.sockets.connected");
+        customLog(io.sockets.connected);
 
-        customLog("setUsername socket.id", socket.id);
-        customLog("setUsername socket.room", socket.room);
+        customLog("setUsername socket.id");
+        customLog(socket.id);
+        customLog("setUsername socket.room");
+        customLog(socket.room);
 
         for (let i in io.sockets.connected) {
             let s = io.sockets.connected[i];
