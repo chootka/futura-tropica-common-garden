@@ -57,11 +57,11 @@ app.get("/", (req, res) => {
     let subdomain = domain.substr(0, domain.indexOf('.'));
 
 
-    // subdomain = "public";
+    subdomain = "public";
 
     // subdomain = "join";
     // subdomain = "bogota";
-    subdomain = "kinshasa";
+    // subdomain = "kinshasa";
     // subdomain = "bengaluru";
 
     console.log("Got request for " + domain + ", subdomain was " + subdomain);
