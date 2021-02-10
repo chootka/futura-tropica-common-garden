@@ -70,6 +70,8 @@ document.body.onscroll = function() {
 }
 
 window.setInterval(function() {
+    if (!myMapUser) return;
+    
     if (currentX != lastX || currentY != lastY) {
 //        console.log("Updating position to " + currentX, currentY);
         lastX = currentX;
