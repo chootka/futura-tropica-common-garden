@@ -16,7 +16,9 @@ fetch('/api/v0/swarm/peers', {
 
             if (!t || !t.length) continue;
 
-            peers.innerHTML += '<a class="peer" href="http://' + t[0] + '"><span class="dot"></span></a>';
+            var octet = String(t).substring( String(t).lastIndexOf('.') + 1 );
+
+            peers.innerHTML += '<a class="peer" href="peer/' + octet + '/"><span class="dot"></span></a>';
         }
 
 
