@@ -110,8 +110,8 @@ window.setInterval(function() {
 }, 50);
 
 function updatePosition(message) {
-//    console.log("Recieved update message:");
-//    console.log(message);
+   console.log("Recieved update message:");
+   console.log(message);
     try {
         document.querySelector("#user" + message.id).style.left = message.x + "px";
         document.querySelector("#user" + message.id).style.top = message.y + "px";
