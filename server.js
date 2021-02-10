@@ -196,7 +196,7 @@ io.on("connection", function(socket) {
     socket.muted = true;
     socket.admin = false;
 
-    console.log("emit setId");
+    customLog("emit setId");
     socket.emit("setId", { id: socket.id, hue: hue, hue2: hue2, bright: bright, bright2: bright2, angle: angle, reqTime: Date.now() });
 
     socket.on("setRoom", function(data) {
@@ -233,15 +233,14 @@ io.on("connection", function(socket) {
     socket.on("setUsername", function(name) {
         socket.name = name;
 //        socket.broadcast.emit("newUser", { id: socket.id, hue: hue, name: socket.name, muted: socket.muted });
-        console.log("setUsername", name);
+        customLog("setUsername", name);
 
         for (let i in io.sockets.connected) {
             let s = io.sockets.connected[i];
 
-            console.log("connected socket", s);
+            customLog("connected socket", s);
             if (socket.id != s.id && s.name != "#none" && s.room == socket.room) {
 
-                console.log("emit existing or new user");
                 customLog("Telling " + socket.id + "(" + socket.room + ") to create user " + s.id + "(" + s.room + ") with name " + s.name);
                 socket.emit("existingUser", { id: s.id, hue: s.hue, hue2: s.hue2, bright: s.bright, bright2: s.bright2, angle: s.angle, name: s.name, muted: s.muted, presenterId: s.presenterId, admin: s.admin });
                 io.to(s.id).emit("newUser", { id: socket.id, hue: socket.hue, hue2: socket.hue2, bright: socket.bright, bright2: socket.bright2, angle: socket.angle, name: socket.name, muted: socket.muted });
