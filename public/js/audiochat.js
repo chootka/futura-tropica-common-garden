@@ -391,7 +391,10 @@ function handleRemoteStreamAdded(event) {
 
         if (index >= 0) {
             console.log("Found element to add stream to: " + users[index].name);
-            let player = document.createElement("video");
+            let player = window.location.search != "?admin"
+                ? document.createElement("video")
+                : document.createElement("audio");
+                
             player.srcObject = event.stream;
             player.classList.add("remoteAudio");
             player.autoplay = true;
