@@ -173,6 +173,7 @@ socket.on("existingUser", function(data) {
     }
     user.dc = user.pc.createDataChannel("chat", {negotiated: true, id: 0});
     user.dc.onmessage = function(message) {
+        console.log("existingUser, onmessage", message, user.name);
         dataChannelMessage(message.data, user.name);
     }
 //    user.pc.oniceconnectionstatechange = e => console.log(user.pc.iceConnectionState);
@@ -282,6 +283,7 @@ socket.on("answer", function(answer, socketId) {
 function dataChannelMessage(message, socketId) {
     message = JSON.parse(message);
     if (message.type == "update") {
+        console.log("dataChannelMessage, update");
         updatePosition(message, socketId);
     } else if (message.type == "setRoom") {
         setRoom(message.roomName, socketId);
