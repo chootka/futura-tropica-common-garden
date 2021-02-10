@@ -60,6 +60,7 @@ body
     .avatarContainer
     .map
     .GUIcontainer
+    .content
     audio.alert
         source(src="static/still_there_2.ogg")
         source(src="static/still_there_2.mp3")
@@ -70,7 +71,8 @@ body
 
         // Set this to true to turn off audio feature
         const disableAudio = false;
-        let subdomain = subdomainAlias = "public";
+        //- let subdomain = subdomainAlias = "public";
+        let subdomainAlias = "#{subdomainAlias}";
 
     script(src="js/jquery-1.7.1.min.js")
     script(src="js/jquery-ui-1.8.17.custom.min.js")

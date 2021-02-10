@@ -17,30 +17,12 @@ const words = require("./private/words.json");
 let maxRoomSize = 200;
 
 let slideshows = [];
-// let chatboxes = [];
-
-// fs.readFile("private/chatboxes.json", function read(err, data) {
-//     if (err) {
-//         return console.log(err);
-//     }
-//     chatboxes = JSON.parse(data);
-// });
 
 let subdomain = 'public';
 
 let subdomains = [];
 
 let logStreams = [];
-
-// let transporter = nodemailer.createTransport({
-//     host: 'smtp.host.name',         // replace with SMTP url of mail host to use for verification email
-//     port: 465,
-//     secure: true,
-//     auth: {
-//         user: 'email@host.name',    // replace wieh email username
-//         pass: 'password'            // replace with email password
-//     }
-// });
 
 app.set('port', port);
 app.set('views', path.join(__dirname, 'views'));
@@ -67,42 +49,27 @@ server.on('error', (err) => {
 });
 
 app.get("/", (req, res) => {
-    res.render("dashboard", { subdomainAlias: "public" });
+    // res.render("dashboard", { subdomainAlias: "public" });
 
     // Can use later for registering our own futura-tropica.network subdomians!
 
-    // const domain = req.headers.host;
-    // let subdomain = domain.substr(0, domain.indexOf('.'));
+    const domain = req.headers.host;
+    let subdomain = domain.substr(0, domain.indexOf('.'));
 
-    // console.log("Got request for " + domain + ", subdomain was " + subdomain);
 
-    // if (!domain.includes(".futura-tropica.network")) {
-    //     fs.readFile("private/subdomainInfo.json", function read(err, data) {
-    //         if (err) {
-    //             return console.log(err);
-    //         }
-    //         let subdomainInfo = JSON.parse(data);
+    // subdomain = "public";
 
-    //         let subdomainsInfo = Object.entries(subdomainInfo);
+    // subdomain = "join";
+    // subdomain = "bogota";
+    subdomain = "kinshasa";
+    // subdomain = "bengaluru";
 
-    //         for(var i = 0; i < subdomainsInfo.length; i++) {
+    console.log("Got request for " + domain + ", subdomain was " + subdomain);
 
-    //             if (subdomainsInfo[i][1].alias && subdomainsInfo[i][1].alias == domain) {
-    //                 console.log("Domain " + subdomainsInfo[i][1].alias + " is an alias for " + subdomainsInfo[i][0] + ".futura-tropica.network");
-    //                 subdomain = subdomainsInfo[i][0];
-    //                 console.log(subdomain);
-    //                 break;
-    //             }
-    //         }
-    //         console.log("rendering page " + subdomain + " for " + domain);
-    //         renderPage(req,res,domain,subdomain);
+    console.log("rendering page " + subdomain + " for " + domain);
+    renderPage(req,res,domain,subdomain);
 
-    //     });
-    // } else {
-    //     console.log("rendering page " + subdomain + " for " + domain);
-    //     renderPage(req,res,domain,subdomain);
-    // }
-    // customLog("Subdomain: " + subdomain);
+    customLog("Subdomain: " + subdomain);
 });
 
 app.get("/about", (req, res) => {
@@ -110,21 +77,22 @@ app.get("/about", (req, res) => {
 });
 
 
-// function renderPage(req, res, domain, subdomain) {
-//     if (subdomain === "cms") {
-//         let now = new Date();
-//         res.render("cms", { date: new Date(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " 23:59:59 GMT+0100").getTime() });
-//     } else if (subdomain) {
+function renderPage(req, res, domain, subdomain) {
+    if (subdomain === "cms") {
+        let now = new Date();
+        res.render("cms", { date: new Date(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " 23:59:59 GMT+0100").getTime() });
+    } else if (subdomain == "join") {
+        res.render("landing");
+    } else if (subdomain) {
 
-//         if (fs.existsSync("public/shows/" + subdomain + ".json")) {
-//             res.render("home", { subdomainAlias: subdomain });
-//         } else {
-//             res.render("toCms", { name: "test" });
-//         }
-//     } else {
-//         res.render("landing");
-//     }
-// }
+        if (fs.existsSync("public/shows/" + subdomain + ".json")) {
+            // res.render("home", { subdomainAlias: subdomain });
+            res.render("dashboard", { subdomainAlias: subdomain });
+        } else {
+            res.render("toCms", { name: "test" });
+        }
+    }
+}
 
 // app.post("/fileupload", (req, res) => {
 //     customLog("Uploading file...");
@@ -301,136 +269,6 @@ io.on("connection", function(socket) {
         
         console.log(io.sockets.adapter.rooms);
     });
-
-
-//////////////////////////////////////////
-//                                      //
-//  Slideshow & chat window from here   //
-//                                      //
-//////////////////////////////////////////
-
-
-    // socket.on("setSlide", function(data) {
-
-    //     customLog("Someone changed a slide on slideshow " + data.slideshow)
-    //     let slideIndex = slideshows.map(function(e) { return e.name; }).indexOf(data.slideshow);
-    //     if (slideIndex >= 0) {
-    //         slideshows[slideIndex].slide = data.slide;
-    //         customLog("Found the presentation & updated the slide");
-    //     } else {
-    //         customLog("Created the presentation & updated the slide");
-    //         slideshows.push({
-    //             name: data.slideshow,
-    //             slide: data.slide
-    //         });
-    //     }
-
-    //     customLog("setSlide", { slideshow: data.slideshow, slide: data.slide });
-    //     io.to(socket.room).emit("setSlide", { slideshow: data.slideshow, slide: data.slide } );
-    // });
-
-    // socket.on("whatSlide", function(slideshow) {
-    //     customLog("Someone requested the current slide for slideshow " + slideshow)
-    //     let slideIndex = slideshows.map(function(e) { return e.name; }).indexOf(slideshow);
-    //     if (slideIndex >= 0) {
-    //         customLog("Found the slideshow & sending slide to user the slide");
-    //         socket.emit("setSlide", { slideshow: slideshow, slide: slideshows[slideIndex].slide } );
-    //     }
-    // });
-
-
-    // socket.on("getChats", function(chatbox) {
-    //     customLog(chatboxes);
-    //     let chatIndex = chatboxes.map(function(e) { return e.name; }).indexOf(chatbox);
-    //     if (chatIndex >= 0) {
-    //         let chatList = chatboxes[chatIndex].chat;
-    //         for (let i=0; i<chatList.length; i++) {
-    //             socket.emit("newChat", { chatbox: chatbox, message:chatList[i].message, username: chatList[i].username, hue: chatList[i].hue, hue2: chatList[i].hue2, bright: chatList[i].bright, bright2: chatList[i].bright2, angle: chatList[i].angle } );
-    //         }
-    //     }
-    // });
-
-    // socket.on("sendChat", function(data) {
-    //     let chatIndex = chatboxes.map(function(e) { return e.name; }).indexOf(data.chatbox);
-    //     if (chatIndex >= 0) {
-    //         chatboxes[chatIndex].chat.push({ username: data.username, message: data.message, hue: socket.hue, hue2: socket.hue2, bright: socket.bright, bright2: socket.bright2, angle: socket.angle });
-    //     } else {
-    //         chatboxes.push({
-    //             name: data.chatbox,
-    //             chat: [
-    //                 { username: data.username, message: data.message, hue: socket.hue, hue2: socket.hue2, bright: socket.bright, bright2: socket.bright2, angle: socket.angle }
-    //             ]
-    //         });
-    //     }
-    //     io.to(socket.room).emit("newChat", { chatbox: data.chatbox, message: data.message, username: data.username, hue: socket.hue, hue2: socket.hue2, bright: socket.bright, bright2: socket.bright2, angle: socket.angle });
-
-    //     fs.writeFile("private/chatboxes.json", JSON.stringify(chatboxes), function(err) {
-    //         if(err) {
-    //             return console.log(err);
-    //         }
-    //     });
-
-    //     customLog(JSON.stringify(chatboxes));
-    // });
-
-
-//////////////////////////////////////////
-//                                      //
-//    Audio tour recording from here    //
-//                                      //
-//////////////////////////////////////////
-
-    // socket.on("resetPoints", function(sPass, subdomain) {
-    //     if (sPass === adminPass) {
-    //         fs.writeFileSync("public/shows/" + subdomain + "_tourdata.js","let points = [", {encoding: 'utf8', flag: 'w'} );
-    //         let logStream = fs.createWriteStream("public/shows/" + subdomain + "_tourdata.js", {encoding: 'utf8', flags: 'a'} );
-    //         logStreams.push(logStream);
-    //         socket.logStream = logStreams.length -1;
-    //         customLog("Socket.logstream is: " + socket.logStream);
-    //     }
-    // });
-
-    // socket.on("appendPoint", function(sPass, point) {
-    //     customLog("Appending point " + point + "...");
-    //     if (sPass === adminPass && socket.logStream) {
-    //         logStreams[socket.logStream].write("[" + point.x + "," + point.y + "],");
-    //         customLog("point appended!");
-    //     }
-    // });
-
-    // socket.on("savePoints", function(sPass, point) {
-    //     customLog("Saving points...");
-    //     if (sPass === adminPass && socket.logStream) {
-    //         logStreams[socket.logStream].write("[" + point.x + "," + point.y + "]];");
-    //         logStreams[socket.logStream].end();
-    //         customLog("points saved!");
-    //     }
-    // });
-
-
-    // socket.on("saveAudio", function(blob, sPass, subdomain) {
-    //     if (sPass === adminPass) {
-    //         let path = 'public/shows/' + subdomain + '_tour.ogg';
-    //         fs.open(path, 'w', function(err, fd) {
-    //             if (err) {
-    //                 throw 'could not open file: ' + err;
-    //             }
-
-    //             // write the contents of the buffer, from position 0 to the end, to the file descriptor returned in opening our file
-    //             fs.write(fd, blob, 0, blob.length, null, function(err) {
-    //                 if (err) {
-    //                     throw 'error writing file: ' + err;
-    //                     socket.emit("tourFailed", err);
-    //                 }
-    //                 fs.close(fd, function() {
-    //                     customLog('wrote audio tour file successfully!');
-    //                     socket.emit("tourDone");
-    //                 });
-    //             });
-    //         });
-    //     }
-    // });
-
 
 //////////////////////////////////////////
 //                                      //

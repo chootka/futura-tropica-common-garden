@@ -9,7 +9,7 @@ head
     meta(name='viewport' content='initial-scale=0.5, width=device-width')
     link(rel='stylesheet' href='/avatars.css')
     link(rel='stylesheet' href='/show.css')
-    script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+    script(src="js/jquery-1.7.1.min.js")
     script(src="/socket.io/socket.io.js")
     
     style.
@@ -237,52 +237,25 @@ head
 body
 
     .menu
-        .button(onclick="this.parentElement.classList.toggle('active');")
-            .hamburger
-
         .menuItem <a href="about">About</a>
-        .menuItem <a href="mailto:sentinel@common.garden">Contact</a>
-        .menuItem <a href="TermsOfService.pdf">Terms of service</a>
     .info
         form(onsubmit='checkName(); return false;')
             p
                 input(id="subdomain" type="text" pattern="[a-zA-Z0-9\-\_]+" maxlength="40" placeholder="subdomain" name="subdomain")
-                label(for="subdomain") .common.garden
+                label(for="subdomain") .futura-tropica.network
                 p.warn &nbsp;
             br
-            input(type='submit' value='create your own garden')
-            br
-
-        div.gardenContainer
-            //p.gardenHeader Try it out with friends:
-            //a.garden(href="https://party.common.garden" target="_blank")
-                p.name Watch party
-            //a.garden(href="https://puzzle.common.garden" target="_blank")
-                p.name Puzzle
-            //a.garden(href="https://online.common.garden" target="_blank")
-                p.name Exhibition
-            //.garden.halfSpacer
-            //a.garden(href="https://2020.common.garden" target="_blank")
-                p.name Quiz
-            //a.garden(href="https://meeting.common.garden" target="_blank")
-                p.name Meeting room
-            //p.gardenHeader Active gardens:
-            //a.activeGarden(href="http://friesmuseum.common.garden")
-                p.name(data-subdomain='friesmuseum') This Unjust Mirror, Fries Museum (0 current visitors)
-            //a.activeGarden(href="https://online.officeimpart.com")
-                p.name(data-subdomain='online') Come Closer!, Office Impart (0 current visitors)
-            //a.activeGarden(href="https://raupenimmersattism.savvy-contemporary.com")
-                p.name(data-subdomain='175acd0fcb9') RAUPENIMMERSATTISM, Savvy Contemporary (0 current visitors)
+            input(type='submit' value='create your own tropical garden')
 
     script.
         const socket = io('/');
-        let elems = document.querySelectorAll("p.name[data-subdomain]");
-        let featured = [];
-        for (let i=0; i<elems.length; i++) {
-            featured.push(elems[i].dataset.subdomain);
-        }
-        console.log(featured);
-        socket.emit("getPages");
+        //- let elems = document.querySelectorAll("p.name[data-subdomain]");
+        //- let featured = [];
+        //- for (let i=0; i<elems.length; i++) {
+        //-     featured.push(elems[i].dataset.subdomain);
+        //- }
+        //- console.log(featured);
+        //- socket.emit("getPages");
 
         let input = document.querySelector("#subdomain");
         input.addEventListener("input", resizeInput);
@@ -301,9 +274,9 @@ body
 
         socket.on("subdomainAvalible", function() {
             if (input.value) {
-                window.location.href = "https://cms.common.garden?" + input.value;
+                window.location.href = "https://cms.futura-tropica.network?" + input.value;
             } else {
-                window.location.href = "https://cms.common.garden?" + input.placeholder;
+                window.location.href = "https://cms.futura-tropica.network?" + input.placeholder;
             }
         });
 
@@ -323,21 +296,21 @@ body
             }
         }
 
-        socket.on("allPages", function(pages) {
-            console.log(pages.length);
-            if (pages.length > 0) {
-                console.log(pages[0]);
+        //- socket.on("allPages", function(pages) {
+        //-     console.log(pages.length);
+        //-     if (pages.length > 0) {
+        //-         console.log(pages[0]);
 
-                for (let i=0; i<pages.length; i++) {
-                    for (let j=0; j<featured.length; j++) {
-                        if (pages[i].name == featured[j]) {
-                            if (pages[i].users == 1) {
-                                document.querySelector("p.name[data-subdomain='" + featured[j] + "']").innerHTML = document.querySelector("p.name[data-subdomain='" + featured[j] + "']").innerHTML.split("(")[0] + "(" + pages[i].users + " current visitor)";
-                            } else {
-                                document.querySelector("p.name[data-subdomain='" + featured[j] + "']").innerHTML = document.querySelector("p.name[data-subdomain='" + featured[j] + "']").innerHTML.split("(")[0] + "(" + pages[i].users + " current visitors)";
-                            }
-                        }
-                    }
-                }
-            }
-        });
+        //-         for (let i=0; i<pages.length; i++) {
+        //-             for (let j=0; j<featured.length; j++) {
+        //-                 if (pages[i].name == featured[j]) {
+        //-                     if (pages[i].users == 1) {
+        //-                         document.querySelector("p.name[data-subdomain='" + featured[j] + "']").innerHTML = document.querySelector("p.name[data-subdomain='" + featured[j] + "']").innerHTML.split("(")[0] + "(" + pages[i].users + " current visitor)";
+        //-                     } else {
+        //-                         document.querySelector("p.name[data-subdomain='" + featured[j] + "']").innerHTML = document.querySelector("p.name[data-subdomain='" + featured[j] + "']").innerHTML.split("(")[0] + "(" + pages[i].users + " current visitors)";
+        //-                     }
+        //-                 }
+        //-             }
+        //-         }
+        //-     }
+        //- });

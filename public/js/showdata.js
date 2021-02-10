@@ -44,30 +44,19 @@ $.getJSON(showdata, function( json ) {
         document.querySelector(".popUp form").insertBefore(pasBox, document.querySelector(".popUp form .enterButton"));
     }
 
-    if (subdomain == "175acd0fcb9") {
-        let p = document.createElement("p");
-        p.innerHTML = "Welcome to SAVVY Contemporary’s RAUPENIMMERSATTISM digital exhibition.<br><br>Please enter a username and give permission to your microphone if you would like to talk to other visitors.";
-        p.className = "entryText";
-        document.querySelector(".popUp form").insertBefore(p, document.querySelector(".popUp form").firstChild);
-        p = document.createElement("p");
-        p.className = "entryText";
-        p.innerHTML = "Bitte melde Dich mit einem Benutzernamen an und schalte Dein Mikrophon an, falls Du mit anderen Besucher*innen sprechen möchtest.";
-        document.querySelector(".popUp form").appendChild(p);
-    }
-
     if (json.textColor) {
         $( 'body' ).css({
-            'height': json.screensize.height + 'px',
-            'width': json.screensize.width + 'px',
-            'background': "hsl(" + json.backgroundColor[0] + "," + json.backgroundColor[1] + "%," + json.backgroundColor[2] + "%)",
+            'height': '100vh', //json.screensize.height,
+            'width': json.screensize.width,
+            // 'background': "hsl(" + json.backgroundColor[0] + "," + json.backgroundColor[1] + "%," + json.backgroundColor[2] + "%)",
             'color': "hsl(" + json.textColor[0] + "," + json.textColor[1] + "%," + json.textColor[2] + "%)",
-            'border-color': "hsl(" + json.borderColor[0] + "," + json.borderColor[1] + "%," + json.borderColor[2] + "%)"
+            // 'border-color': "hsl(" + json.borderColor[0] + "," + json.borderColor[1] + "%," + json.borderColor[2] + "%)"
         } );
     } else {
-        $( 'body' ).css({ 'height': json.screensize.height + 'px', 'width': json.screensize.width + 'px' } );
+        $( 'body' ).css({ 'height': '100vh', 'width': json.screensize.width } ); //json.screensize.height
     }
     if (json.borderWidth) {
-        borderWidth = json.borderWidth + "px";
+        borderWidth = json.borderWidth;
     }
 
     if (json.customCss) {
@@ -76,16 +65,16 @@ $.getJSON(showdata, function( json ) {
         document.head.appendChild(style);
     }
 
-    if (json.backgroundColor[2] > 75) {
-        let style = document.createElement("style");
-        style.innerHTML = ".adminMapUser { background: #000; } .adminMapUser:before { border-color: #000; }";
-        document.head.appendChild(style);
-    }
-    if (json.backgroundColor[0] < 40 || json.backgroundColor > 300) {
-        let style = document.createElement("style");
-        style.innerHTML = ".myMapUser { background: #0f0 !important; } .myMapUser.adminMapUser:before { border-color: #0f0; }";
-        document.head.appendChild(style);
-    }
+    // if (json.backgroundColor[2] > 75) {
+    //     let style = document.createElement("style");
+    //     style.innerHTML = ".adminMapUser { background: #000; } .adminMapUser:before { border-color: #000; }";
+    //     document.head.appendChild(style);
+    // }
+    // if (json.backgroundColor[0] < 40 || json.backgroundColor > 300) {
+    //     let style = document.createElement("style");
+    //     style.innerHTML = ".myMapUser { background: #0f0 !important; } .myMapUser.adminMapUser:before { border-color: #0f0; }";
+    //     document.head.appendChild(style);
+    // }
 
     mapscale = json.screensize.width / (window.innerWidth / 3);
     if (window.innerWidth < window.innerHeight) {
@@ -93,7 +82,8 @@ $.getJSON(showdata, function( json ) {
     }
     let map = document.querySelector(".map");
     map.style.width = (json.screensize.width / mapscale) + "px";
-    map.style.height = (json.screensize.height / mapscale) + "px";
+    // map.style.height = (json.screensize.height / mapscale) + "px";
+    map.style.height = (window.innerheight / mapscale) + "px";
 
     if (json.title) {
         document.head.querySelector("title").innerHTML = json.title;
@@ -107,9 +97,9 @@ $.getJSON(showdata, function( json ) {
 
         if ( json.works[ i ].imagelink || json.works[ i ].image ) {
             if (json.works[i].url != null && json.works[i].url != "") {
-                article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="imagelink"><a href="' + json.works[ i ].url + '" target="_blank"><img src="' + json.works[ i ].imageurl + '"></a></div>' );
+                article.append( '<div class="imagelink"><a href="' + json.works[ i ].url + '" target="_blank"><img src="' + json.works[ i ].imageurl + '"></a></div>' );
             } else {
-                article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="imagelink"><img src="' + json.works[ i ].imageurl + '"></div>' );
+                article.append( '<div class="imagelink"><img src="' + json.works[ i ].imageurl + '"></div>' );
             }
         } else if (json.works[i].text) {
             article.append( "<h1>" + json.works[i].title + "</h1> <p>" + json.works[ i ].description + "</p>" );
@@ -198,6 +188,8 @@ $.getJSON(showdata, function( json ) {
                 sendChat(event);
             }
             article.append(form);
+        } else if ( json.works[ i ].localVideo ) {
+            article.append( '<video src="' + json.works[i].src + '" autoplay muted class="iframe"></video>' );
         } else if ( json.works[ i ].youtube && json.works[ i ].showVolume ) {
             article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" data-showVolume="true" data-volume="100" scrolling="no" frameborder="0" allow="autoplay" muted width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
         } else if ( json.works[ i ].vimeo && json.works[ i ].showVolume ) {
@@ -283,7 +275,7 @@ $.getJSON(showdata, function( json ) {
 
 
 
-        $( "body" ).append( article );
+        $( ".content" ).append( article );
 
         if (json.works[i].infoStyle) {
             document.querySelector("#artwork" + (i + 1) + " .info").style = json.works[ i ].infoStyle;
