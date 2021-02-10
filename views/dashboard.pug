@@ -72,16 +72,6 @@ body
         const disableAudio = false;
         let subdomain = subdomainAlias = "public";
 
-        // automatically running the functions that would be run on  close of pop up
-        const username = "netrunner" + Math.floor((Math.random()*420666));
-        console.log("set username", username);
-        socket.emit("setUsername", username);
-        //- unMuteYouTube();
-            
-        inShow = true;
-        document.querySelector(".map").classList.remove("hidden");
-        socket.emit("countVisitor");
-
     script(src="js/jquery-1.7.1.min.js")
     script(src="js/jquery-ui-1.8.17.custom.min.js")
     script(src="js/script005.min.js")

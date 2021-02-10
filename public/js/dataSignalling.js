@@ -63,6 +63,19 @@ socket.on("setId", function(data) {
 
         myUser = elem;
         myMapUser = mapElem;
+
+
+        // automatically running the functions that would be run on  close of pop up
+        const username = "netrunner" + Math.floor((Math.random()*420666));
+        socket.emit("setUsername", username);
+        //- unMuteYouTube();
+            
+        inShow = true;
+        document.querySelector(".map").classList.remove("hidden");
+        socket.emit("countVisitor");
+        // // //
+        
+
         if (window.location.search != "?admin") {
             socket.emit("setRoom", { room: subdomain });
         } else {
