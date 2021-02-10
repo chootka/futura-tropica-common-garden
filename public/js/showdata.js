@@ -28,7 +28,7 @@ function doesFileExist(urlToFile) {
 }
 
 $.getJSON(showdata, function( json ) {
-    console.log("Got show data");
+    console.log("Got show data", json);
 
     console.log(json);
 
