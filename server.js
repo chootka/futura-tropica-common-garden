@@ -200,6 +200,7 @@ io.on("connection", function(socket) {
     socket.emit("setId", { id: socket.id, hue: hue, hue2: hue2, bright: bright, bright2: bright2, angle: angle, reqTime: Date.now() });
 
     socket.on("setRoom", function(data) {
+        customLog("[2] setRoom");
         if (socketsInRoom(data.room) < maxRoomSize || data.admin) {
             customLog("Socket wants to join room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room");
             socket.join(data.room);
@@ -233,7 +234,7 @@ io.on("connection", function(socket) {
     socket.on("setUsername", function(name) {
         socket.name = name;
 //        socket.broadcast.emit("newUser", { id: socket.id, hue: hue, name: socket.name, muted: socket.muted });
-        customLog("[2] setUsername");
+        customLog("[3] setUsername");
         customLog(name);
         customLog("setUsername, io.sockets.connected");
         customLog(io.sockets.connected);
