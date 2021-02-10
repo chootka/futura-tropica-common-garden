@@ -40,30 +40,5 @@
                 "lock16_9": true
             }
         ]
-    },
-    "quiz" : {
-        "opening": false,
-        "setup": "quiz",
-        "hideTour": true,
-        "title": "Quiz",
-        "backgroundColor": ["0", "0", "0"],
-        "textColor": ["0", "0", "100"],
-        "borderColor": ["0", "0", "0"],
-        "borderWidth": 2,
-        "frameBackground": ["0", "0", "0"],
-        "screensize": { "width": 3000, "height": 1688 },
-        "works": [
-            {
-                "title":"New Quiz",
-                "subtitle":"",
-                "description":"",
-                "artist":"New Quiz",
-                "url":"",
-                "top":"200",
-                "left":"300",
-                "width":"1000",
-                "height":"450",
-                "quiz":true,
-                "questions":[]}
-        ]
-    }}
+    }
+}

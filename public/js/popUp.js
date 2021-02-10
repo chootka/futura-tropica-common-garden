@@ -47,16 +47,6 @@ function closePopUp(event) {
     checkSlideshows();
     setupChatboxes();
     unMuteYouTube();
-    let puzzles = document.querySelectorAll("article.puzzle");
-    let quizzes = document.querySelectorAll("article.quiz");
-    window.setTimeout(function() {
-        for (let i=0; i<puzzles.length; i++) {
-            setupPuzzle(puzzles[i].id);
-        }
-        for (let i=0; i<quizzes.length; i++) {
-            setupQuiz(quizzes[i].id);
-        }
-    },100)
 
     inShow = true;
     document.querySelector(".map").classList.remove("hidden");

@@ -99,12 +99,6 @@ $.getJSON(showdata, function( json ) {
         document.head.querySelector("title").innerHTML = json.title;
     }
 
-    // if (json.hideTour == true) {
-    //     document.querySelector(".tourGUI").style.display = "none";
-    //     document.querySelector(".tourGUI").classList.add("inactive");
-    //     console.log("Hidden tourGUI");
-    // }
-
     var jitsiroom = "";
 
     for ( var i = 0; i < json.works.length; i++ ) {
@@ -120,24 +114,6 @@ $.getJSON(showdata, function( json ) {
         } else if (json.works[i].text) {
             article.append( "<h1>" + json.works[i].title + "</h1> <p>" + json.works[ i ].description + "</p>" );
             article.addClass("text");
-        } else if (json.works[i].puzzle) {
-            article.css("z-index", "auto");
-            article.addClass("puzzle");
-            article.attr("data-segmentsX", json.works[i].segmentsX)
-            article.attr("data-segmentsY", json.works[i].segmentsY)
-            let url = json.works[i].imageurl.replaceAll(' ','%20');
-
-            let html = "<div class='boundry' data-url='" + url + "'></div><div class='frame'>";
-            for (let j=0; j<json.works[i].segmentsY * json.works[i].segmentsX; j++) {
-                html += "<div class='segment' id='segment" + j + "' style='width:" + Math.round(json.works[i].width/json.works[i].segmentsX) + "px; height:" + Math.round(json.works[i].height/json.works[i].segmentsY) + "px; background-image: url(" + url + ");'></div>";
-            }
-            html += "</div>";
-            html += "<div class='button reset' onclick='resetPuzzle(\"artwork" + (i+1) + "\")'>Restart Puzzle</div>";
-            article.append(html);
-        } else if (json.works[i].quiz) {
-            article.addClass("quiz");
-            article.append("<div class='option a' style='width: " + json.works[i].height + "px;'>A</div><div class='option b' style='width: " + json.works[i].height + "px;'>B</div><div class='questionContainer hidden'><h1>" + json.works[i].title + "</h1><div class='question' data-question='0'></div><div class='answer a'></div><div class='answer b'></div></div><div class='button disabled'>START</div><div class='score' data-score='0'>Score: 0</div>");
-            quizzes[subdomain + "-artwork" + (i+1)] = json.works[i].questions;
         } else if ( json.works[ i ].slideshow == true ) {
             for (let j=0; j<json.works[i].slides.length; j++) {
                 let slide = json.works[i].slides[j];
@@ -286,11 +262,6 @@ $.getJSON(showdata, function( json ) {
             staticRooms.push("artwork" + (i+1));
         }
 
-        if (json.works[i].puzzle) {
-            article.css("width", Math.round(Math.round(json.works[i].width/json.works[i].segmentsX)) * json.works[i].segmentsX) + "px";
-            article.css("height", Math.round(Math.round(json.works[i].height/json.works[i].segmentsY)) * json.works[i].segmentsY) + "px";
-        }
-
         if (json.works[i].portal) {
             article.css("height", json.works[i].width + "px");
         }
@@ -334,12 +305,6 @@ $.getJSON(showdata, function( json ) {
             mapIcon.style.left = json.works[ i ].left / mapscale;
             mapIcon.style.width = json.works[ i ].width / mapscale;
             mapIcon.style.height = json.works[ i ].height / mapscale;
-//            if (json.works[i].height.includes("au")) {
-//                let aspect = document.querySelector("#artwork" + (i + 1) + " img").naturalHeight / document.querySelector("#artwork" + (i + 1) + " img").naturalWidth;
-//                console.log(aspect);
-//                console.log(json.works[ i ].width * aspect / mapscale);
-//                mapIcon.style.height = json.works[ i ].width * aspect / mapscale + "px";
-//            }
             if (window.innerWidth < window.innerHeight) {
                 mapIcon.querySelector("p").style.fontSize = "1.4vw";
             }
@@ -358,10 +323,6 @@ $.getJSON(showdata, function( json ) {
                     mapIcon.classList.add("circle");
                     mapIcon.classList.add("portal");
                 }
-            }
-
-            if (json.works[i].quiz) {
-                mapIcon.classList.add("quiz");
             }
 
             if (json.works[i].rotation) {

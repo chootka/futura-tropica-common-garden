@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 const fs = require("fs");
 const path = require('path');
 const express = require('express');
@@ -17,16 +17,14 @@ const words = require("./private/words.json");
 let maxRoomSize = 200;
 
 let slideshows = [];
-let chatboxes = [];
-let puzzles = [];
-let quizzes = [];
+// let chatboxes = [];
 
-fs.readFile("private/chatboxes.json", function read(err, data) {
-    if (err) {
-        return console.log(err);
-    }
-    chatboxes = JSON.parse(data);
-});
+// fs.readFile("private/chatboxes.json", function read(err, data) {
+//     if (err) {
+//         return console.log(err);
+//     }
+//     chatboxes = JSON.parse(data);
+// });
 
 let subdomain = 'public';
 
@@ -34,15 +32,15 @@ let subdomains = [];
 
 let logStreams = [];
 
-let transporter = nodemailer.createTransport({
-    host: 'smtp.host.name',         // replace with SMTP url of mail host to use for verification email
-    port: 465,
-    secure: true,
-    auth: {
-        user: 'email@host.name',    // replace wieh email username
-        pass: 'password'            // replace with email password
-    }
-});
+// let transporter = nodemailer.createTransport({
+//     host: 'smtp.host.name',         // replace with SMTP url of mail host to use for verification email
+//     port: 465,
+//     secure: true,
+//     auth: {
+//         user: 'email@host.name',    // replace wieh email username
+//         pass: 'password'            // replace with email password
+//     }
+// });
 
 app.set('port', port);
 app.set('views', path.join(__dirname, 'views'));
@@ -53,12 +51,6 @@ app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb', extended: true}));
 
 const server = http.createServer(app);
-
-//const server = https.createServer({
-//    key: fs.readFileSync('key.pem'),
-//    cert: fs.readFileSync('cert.pem')
-//}, app);
-
 
 
 const io = require('socket.io')(server, {
@@ -230,7 +222,6 @@ io.on("connection", function(socket) {
 
     socket.on("setUsername", function(name) {
         socket.name = name;
-//        socket.broadcast.emit("newUser", { id: socket.id, hue: hue, name: socket.name, muted: socket.muted });
 
         for (let i in io.sockets.connected) {
             let s = io.sockets.connected[i];
@@ -248,7 +239,6 @@ io.on("connection", function(socket) {
         if (!socket.leftShow) {
             io.to(socket.room).emit("disconnectedUser", socket.id);
         }
-//        socket.disconnect(true);
         customLog(socket.id + " has disconnected");
 
     });
@@ -289,7 +279,6 @@ io.on("connection", function(socket) {
         io.to(socket.room).emit("disconnectedUser", socket.id);
         socket.leftShow = true;
         socket.disconnect(true);
-//        io.to(socket.room).emit("disconnect", socket.id);
     });
 
 
@@ -321,270 +310,68 @@ io.on("connection", function(socket) {
 //////////////////////////////////////////
 
 
-    socket.on("setSlide", function(data) {
+    // socket.on("setSlide", function(data) {
 
-        customLog("Someone changed a slide on slideshow " + data.slideshow)
-        let slideIndex = slideshows.map(function(e) { return e.name; }).indexOf(data.slideshow);
-        if (slideIndex >= 0) {
-            slideshows[slideIndex].slide = data.slide;
-            customLog("Found the presentation & updated the slide");
-        } else {
-            customLog("Created the presentation & updated the slide");
-            slideshows.push({
-                name: data.slideshow,
-                slide: data.slide
-            });
-        }
+    //     customLog("Someone changed a slide on slideshow " + data.slideshow)
+    //     let slideIndex = slideshows.map(function(e) { return e.name; }).indexOf(data.slideshow);
+    //     if (slideIndex >= 0) {
+    //         slideshows[slideIndex].slide = data.slide;
+    //         customLog("Found the presentation & updated the slide");
+    //     } else {
+    //         customLog("Created the presentation & updated the slide");
+    //         slideshows.push({
+    //             name: data.slideshow,
+    //             slide: data.slide
+    //         });
+    //     }
 
-        customLog("setSlide", { slideshow: data.slideshow, slide: data.slide });
-        io.to(socket.room).emit("setSlide", { slideshow: data.slideshow, slide: data.slide } );
-    });
+    //     customLog("setSlide", { slideshow: data.slideshow, slide: data.slide });
+    //     io.to(socket.room).emit("setSlide", { slideshow: data.slideshow, slide: data.slide } );
+    // });
 
-    socket.on("whatSlide", function(slideshow) {
-        customLog("Someone requested the current slide for slideshow " + slideshow)
-        let slideIndex = slideshows.map(function(e) { return e.name; }).indexOf(slideshow);
-        if (slideIndex >= 0) {
-            customLog("Found the slideshow & sending slide to user the slide");
-            socket.emit("setSlide", { slideshow: slideshow, slide: slideshows[slideIndex].slide } );
-        }
-    });
-
-
-    socket.on("getChats", function(chatbox) {
-        customLog(chatboxes);
-        let chatIndex = chatboxes.map(function(e) { return e.name; }).indexOf(chatbox);
-        if (chatIndex >= 0) {
-            let chatList = chatboxes[chatIndex].chat;
-            for (let i=0; i<chatList.length; i++) {
-                socket.emit("newChat", { chatbox: chatbox, message:chatList[i].message, username: chatList[i].username, hue: chatList[i].hue, hue2: chatList[i].hue2, bright: chatList[i].bright, bright2: chatList[i].bright2, angle: chatList[i].angle } );
-            }
-        }
-    });
-
-    socket.on("sendChat", function(data) {
-        let chatIndex = chatboxes.map(function(e) { return e.name; }).indexOf(data.chatbox);
-        if (chatIndex >= 0) {
-            chatboxes[chatIndex].chat.push({ username: data.username, message: data.message, hue: socket.hue, hue2: socket.hue2, bright: socket.bright, bright2: socket.bright2, angle: socket.angle });
-        } else {
-            chatboxes.push({
-                name: data.chatbox,
-                chat: [
-                    { username: data.username, message: data.message, hue: socket.hue, hue2: socket.hue2, bright: socket.bright, bright2: socket.bright2, angle: socket.angle }
-                ]
-            });
-        }
-        io.to(socket.room).emit("newChat", { chatbox: data.chatbox, message: data.message, username: data.username, hue: socket.hue, hue2: socket.hue2, bright: socket.bright, bright2: socket.bright2, angle: socket.angle });
-
-        fs.writeFile("private/chatboxes.json", JSON.stringify(chatboxes), function(err) {
-            if(err) {
-                return console.log(err);
-            }
-        });
-
-        customLog(JSON.stringify(chatboxes));
-    });
+    // socket.on("whatSlide", function(slideshow) {
+    //     customLog("Someone requested the current slide for slideshow " + slideshow)
+    //     let slideIndex = slideshows.map(function(e) { return e.name; }).indexOf(slideshow);
+    //     if (slideIndex >= 0) {
+    //         customLog("Found the slideshow & sending slide to user the slide");
+    //         socket.emit("setSlide", { slideshow: slideshow, slide: slideshows[slideIndex].slide } );
+    //     }
+    // });
 
 
+    // socket.on("getChats", function(chatbox) {
+    //     customLog(chatboxes);
+    //     let chatIndex = chatboxes.map(function(e) { return e.name; }).indexOf(chatbox);
+    //     if (chatIndex >= 0) {
+    //         let chatList = chatboxes[chatIndex].chat;
+    //         for (let i=0; i<chatList.length; i++) {
+    //             socket.emit("newChat", { chatbox: chatbox, message:chatList[i].message, username: chatList[i].username, hue: chatList[i].hue, hue2: chatList[i].hue2, bright: chatList[i].bright, bright2: chatList[i].bright2, angle: chatList[i].angle } );
+    //         }
+    //     }
+    // });
 
-//////////////////////////////////////////
-//                                      //
-//     Jigsaw puzzle code from here     //
-//                                      //
-//////////////////////////////////////////
+    // socket.on("sendChat", function(data) {
+    //     let chatIndex = chatboxes.map(function(e) { return e.name; }).indexOf(data.chatbox);
+    //     if (chatIndex >= 0) {
+    //         chatboxes[chatIndex].chat.push({ username: data.username, message: data.message, hue: socket.hue, hue2: socket.hue2, bright: socket.bright, bright2: socket.bright2, angle: socket.angle });
+    //     } else {
+    //         chatboxes.push({
+    //             name: data.chatbox,
+    //             chat: [
+    //                 { username: data.username, message: data.message, hue: socket.hue, hue2: socket.hue2, bright: socket.bright, bright2: socket.bright2, angle: socket.angle }
+    //             ]
+    //         });
+    //     }
+    //     io.to(socket.room).emit("newChat", { chatbox: data.chatbox, message: data.message, username: data.username, hue: socket.hue, hue2: socket.hue2, bright: socket.bright, bright2: socket.bright2, angle: socket.angle });
 
+    //     fs.writeFile("private/chatboxes.json", JSON.stringify(chatboxes), function(err) {
+    //         if(err) {
+    //             return console.log(err);
+    //         }
+    //     });
 
-
-    socket.on("getPuzzle", function(name, data) {
-        // check if puzzle is already active
-        let puzzleIndex = puzzles.map(function(e) { return e.name; }).indexOf(name);
-        if (puzzleIndex >= 0) {
-            // if active,s end current state to user
-//            customLog("Puzzle is in progress!");
-            socket.emit("setPuzzle", puzzles[puzzleIndex]);
-        } else if (data) {
-            // if not active, generate the puzzle pices & positions
-            createPuzzle(name,data,socket);
-        }
-
-//        console.log(puzzles);
-    });
-
-    socket.on("resetPuzzle", function(name,data) {
-        createPuzzle(name,data,socket);
-    });
-
-    function createPuzzle(name,data,socket) {
-//        customLog("Creating the puzzle...");
-
-        let puzzle = {
-            name: name,
-            width: data.width,
-            height: data.height,
-            top: data.top,
-            left: data.left,
-            segmentsX: data.segmentsX,
-            segmentsY: data.segmentsY,
-            piceSize: {
-                x: data.width / data.segmentsX,
-                y: data.height / data.segmentsY,
-            },
-            pices: [],
-            segments: []
-        };
-
-        for (let i=0; i<data.segmentsY; i++) {
-            for (let j=0; j<data.segmentsX; j++) {
-                let pice = {
-                    held: false,
-                    xId: j,
-                    yId: i
-                }
-                if (Math.random() < 0.5) {
-                    pice.x = puzzle.piceSize.x + Math.random() * (puzzle.width + 400 - (puzzle.piceSize.x * 2));
-                    pice.y = puzzle.piceSize.y + Math.random() * (200 - puzzle.piceSize.y * 2);
-                    if (Math.random() < 0.5) {
-                        pice.y += puzzle.height + 200;
-                    }
-//                    console.log(pice.x,pice.y);
-                } else {
-                    pice.y = puzzle.piceSize.y + Math.random() * (puzzle.height + 400 - (puzzle.piceSize.y * 2));
-                    pice.x = puzzle.piceSize.x + Math.random() * (200 - puzzle.piceSize.x * 2);
-                    if (Math.random() < 0.5) {
-                        pice.x += puzzle.width + 200;
-                    }
-//                    console.log(pice.x,pice.y);
-                }
-                puzzle.pices.push(pice);
-                puzzle.segments.push({
-                    placed: false,
-                    xId: j,
-                    yId: i
-                });
-            }
-        }
-
-        let puzzleIndex = puzzles.map(function(e) { return e.name; }).indexOf(name);
-        if (puzzleIndex >=0) {
-            puzzles[puzzleIndex] = puzzle;
-        } else {
-            puzzles.push(puzzle);
-        }
-        io.to(socket.room).emit("setPuzzle", puzzle);
-    }
-
-    socket.on("clickPice", function(piceId,puzzle) {
-//        customLog("user " + socket.id + " has picked up pice " + piceId + " of puzzle " + puzzle);
-        let name = socket.room + "-" + puzzle;
-        let puzzleIndex = puzzles.map(function(e) { return e.name; }).indexOf(name);
-
-        if (puzzleIndex >= 0) {
-            let puzzle = puzzles[puzzleIndex];
-            let pice = puzzle.pices[piceId];
-            if (pice) {
-                pice.held = socket.id;
-                io.to(socket.room).emit("pickupPice", name, piceId, socket.id);
-            }
-        }
-    });
-
-    socket.on("dropPice", function(piceId,puzzle,x,y) {
-//        customLog("user " + socket.id + " has dropped pice " + piceId + " of puzzle " + puzzle);
-        let name = socket.room + "-" + puzzle;
-        let puzzleIndex = puzzles.map(function(e) { return e.name; }).indexOf(name);
-
-        if (puzzleIndex >= 0) {
-            let puzzle = puzzles[puzzleIndex];
-            let pice = puzzle.pices[piceId];
-            pice.held = null;
-            pice.x = x;
-            pice.y = y;
-
-            io.to(socket.room).emit("dropPice", name, piceId, socket.id,x,y);
-        }
-    });
-
-    socket.on("placePice", function(piceId, puzzle) {
-//        customLog("user " + socket.id + " has placed pice " + piceId + " of puzzle " + puzzle);
-        let name = socket.room + "-" + puzzle;
-        let puzzleIndex = puzzles.map(function(e) { return e.name; }).indexOf(name);
-
-        if (puzzleIndex >= 0) {
-            let puzzle = puzzles[puzzleIndex];
-            puzzle.pices[piceId].placed = true;
-
-            let segment = puzzle.segments[piceId];
-            segment.placed = true;
-            io.to(socket.room).emit("placePice", name, piceId, socket.id);
-        }
-    });
-
-
-//////////////////////////////////////////
-//                                      //
-//         Quiz code from here          //
-//                                      //
-//////////////////////////////////////////
-
-
-
-    socket.on("getQuiz", function(name) {
-        console.log("got request for quiz " + name);
-        let quizIndex = quizzes.map(function(e) { return e.name; }).indexOf(name);
-        if (quizIndex >=0 ) {
-            socket.emit("setQuiz",name,quizzes[quizIndex].question);
-        } else {
-            socket.emit("noRunningQuiz",name);
-        }
-    });
-
-    socket.on("startQuiz", function(name) {
-        let quiz = {
-            name: name,
-            question: 0,
-            scores: { }
-        }
-        let quizIndex = quizzes.map(function(e) { return e.name; }).indexOf(name);
-        if (quizIndex >=0 ) {
-            quizzes[quizIndex] = quiz;
-        } else {
-            quizzes.push(quiz);
-        }
-        console.log("Quiz " + name + " has been reset:");
-        console.log(quizzes);
-        io.to(socket.room).emit("setQuiz",name,0);
-    });
-
-    socket.on("nextQuestion", function(name,question) {
-        let quizIndex = quizzes.map(function(e) { return e.name; }).indexOf(name);
-        if (quizIndex >=0 ) {
-            if (quizzes[quizIndex].question == question) {
-                quizzes[quizIndex].question = parseInt(question)+1;
-                io.to(socket.room).emit("setQuiz",name,quizzes[quizIndex].question);
-                console.log("Next question!!");
-            }
-        }
-    });
-
-    socket.on("quizAnswer", function(answer,name) {
-        let quizIndex = quizzes.map(function(e) { return e.name; }).indexOf(name);
-        if (quizIndex >=0 ) {
-            if (quizzes[quizIndex].scores[socket.id]) {
-                quizzes[quizIndex].scores[socket.id] += answer;
-            } else {
-                quizzes[quizIndex].scores[socket.id] = answer;
-            }
-            console.log(quizzes[quizIndex].scores);
-        }
-    });
-
-    socket.on("quizDone", function(name) {
-        let quizIndex = quizzes.map(function(e) { return e.name; }).indexOf(name);
-        if (quizIndex >=0 ) {
-            io.to(socket.room).emit("quizDone",name,quizzes[quizIndex].scores);
-            quizzes.splice(quizIndex,1);
-            console.log("Quiz " + name + " is done, removing it!");
-        }
-    });
+    //     customLog(JSON.stringify(chatboxes));
+    // });
 
 
 //////////////////////////////////////////
@@ -593,56 +380,56 @@ io.on("connection", function(socket) {
 //                                      //
 //////////////////////////////////////////
 
-    socket.on("resetPoints", function(sPass, subdomain) {
-        if (sPass === adminPass) {
-            fs.writeFileSync("public/shows/" + subdomain + "_tourdata.js","let points = [", {encoding: 'utf8', flag: 'w'} );
-            let logStream = fs.createWriteStream("public/shows/" + subdomain + "_tourdata.js", {encoding: 'utf8', flags: 'a'} );
-            logStreams.push(logStream);
-            socket.logStream = logStreams.length -1;
-            customLog("Socket.logstream is: " + socket.logStream);
-        }
-    });
+    // socket.on("resetPoints", function(sPass, subdomain) {
+    //     if (sPass === adminPass) {
+    //         fs.writeFileSync("public/shows/" + subdomain + "_tourdata.js","let points = [", {encoding: 'utf8', flag: 'w'} );
+    //         let logStream = fs.createWriteStream("public/shows/" + subdomain + "_tourdata.js", {encoding: 'utf8', flags: 'a'} );
+    //         logStreams.push(logStream);
+    //         socket.logStream = logStreams.length -1;
+    //         customLog("Socket.logstream is: " + socket.logStream);
+    //     }
+    // });
 
-    socket.on("appendPoint", function(sPass, point) {
-        customLog("Appending point " + point + "...");
-        if (sPass === adminPass && socket.logStream) {
-            logStreams[socket.logStream].write("[" + point.x + "," + point.y + "],");
-            customLog("point appended!");
-        }
-    });
+    // socket.on("appendPoint", function(sPass, point) {
+    //     customLog("Appending point " + point + "...");
+    //     if (sPass === adminPass && socket.logStream) {
+    //         logStreams[socket.logStream].write("[" + point.x + "," + point.y + "],");
+    //         customLog("point appended!");
+    //     }
+    // });
 
-    socket.on("savePoints", function(sPass, point) {
-        customLog("Saving points...");
-        if (sPass === adminPass && socket.logStream) {
-            logStreams[socket.logStream].write("[" + point.x + "," + point.y + "]];");
-            logStreams[socket.logStream].end();
-            customLog("points saved!");
-        }
-    });
+    // socket.on("savePoints", function(sPass, point) {
+    //     customLog("Saving points...");
+    //     if (sPass === adminPass && socket.logStream) {
+    //         logStreams[socket.logStream].write("[" + point.x + "," + point.y + "]];");
+    //         logStreams[socket.logStream].end();
+    //         customLog("points saved!");
+    //     }
+    // });
 
 
-    socket.on("saveAudio", function(blob, sPass, subdomain) {
-        if (sPass === adminPass) {
-            let path = 'public/shows/' + subdomain + '_tour.ogg';
-            fs.open(path, 'w', function(err, fd) {
-                if (err) {
-                    throw 'could not open file: ' + err;
-                }
+    // socket.on("saveAudio", function(blob, sPass, subdomain) {
+    //     if (sPass === adminPass) {
+    //         let path = 'public/shows/' + subdomain + '_tour.ogg';
+    //         fs.open(path, 'w', function(err, fd) {
+    //             if (err) {
+    //                 throw 'could not open file: ' + err;
+    //             }
 
-                // write the contents of the buffer, from position 0 to the end, to the file descriptor returned in opening our file
-                fs.write(fd, blob, 0, blob.length, null, function(err) {
-                    if (err) {
-                        throw 'error writing file: ' + err;
-                        socket.emit("tourFailed", err);
-                    }
-                    fs.close(fd, function() {
-                        customLog('wrote audio tour file successfully!');
-                        socket.emit("tourDone");
-                    });
-                });
-            });
-        }
-    });
+    //             // write the contents of the buffer, from position 0 to the end, to the file descriptor returned in opening our file
+    //             fs.write(fd, blob, 0, blob.length, null, function(err) {
+    //                 if (err) {
+    //                     throw 'error writing file: ' + err;
+    //                     socket.emit("tourFailed", err);
+    //                 }
+    //                 fs.close(fd, function() {
+    //                     customLog('wrote audio tour file successfully!');
+    //                     socket.emit("tourDone");
+    //                 });
+    //             });
+    //         });
+    //     }
+    // });
 
 
 //////////////////////////////////////////
@@ -760,21 +547,21 @@ io.on("connection", function(socket) {
             }
         });
 
-        let message = {
-            from: "email@host.name",     // replace email adress with one matching credentials on lines 40, 44 & 45
-            to: email,
-            subject: "Verification code common.garden",
-            html: '<html><head><meta charset="utf-8"><style type="text/css">body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}.ExternalClass {width:100%;}.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}</style></head><body bgcolor="#88d598" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr height="200"><td>&nbsp;</td><tr height="90"><td width="100%" valign="top" align="center" bgcolor="#88d598" style="color: #ffffff; font-size: 26px; margin-top: 100px; font-family: sans-serif;">Welcome to common.garden!</td></tr><tr height="50"><td width="100%" valign="top" align="center" bgcolor="#88d598" style="color: #ffffff; font-size: 16px; margin-top: 30px; font-family: sans-serif;">Your verification code for ' + subdomain + '.common.garden is:</td></tr><tr><td width="100%" height="50" valign="top" align="center" style="margin-top: 50px;"><span width="250" height="50" style="color: #000000; background-color: #eeeeee; font-size: 16px; border-radius: 25px; border-width: 1px; border-color: #aaaaaa; border-style: solid; padding-top: 9px; display: inline-block; font-family: sans-serif; width: 200px; height: 28px;">' + code + '</span></td></tr></table></body></html>'
-        };
+        // let message = {
+        //     from: "email@host.name",     // replace email adress with one matching credentials on lines 40, 44 & 45
+        //     to: email,
+        //     subject: "Verification code common.garden",
+        //     html: '<html><head><meta charset="utf-8"><style type="text/css">body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;}.ExternalClass {width:100%;}.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}</style></head><body bgcolor="#88d598" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr height="200"><td>&nbsp;</td><tr height="90"><td width="100%" valign="top" align="center" bgcolor="#88d598" style="color: #ffffff; font-size: 26px; margin-top: 100px; font-family: sans-serif;">Welcome to common.garden!</td></tr><tr height="50"><td width="100%" valign="top" align="center" bgcolor="#88d598" style="color: #ffffff; font-size: 16px; margin-top: 30px; font-family: sans-serif;">Your verification code for ' + subdomain + '.common.garden is:</td></tr><tr><td width="100%" height="50" valign="top" align="center" style="margin-top: 50px;"><span width="250" height="50" style="color: #000000; background-color: #eeeeee; font-size: 16px; border-radius: 25px; border-width: 1px; border-color: #aaaaaa; border-style: solid; padding-top: 9px; display: inline-block; font-family: sans-serif; width: 200px; height: 28px;">' + code + '</span></td></tr></table></body></html>'
+        // };
 
-        transporter.sendMail(message, function(error, info){
-            if (error) {
-                customLog(error);
-                socket.emit("cmsErr");
-            } else {
-                customLog('Verification code sent to ' + email + ': ' + info.response);
-            }
-        });
+        // transporter.sendMail(message, function(error, info){
+        //     if (error) {
+        //         customLog(error);
+        //         socket.emit("cmsErr");
+        //     } else {
+        //         customLog('Verification code sent to ' + email + ': ' + info.response);
+        //     }
+        // });
     });
 
     socket.on("checkCodeCMS", function(code, subdomain) {
