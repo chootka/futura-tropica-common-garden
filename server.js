@@ -28,6 +28,8 @@ fs.readFile("private/chatboxes.json", function read(err, data) {
     chatboxes = JSON.parse(data);
 });
 
+let subdomain = 'public';
+
 let subdomains = [];
 
 let logStreams = [];

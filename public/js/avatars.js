@@ -101,6 +101,9 @@ window.setInterval(function() {
 }, 200);
 
 window.setInterval(function() {
+    console.log("myUser", myUser);
+    if (!myUser) return;
+
     myUser.style.left = currentX + "px";
     myUser.style.top = currentY + "px";
 }, 50);
