@@ -35,6 +35,17 @@ let config = {
 let myUser;
 let myMapUser;
 
+function setUser() {
+    // automatically running the functions that would be run on  close of pop up
+    const username = "netrunner" + Math.floor((Math.random()*420666));
+    socket.emit("setUsername", username);
+    //- unMuteYouTube();
+                
+    inShow = true;
+    document.querySelector(".map").classList.remove("hidden");
+    socket.emit("countVisitor");
+}
+
 socket.on("setId", function(data) {
     console.log("dataSignalling, setId, data", data);
     reqTime = data.reqTime;
@@ -74,17 +85,9 @@ socket.on("setId", function(data) {
         if (window.location.search.includes("username") && window.location.search.includes("terms=true")) {
             console.log("Auto-joining");
             // closePopUp();
-
-            // automatically running the functions that would be run on  close of pop up
-            const username = "netrunner" + Math.floor((Math.random()*420666));
-            socket.emit("setUsername", username);
-            //- unMuteYouTube();
-                
-            inShow = true;
-            document.querySelector(".map").classList.remove("hidden");
-            socket.emit("countVisitor");
-            // // //
         }
+
+        setUser();
 
     } else {
 //        console.log(" ");
