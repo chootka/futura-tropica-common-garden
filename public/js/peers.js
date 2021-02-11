@@ -1,6 +1,6 @@
 const peers = document.getElementById('peers');
 
-fetch('http://localhost/api/v0/swarm/peers', {
+fetch(process.env.VUE_APP_API_URL+'/swarm/peers', {
     method: 'POST'
 })
     .then(res => res.json())
