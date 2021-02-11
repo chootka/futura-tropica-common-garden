@@ -22,6 +22,8 @@ let subdomain = 'public';
 
 let subdomains = [];
 
+let peer_ids = ['bogota', 'kinshasa', 'bengaluru'];
+
 let logStreams = [];
 
 app.set('port', port);
@@ -83,11 +85,15 @@ function renderPage(req, res, domain, subdomain) {
         res.render("cms", { date: new Date(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " 23:59:59 GMT+0100").getTime() });
     } else if (subdomain == "join") {
         res.render("landing");
+    } else if (subdomain == "public") {
+
+        if (fs.existsSync("public/shows/" + subdomain + ".json")) {
+            res.render("dashboard", { subdomainAlias: subdomain });
+        }
     } else if (subdomain) {
 
         if (fs.existsSync("public/shows/" + subdomain + ".json")) {
-            // res.render("home", { subdomainAlias: subdomain });
-            res.render("dashboard", { subdomainAlias: subdomain });
+            res.render("home", { subdomainAlias: subdomain });
         } else {
             res.render("toCms", { name: "test" });
         }

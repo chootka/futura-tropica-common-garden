@@ -1,42 +1,75 @@
 head
     meta(charset="utf-8")
     meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
-    title Common.Garden
-    meta(name='author' content='Common.Garden')
-    meta(name='description' content='Online gallery')
-    meta(property='og:title' content='Common.Garden')
-    meta(property='og:site_name' content='Common.Garden')
+
+    title Futura Tropica Netroots
+
+    meta(name='author' content='Futura Tropica x Common.Garden')
+    meta(name='description' content='Futura Tropica Public Dashboard')
     meta(name='viewport' content='initial-scale=0.5, width=device-width')
+
     link(rel='stylesheet' href='/avatars.css')
-    link(rel='stylesheet' href='/show.css')
-    script(src="https://webrtc.github.io/adapter/adapter-latest.js")
-    script(src="/socket.io/socket.io.js")
+    link(rel='stylesheet' href='/dashboard.css')
+
+    style.
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -140px;
+            padding-top: 50px;
+            padding-left: 10px;
+            width: 140px;
+            height: 100vh;
+            background: hsl(133,50%,68%);
+            z-index: 1;
+            box-sizing: border-box;
+            transition: left 0.3s;
+        }
+        .menu.active {
+            left: 0;
+        }
+        .menuItem {
+            padding: 3px;
+        }
+
+    script(src="js/adapter-latest.js")
+    script(src="https://public.futura-tropica.network/socket.io/socket.io.js")
     
-    script(src="https://code.jquery.com/jquery-3.5.1.min.js")
-    script(src="https://player.vimeo.com/api/player.js")
+    //- script(src="js/vimeo-player.js")
+
 body
-    audio.alert
-        source(src="static/still_there_2.ogg")
-        source(src="static/still_there_2.mp3")
-    .fade
-    .popUp
-        form
-            input.username(type="text" pattern="[^'\x22\x3c\x3e\x3b]+" placeholder="username" maxlength="25" name="username" required)
-            input.enterButton.disabled(type="submit" value="Enter Show" name="enter")
-            .terms
-                input.terms(type="checkbox" name="terms" id="terms" required)
-                label(for="terms") I agree to the <a href="static/TermsOfService.pdf" target="_blank">privacy statement</a>
+    .menu
+        .menuItem <a href="about">About</a>
+    .title
+        svg(viewBox="0 0 500 500")
+            path(id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97")
+            text(width="500")
+                textPath(xlink:href="#curve")
+                    || Futura Tropica |
+    .title.inverted
+        svg(viewBox="0 0 500 500")
+            path(id="curve2" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97")
+            text(width="500")
+                textPath(xlink:href="#curve2" startOffset="50")
+                    | &mdash; networks &mdash;
+
+
     .avatarContainer
     .map
     .GUIcontainer
-        .GUI.tourGUI.buttonGUI Start Tour
+    .content
+    audio.alert
+        source(src="static/still_there_2.ogg")
+        source(src="static/still_there_2.mp3")
 
+    
     script.
+        const socket = io('/');
+
         // Set this to true to turn off audio feature
-         let disableAudio = false;
-         
-         
-         let subdomainAlias = "#{subdomainAlias}";
+        const disableAudio = false;
+        let subdomainAlias = "#{subdomainAlias}";
+
     script(src="js/jquery-1.7.1.min.js")
     script(src="js/jquery-ui-1.8.17.custom.min.js")
     script(src="js/script005.min.js")
@@ -44,16 +77,8 @@ body
     script(src="js/avatars.js")
     script(src="js/audiochat.js")
     script(src="js/staticAudioRooms.js")
-    script(src="js/popUp.js")
-    script(src="js/portals.js")
     script(src="js/showdata.js")
-    //script(src="js/streamer.js")
-    script(src="js/tour.js")
-    script(src="shows/online_tourdata.js")
-    script(src="js/recorder.js")
-    script(src="js/presentation.js")
-    script(src="js/chatbox.js")
-    //script(src="js/screenshare.js")
     script(src="js/youtube_sync.js")
-    script(src="js/kurento-utils.js")
-    script(src="https://www.youtube.com/iframe_api")
+    //- script(src="js/kurento-utils.js")
+    script(src="js/iframe_api.js")
+        
