@@ -19,6 +19,10 @@ let maxRoomSize = 200;
 let slideshows = [];
 
 let subdomain = 'public';
+    // subdomain = "join";
+    // subdomain = "bogota";
+    // subdomain = "kinshasa";
+    // subdomain = "bengaluru";
 
 let subdomains = [];
 
@@ -55,21 +59,21 @@ app.get("/", (req, res) => {
 
     // Can use later for registering our own futura-tropica.network subdomians!
 
-    const domain = req.headers.host;
-    let subdomain = domain.substr(0, domain.indexOf('.'));
+    // const domain = req.headers.host;
+    // let subdomain = domain.substr(0, domain.indexOf('.'));
 
 
-    subdomain = "public";
+    // subdomain = "public";
 
     // subdomain = "join";
     // subdomain = "bogota";
     // subdomain = "kinshasa";
     // subdomain = "bengaluru";
 
-    console.log("Got request for " + domain + ", subdomain was " + subdomain);
+    // console.log("Got request for " + domain + ", subdomain was " + subdomain);
 
-    console.log("rendering page " + subdomain + " for " + domain);
-    renderPage(req,res,domain,subdomain);
+    console.log("rendering page " + subdomain);
+    renderPage(req, res, subdomain); //req, res, domain, subdomain
 
     customLog("Subdomain: " + subdomain);
 });
@@ -79,7 +83,7 @@ app.get("/about", (req, res) => {
 });
 
 
-function renderPage(req, res, domain, subdomain) {
+function renderPage(req, res, subdomain) {
     if (subdomain === "cms") {
         let now = new Date();
         res.render("cms", { date: new Date(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " 23:59:59 GMT+0100").getTime() });
