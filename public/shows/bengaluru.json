@@ -37,25 +37,25 @@
          "text": true
       },
       {
-         "imageurl":"./img/dither6.png",
+         "imageurl":"/img/dither6.png",
          "width":360,
          "height":270,
          "image": true
       },
       {
-         "src":"./video/TvTestCard_512kb.mp4",
+         "src":"/video/TvTestCard_512kb.mp4",
          "width":360,
          "height":270,
          "localVideo": true
       },
       {
-         "imageurl":"./img/dither8.jpg",
+         "imageurl":"/img/dither8.jpg",
          "width":360,
          "height":270,
          "image": true
       },
       {
-         "src":"./video/TvTestCard_512kb.mp4",
+         "src":"/video/TvTestCard_512kb.mp4",
          "width":360,
          "height":270,
          "localVideo": true
