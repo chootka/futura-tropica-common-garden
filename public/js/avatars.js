@@ -2,6 +2,7 @@ let mouseX = 0;
 let mouseY = 0;
 let currentX = 0;
 let currentY = 0;
+const yOffset = 30;
 let lastX = 0;
 let lastY = 0;
 
@@ -34,7 +35,7 @@ document.onmousemove = function(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
         currentX = window.scrollX + mouseX;
-        currentY = window.scrollY + mouseY;
+        currentY = window.scrollY + mouseY - yOffset;
     }
     if (inShow) {
         map.classList.remove("hidden");        

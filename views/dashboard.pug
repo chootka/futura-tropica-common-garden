@@ -38,22 +38,20 @@ head
     //- script(src="js/vimeo-player.js")
 
 body
-    .menu
-        .menuItem <a href="about">About</a>
-    .title
-        svg(viewBox="0 0 500 500")
-            path(id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97")
-            text(width="500")
-                textPath(xlink:href="#curve")
-                    || Futura Tropica |
-    #peers
-    .title.inverted
-        svg(viewBox="0 0 500 500")
-            path(id="curve2" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97")
-            text(width="500")
-                textPath(xlink:href="#curve2" startOffset="50")
-                    | &mdash; networks &mdash;
+    .nav
+        .info
+        .languages
+            .en
+            div
+                | &mdash;
+            .es
+            div
+                | &mdash;
+            .fr
 
+    .title.up
+    #peers
+    .title.down
 
     .avatarContainer
     .map
@@ -63,13 +61,11 @@ body
         source(src="/static/still_there_2.ogg")
         source(src="/static/still_there_2.mp3")
 
-    
     script.
         const socket = io('/');
 
         // Set this to true to turn off audio feature
         const disableAudio = false;
-        //- let subdomain = subdomainAlias = "public";
         let subdomainAlias = "#{subdomainAlias}";
 
     script(src="/js/jquery-1.7.1.min.js")
