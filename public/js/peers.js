@@ -1,6 +1,7 @@
 const peers = document.getElementById('peers');
+const locations = [{id: 4, label: 'bogota'}, {id: 5, label: 'kinshasa'}, {id: 6, label: 'bengaluru'}];
 
-fetch('http://localhost/api/v0/swarm/peers', {
+fetch('/api/v0/swarm/peers', {
     method: 'POST'
 })
     .then(res => res.json())
@@ -10,18 +11,22 @@ fetch('http://localhost/api/v0/swarm/peers', {
 
         for (p in data.Peers) {
 
-            var r = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/; //http://www.regular-expressions.info/examples.html
-            var a = data.Peers[p].Addr;
-            var t = a.match(r);
+            let r = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/; //http://www.regular-expressions.info/examples.html
+            let a = data.Peers[p].Addr;
+            let t = a.match(r);
 
             if (!t || !t.length) continue;
 
-            var octet = String(t).substring( String(t).lastIndexOf('.') + 1 );
+            let octet = String(t).substring( String(t).lastIndexOf('.') + 1 );
+            let location = locations.filter(loc => {
 
-            peers.innerHTML += '<a class="peer" href="peer/' + octet + '/"><span class="dot"></span></a>';
+                // console.log("loc.id", loc.id);
+                // console.log("octet", parseInt(octet));
+                return loc.id === parseInt(octet);
+            });
+
+            peers.innerHTML += '<a class="peer" href="peer/' + octet + '/"><span class="dot"></span><div class="label">' + location[0].label + '</div></a>';
         }
-
-
 
     })
     .catch(err => {

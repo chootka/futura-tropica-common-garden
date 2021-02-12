@@ -82,32 +82,35 @@ a {
     bottom: 0;
 
     max-width: 1500px;
+
     margin: 0 auto;
+    padding: 0 50px;
 }
 
-.title {
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-.title.up {
-    background: url(/img/Dashboard-UP.svg) no-repeat;
-    background-size: 100%;
-
-    top: 100px;
-}
-.title.down {
-    background: url(/img/Dashboard-DOWN.svg) no-repeat;
-    background-size: 100%;
-
-    top: 550px;
+    z-index: 10;
 }
 .info {
-    position: absolute;
-    left: 90px;
-    top: 463px;
+    cursor: pointer;
 
     width: 13px;
     height: 73px;
@@ -116,9 +119,7 @@ a {
     background-size: 100%;
 }
 .languages {
-    position: absolute;
-    right: 100px;
-    top: 454px;
+    cursor: pointer;
 
     display: flex;
     flex-direction: column;
@@ -151,6 +152,33 @@ a {
     background: url(/img/Language-FR.svg) no-repeat;
     background-size: 100%;
 }
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.title .up {
+    background: url(/img/Dashboard-UP.svg) no-repeat;
+    background-size: 100%;
+
+    width: 100%;
+    height: 30%;
+}
+.title .down {
+    background: url(/img/Dashboard-DOWN.svg) no-repeat;
+    background-size: 100%;
+
+    width: 100%;
+    height: 30%;
+}
 .content {
     position: relative;
     display: flex;
@@ -180,13 +208,29 @@ a {
     align-items: center;
     justify-content: center;
 
-    height: 100vh;
+    margin: 0 auto;
+    max-width: 80vw;
 
-    z-index: 999;
+    z-index: 11;
+}
+.label {
+    color: #eec860;
+    font-family: EHNormalBold, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+
+    padding: 6px;
+    transform: scaleY(-1);
+}
+.peer:nth-child(even) .label {
+    transform: scaleY(-1) translateY(117px);
 }
 .dot {
     background-color: #bbb;
     border-radius: 50%;
+
+    cursor: pointer;
 
     display: inline-block;
 
@@ -207,3 +251,61 @@ a {
 
     margin-top: 4px;  
 }   
+
+#overlay {
+    opacity: 0;
+
+    border-radius: 240px;
+    background: #fff;
+
+    height: 490px;
+    max-width: 700px;
+
+    margin: 0 auto;
+    padding: 5px 180px;
+
+    top: 50%;
+    margin-top: -275px;
+
+    position: absolute;
+    z-index: -1;
+
+    transition: opacity .3s;
+}
+
+#overlay.visible {
+    opacity: 1;
+    z-index: 12;
+}
+
+.lang-wrapper {
+    max-width: 650px;
+}
+
+#overlay .lang {
+    color: #eec860;
+    font-family: EHNormalBold, sans-serif;
+    font-size: 18px;
+    line-height: 1.2em;
+
+    padding-bottom: 10px;
+}
+
+.lang .en,
+.lang .es,
+.lang .fr {
+    width: 32px;
+    height: 20px;
+}
+
+.header {
+    background: url(/img/FuturaTropicaNetroots.svg) no-repeat;
+    background-size: 100%;
+
+    margin: 20px auto;
+
+    width: 100%;
+    height: 11%;
+
+    max-width: 600px;
+}

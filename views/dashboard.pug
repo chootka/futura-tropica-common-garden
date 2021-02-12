@@ -38,20 +38,35 @@ head
     //- script(src="js/vimeo-player.js")
 
 body
-    .nav
-        .info
-        .languages
-            .en
-            div
-                | &mdash;
-            .es
-            div
-                | &mdash;
-            .fr
+    .layout
+        .wrapper
+            #overlay
+                .header
+                .lang-wrapper
+                    .lang
+                        .en
+                        || Futura Trōpica | is an InterTropical Network of Grass-Root Local Networks for the lateral flow of local resources and other forms of knowledges, designs and technologies. from a *Tropikós perspective. *Tropikós—> greek roots of the word ‘tropics’ - it means ‘to turn’
+                    .lang
+                        .es
+                        || Futura Trōpica | es una Red InterTropical de Redes Locales desde abajo para el intercambio lateral de otras formas de conocimientos y saberes, diseños y tecnologías. desde una perspectiva *Tropikós. *Tropikós—> las raíces griegas de la palabra “trópico” - significa “dar un giro”
+                    .lang
+                        .fr
+                        Futura Trōpica est un réseau intertropical de réseaux locaux pour l'échange latéral d'autres formes de connaissances et de savoir-faire, de conceptions et de technologies. Du point de vue *Tropikós. *Tropikós-> racine grecque du mot "tropique" - qui signifie "tourner".
+            .nav
+                .info
+                .languages
+                    .en
+                    div
+                        | &mdash;
+                    .es
+                    div
+                        | &mdash;
+                    .fr
 
-    .title.up
-    #peers
-    .title.down
+            .title
+                .up
+                .down
+            #peers
 
     .avatarContainer
     .map
@@ -67,6 +82,14 @@ body
         // Set this to true to turn off audio feature
         const disableAudio = false;
         let subdomainAlias = "#{subdomainAlias}";
+
+        // button click
+        document.getElementsByClassName('info')[0].addEventListener('click', function() {
+            document.getElementById('overlay').classList.toggle("visible");
+        })
+        document.getElementsByClassName('languages')[0].addEventListener('click', function() {
+            document.getElementById('overlay').classList.toggle("visible");
+        })
 
     script(src="/js/jquery-1.7.1.min.js")
     script(src="/js/jquery-ui-1.8.17.custom.min.js")
