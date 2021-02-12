@@ -1,5 +1,5 @@
 const peers = document.getElementById('peers');
-const locations = [{id: 4, label: 'bogota'}, {id: 5, label: 'kinshasa'}, {id: 6, label: 'bengaluru'}];
+const locations = [{id: 5, label: 'bogota'}, {id: 4, label: 'kinshasa'}, {id: 6, label: 'bengaluru'}];
 
 fetch('/api/v0/swarm/peers', {
     method: 'POST'
