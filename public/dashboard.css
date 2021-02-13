@@ -38,17 +38,6 @@ body {
 img {
     max-width: 100%;
 }
-/*path {
-    fill: transparent;
-}
-
-text {
-    fill: #ebc467;
-    letter-spacing: .1em;
-    text-align: center;
-
-    transform: scale(1.4, 1) translate(-70px);
-}*/
 a {
     text-decoration: none;
 }
@@ -218,6 +207,12 @@ ul li {
     overflow-x: hidden;
 
     transform:rotate(-90deg) translateY(-100px);
+}
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .content > article {
     transform: rotate(90deg);
