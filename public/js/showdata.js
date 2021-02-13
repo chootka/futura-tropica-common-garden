@@ -341,8 +341,8 @@ $.getJSON(showdata, function( json ) {
     }
     window.setTimeout(function() {
         load();
-        // document.querySelector(".popUp .enterButton").classList.remove("unloaded");
-        // document.querySelector(".popUp .enterButton").value = "Enter Show";
+        document.querySelector(".popUp .enterButton").classList.remove("unloaded");
+        document.querySelector(".popUp .enterButton").value = "Enter Futura Tropica";
 
         if (!json.private) {
             let articles = document.querySelectorAll("article");

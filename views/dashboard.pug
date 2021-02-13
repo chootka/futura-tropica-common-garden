@@ -9,6 +9,7 @@ head
     meta(name='viewport' content='initial-scale=0.5, width=device-width')
 
     link(rel='stylesheet' href='/avatars.css')
+    link(rel='stylesheet' href='/show.css')
     link(rel='stylesheet' href='/dashboard.css')
 
     style.
@@ -71,6 +72,11 @@ body
     .avatarContainer
     .map
     .GUIcontainer
+    .fade
+    .popUp
+        form
+            input.username(type="text" pattern="[^'\x22\x3c\x3e\x3b]+" placeholder="your name" maxlength="25" name="username" required)
+            input.enterButton(type="submit" value="Enter Futura Tropica" name="enter")
     .content
     audio.alert
         source(src="/static/still_there_2.ogg")
@@ -98,6 +104,7 @@ body
     script(src="/js/avatars.js")
     script(src="/js/audiochat.js")
     script(src="/js/staticAudioRooms.js")
+    script(src="/js/popUp.js")
     script(src="/js/showdata.js")
     script(src="/js/youtube_sync.js")
     //- script(src="js/kurento-utils.js")

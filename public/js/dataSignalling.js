@@ -83,12 +83,12 @@ socket.on("setId", function(data) {
             socket.emit("setRoom", { room: subdomain, admin: true});
         }
 
-        // if (window.location.search.includes("username") && window.location.search.includes("terms=true")) {
-            // console.log("Auto-joining");
-            // closePopUp();
-        // }
+        if (window.location.search.includes("username") && window.location.search.includes("terms=true")) {
+            console.log("Auto-joining");
+            closePopUp();
+        }
 
-        joinUser();
+        // joinUser();
 
     } else {
 //        console.log(" ");
