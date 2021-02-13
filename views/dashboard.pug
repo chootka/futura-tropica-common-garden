@@ -139,15 +139,12 @@ body
         const overlay = document.getElementById('overlay');
 
         function hideOverlay() {
-            console.log("hideOverlay");
-
             body.removeEventListener('click', hideOverlay);
             if (overlay.classList.contains("visible")) overlay.classList.toggle("visible");
         }
 
         // button click
         info.addEventListener('click', function() {
-            console.log("info click");
             overlay.classList.toggle("visible");
             
             setTimeout(() => { body.addEventListener('click', hideOverlay) }, 1000);

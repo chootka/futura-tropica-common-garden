@@ -20,7 +20,8 @@
 }*/
 body {
     background: linear-gradient(270deg, #efefef, #100d0d, #efefef);
-    background-size: 95%;
+    background-size: cover;
+    background-attachment: fixed;
 
     /*-webkit-animation: dashboard 28s ease infinite;
     -moz-animation: dashboard 28s ease infinite;
