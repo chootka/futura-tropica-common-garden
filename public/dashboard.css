@@ -197,16 +197,12 @@ ul li {
 .content-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
 }
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    /*margin-top: -25%;*/
     z-index: 999;
 
     overflow-y: auto;
@@ -216,7 +212,7 @@ ul li {
 }
 .content > article {
     transform: rotate(90deg);
-    padding: 90px;
+    margin: 110px 0;
 }
 #peers {
     position: absolute;
