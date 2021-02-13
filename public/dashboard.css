@@ -20,13 +20,17 @@
 }*/
 body {
     background: linear-gradient(270deg, #efefef, #100d0d, #efefef);
-    background-size: 95%;
+    background-size: cover;
+    background-attachment: fixed;
 
     /*-webkit-animation: dashboard 28s ease infinite;
     -moz-animation: dashboard 28s ease infinite;
     animation: dashboard 28s ease infinite;*/
 
+    color: #eec860;
     font-family: EHNormal, sans-serif;
+    font-size: 18px;
+    line-height: 1.2em;
 
     height: 100vh;
     overflow-y: hidden;
@@ -47,6 +51,29 @@ text {
 }*/
 a {
     text-decoration: none;
+}
+
+p {
+    font-family: EHNormal, sans-serif;
+    font-size: 18px;
+    line-height: 1.2em;
+    margin-top: 2px;
+}
+
+h1 {
+    font-family: EHNormalBold, sans-serif;
+    font-size: 18px;
+    line-height: 1.2em;
+    margin-bottom: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
 }
 
 @-webkit-keyframes float {
@@ -130,10 +157,7 @@ a {
     height: 93px;
 }
 .languages > div {
-    color: #eec860;
     font-family: EHNormalBold, sans-serif;
-    font-weight: bold;
-    line-height: .8em;
 
     width: 25px;
     height: 14px;
@@ -170,14 +194,14 @@ a {
     background-size: 100%;
 
     width: 100%;
-    height: 30%;
+    height: 40%;
 }
 .title .down {
     background: url(/img/Dashboard-DOWN.svg) no-repeat;
     background-size: 100%;
 
     width: 100%;
-    height: 30%;
+    height: 40%;
 }
 .content {
     position: relative;
@@ -258,14 +282,18 @@ a {
     border-radius: 240px;
     background: #fff;
 
-    height: 490px;
+    color: #eec860;
+
+    height: 550px;
     max-width: 700px;
 
     margin: 0 auto;
-    padding: 5px 180px;
+    padding: 15px 200px;
+
+    overflow-y: auto;
 
     top: 50%;
-    margin-top: -275px;
+    margin-top: -290px;
 
     position: absolute;
     z-index: -1;
@@ -283,11 +311,6 @@ a {
 }
 
 #overlay .lang {
-    color: #eec860;
-    font-family: EHNormalBold, sans-serif;
-    font-size: 18px;
-    line-height: 1.2em;
-
     padding-bottom: 10px;
 }
 
@@ -309,3 +332,14 @@ a {
 
     max-width: 600px;
 }
+
+.names {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
