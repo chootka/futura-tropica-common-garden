@@ -83,7 +83,7 @@ socket.on("setId", function(data) {
             socket.emit("setRoom", { room: subdomain, admin: true});
         }
 
-        if (window.location.search.includes("username") && window.location.search.includes("terms=true")) {
+        if (window.location.search.includes("username")) { //&& window.location.search.includes("terms=true")) {
             console.log("Auto-joining");
             closePopUp();
         }
