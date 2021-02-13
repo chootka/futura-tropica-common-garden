@@ -25,7 +25,7 @@ fetch('/api/v0/swarm/peers', {
                 return loc.id === parseInt(octet);
             });
 
-            peers.innerHTML += '<a class="peer" href="peer/' + octet + '/?username"><span class="dot"></span><div class="label">' + location[0].label + '</div></a>';
+            peers.innerHTML += '<a class="peer" href="peer/' + octet + '/?username=' + username + '"><span class="dot"></span><div class="label">' + location[0].label + '</div></a>';
         }
 
     })
