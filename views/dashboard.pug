@@ -134,12 +134,14 @@ body
         const disableAudio = false;
         let subdomainAlias = "#{subdomainAlias}";
 
+        const overlay = document.getElementById('overlay');
+
         // button click
-        document.getElementsByClassName('info')[0].addEventListener('click', function() {
-            document.getElementById('overlay').classList.toggle("visible");
+        document.getElementsByTag('body')[0].addEventListener('click', function() {
+            if (overlay.classList.contains("visible")) overlay.classList.toggle("visible");
         })
-        document.getElementsByClassName('languages')[0].addEventListener('click', function() {
-            document.getElementById('overlay').classList.toggle("visible");
+        document.getElementsByClassName('info')[0].addEventListener('click', function() {
+            overlay.classList.toggle("visible");
         })
 
     script(src="/js/jquery-1.7.1.min.js")
