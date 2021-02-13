@@ -30,8 +30,6 @@ function doesFileExist(urlToFile) {
 $.getJSON(showdata, function( json ) {
     console.log("Got show data", json);
 
-    console.log(json);
-
     if (json.private) {
         console.log("this is a private show");
 
@@ -90,6 +88,9 @@ $.getJSON(showdata, function( json ) {
     }
 
     var jitsiroom = "";
+
+    console.log("json.works?", json.works);
+    console.log("json.works.length", json.works.length);
 
     for ( var i = 0; i < json.works.length; i++ ) {
 
