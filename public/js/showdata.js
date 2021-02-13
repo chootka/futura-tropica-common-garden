@@ -93,15 +93,19 @@ $.getJSON(showdata, function( json ) {
 
     for ( var i = 0; i < json.works.length; i++ ) {
 
+        console.log("wrk", json.works[i]);
+
         var article = $('<article id="artwork' + (i + 1) + '" class="posabs artist thing hidden" data-loaded="0" data-id="' + (i + 1) + '" data-type="art" data-src="' + json.works[ i ].url + '" data-name="' + json.works[ i ].title + '">');
 
         if ( json.works[ i ].imagelink || json.works[ i ].image ) {
+            console.log("image", json.works[i].image);
             if (json.works[i].url != null && json.works[i].url != "") {
                 article.append( '<div class="imagelink"><a href="' + json.works[ i ].url + '" target="_blank"><img src="' + json.works[ i ].imageurl + '"></a></div>' );
             } else {
                 article.append( '<div class="imagelink"><img src="' + json.works[ i ].imageurl + '"></div>' );
             }
         } else if (json.works[i].text) {
+            console.log("text", json.works[i].text);
             article.append( "<h1>" + json.works[i].title + "</h1> <p>" + json.works[ i ].description + "</p>" );
             article.addClass("text");
         } else if ( json.works[ i ].slideshow == true ) {
