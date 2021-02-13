@@ -114,6 +114,12 @@ ul li {
     padding: 0 50px;
 }
 
+.homeButton {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
 .wrapper {
     position: relative;
     margin: 0 auto;
