@@ -42,10 +42,12 @@ function closePopUp(event) {
     console.log("username is: " + document.body.querySelector(".popUp .username").value);
 
     // update username
-    socket.emit("setUsername", document.body.querySelector(".popUp .username").value);
     username = document.body.querySelector(".popUp .username").value;
-    checkSlideshows();
-    setupChatboxes();
+    socket.emit("setUsername", username);
+
+    console.log("username", username);
+    // checkSlideshows();
+    // setupChatboxes();
     unMuteYouTube();
 
     inShow = true;

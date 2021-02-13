@@ -125,7 +125,7 @@ body
     .popUp
         form
             input.username(type="text" pattern="[^'\x22\x3c\x3e\x3b]+" placeholder="your name" maxlength="25" name="username" required)
-            input.enterButton(type="submit" value="Enter Futura Tropica" name="enter")
+            input.enterButton.disabled(type="submit" value="Enter Futura Tropica" name="enter")
     .content
     audio.alert
         source(src="/static/still_there_2.ogg")
