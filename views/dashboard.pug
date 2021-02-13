@@ -150,7 +150,7 @@ body
             console.log("info click");
             overlay.classList.toggle("visible");
             
-            body.addEventListener('click', hideOverlay);
+            setTimeout(() => { body.addEventListener('click', hideOverlay) }, 1000);
         })
 
     script(src="/js/jquery-1.7.1.min.js")
