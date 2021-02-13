@@ -138,15 +138,16 @@ body
         const info = document.getElementsByClassName('info')[0];
         const overlay = document.getElementById('overlay');
 
+        function hideOverlay() {
+            body.removeEventListener('click', hideOverlay);
+            if (overlay.classList.contains("visible")) overlay.classList.toggle("visible");
+        }
+
         // button click
         info.addEventListener('click', function() {
             overlay.classList.toggle("visible");
             
-            body.addEventListener('click', function() {
-                body.removeEventListener('click');
-
-                if (overlay.classList.contains("visible")) overlay.classList.toggle("visible");
-            });
+            body.addEventListener('click', hideOverlay);
         })
 
     script(src="/js/jquery-1.7.1.min.js")
