@@ -310,7 +310,7 @@ input.terms {
     font-size: 18px;
 }
 
-article {
+/*article {
     position: absolute;
     background: #fff;
     border-width: 2px;
@@ -466,7 +466,7 @@ article.talking .room:before {
     height: 100%;
     background: rgba(0,0,0,0.2);
     border-radius: 30px;
-}
+}*/
 .map {
     position: fixed;
     top: 0;
