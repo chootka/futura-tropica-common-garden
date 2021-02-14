@@ -1,6 +1,6 @@
 let showdata = '/shows/showdata.json';
 
-// let mapscale;
+let mapscale;
 
 console.log("showdata.js, subdomain", subdomain);
 if(subdomain) {
@@ -24,14 +24,14 @@ $.getJSON(showdata, function( json ) {
 
     $( 'body' ).css({ 'height': '100vh', 'width': json.screensize.width } ); //json.screensize.height
 
-    // mapscale = json.screensize.width / (window.innerWidth / 3);
-    // if (window.innerWidth < window.innerHeight) {
-    //     mapscale = json.screensize.width / (window.innerWidth / 1.5);
-    // }
-    // let map = document.querySelector(".map");
-    // map.style.width = (json.screensize.width / mapscale) + "px";
-    // // map.style.height = (json.screensize.height / mapscale) + "px";
-    // map.style.height = (window.innerheight / mapscale) + "px";
+    mapscale = json.screensize.width / (window.innerWidth / 3);
+    if (window.innerWidth < window.innerHeight) {
+        mapscale = json.screensize.width / (window.innerWidth / 1.5);
+    }
+    let map = document.querySelector(".map");
+    map.style.width = (json.screensize.width / mapscale) + "px";
+    // map.style.height = (json.screensize.height / mapscale) + "px";
+    map.style.height = (window.innerheight / mapscale) + "px";
 
     if (json.title) {
         document.head.querySelector("title").innerHTML = json.title;
