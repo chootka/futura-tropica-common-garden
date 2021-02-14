@@ -8,6 +8,8 @@ head
     meta(name='description' content='Futura Tropica Public Dashboard')
     meta(name='viewport' content='initial-scale=0.5, width=device-width')
 
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css')
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css')
     link(rel='stylesheet' href='/avatars.css')
     link(rel='stylesheet' href='/show.css')
     link(rel='stylesheet' href='/dashboard.css')
@@ -151,8 +153,27 @@ body
             setTimeout(() => { body.addEventListener('click', hideOverlay) }, 1000);
         })
 
-    script(src="/js/jquery-1.7.1.min.js")
-    script(src="/js/jquery-ui-1.8.17.custom.min.js")
+        // horizontal slider
+        const slider = $(".content");
+        slider
+          .slick({
+            dots: false
+          });
+
+        slider.on('wheel', (function(e) {
+          e.preventDefault();
+
+          if (e.originalEvent.deltaY < 0) {
+            $(this).slick('slickNext');
+          } else {
+            $(this).slick('slickPrev');
+          }
+        }));
+
+    //- script(src="/js/jquery-1.7.1.min.js")
+    //- script(src="/js/jquery-ui-1.8.17.custom.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js")
+    script(src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js")
     script(src="/js/script005.min.js")
     script(src="/js/dataSignalling.js")
     script(src="/js/avatars.js")

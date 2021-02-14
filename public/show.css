@@ -311,11 +311,13 @@ input.terms {
 }
 
 .content-wrapper {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    margin: 0 auto;
+    width: 80%;
 }
 .content {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 999;
@@ -325,11 +327,11 @@ input.terms {
     overflow-x: hidden;
 
     transform: rotate(-90deg) translateY(-195vh) translateX(-50vh);
-    transform-origin: top;
+    transform-origin: top;*/
 }
 .content > article {
-    transform: rotate(90deg);
-    margin: 100px 0;
+    /*transform: rotate(90deg);*/
+    /*margin: 100px 0;*/
 }
 
 /*article {
