@@ -105,7 +105,8 @@ $.getJSON(showdata, function( json ) {
             slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
                 var data = { "event":"command", "func":"pauseVideo", "args":"" };
                 var message = JSON.stringify(data);
-                console.log("beforeChange", slick.$slides);
+                console.log("currentSlide", slick.$slides[currentSlide]);
+                console.log("iframe", $("iframe", slick.$slides[currentSlide])[0]);
                 $("iframe", slick.$slides[currentSlide])[0].contentWindow.postMessage(message, '*');
             });
 
