@@ -316,7 +316,7 @@ input.terms {
     margin: 0 auto;
     width: 80%;
 }
-.content {
+.horizontal-content {
     /*display: flex;
     flex-direction: column;
     align-items: center;
@@ -329,7 +329,7 @@ input.terms {
     transform: rotate(-90deg) translateY(-195vh) translateX(-50vh);
     transform-origin: top;*/
 }
-.content > article {
+.horizontal-content > article {
     /*transform: rotate(90deg);*/
     /*margin: 100px 0;*/
 }
