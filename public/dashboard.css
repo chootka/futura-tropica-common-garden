@@ -33,7 +33,7 @@ body {
     line-height: 1.2em;
 
     height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 img {
     max-width: 100%;

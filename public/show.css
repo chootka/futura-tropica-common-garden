@@ -320,12 +320,11 @@ input.terms {
     align-items: center;
     z-index: 999;
 
-    height: 240vh;
-
-    overflow-y: auto;
+    height: 150vh;
+    
     overflow-x: hidden;
 
-    transform: rotate(-90deg) translateY(-240vh) translateX(-50vh);
+    transform: rotate(-90deg) translateY(-150vh) translateX(-50vh);
     transform-origin: top;
 }
 .content > article {
