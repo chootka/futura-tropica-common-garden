@@ -311,27 +311,14 @@ input.terms {
 }
 
 .content-wrapper {
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    margin: 0 auto;
-    width: 80%;
-}
-.horizontal-content {
-    /*display: flex;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    z-index: 999;
+    justify-content: center;
 
-    height: 150vh;
+    margin: 0 auto;
 
-    overflow-x: hidden;
-
-    transform: rotate(-90deg) translateY(-195vh) translateX(-50vh);
-    transform-origin: top;*/
-}
-.horizontal-content > article {
-    /*transform: rotate(90deg);*/
-    /*margin: 100px 0;*/
+    height: 100vh;
+    width: 80%;
 }
 
 .slick-track {
