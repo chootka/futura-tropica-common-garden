@@ -43,6 +43,21 @@
          "imageurl":"/img/dither8.jpg",
          "width":360,
          "image":true
+      },
+      {
+         "imageurl":"/img/dither1.jpg",
+         "width":250,
+         "image":true
+      },
+      {
+         "imageurl":"/img/daisy-gif-1.gif",
+         "width":560,
+         "image":true
+      },
+      {
+         "title":"MORE TXT for BENGALURU",
+         "description":"y0y0y0y0y",
+         "text":true
       }
    ],
    "borderWidth":"1px",
