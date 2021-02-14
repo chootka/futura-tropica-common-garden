@@ -67,7 +67,7 @@ $.getJSON(showdata, function( json ) {
             article.attr("data-vimeo", true);
         }
 
-        $( ".content" ).append( article );
+        $( ".horizontal-content" ).append( article );
 
         // if (json.works[i].hideMap != true) {
         //     let mapIcon = document.createElement("div");
