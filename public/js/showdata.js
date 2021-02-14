@@ -64,10 +64,10 @@ $.getJSON(showdata, function( json ) {
             article.append( "<h1>" + json.works[i].title + "</h1><p>" + json.works[ i ].description + "</p>" );
             article.addClass("text");
         } else if ( json.works[ i ].localVideo ) {
-            article.append( '<video src="' + json.works[i].src + '" autoplay muted class="iframe"></video>' );
+            article.append( '<video src="' + json.works[i].src + '" muted class="iframe"></video>' );
         } else if ( json.works[ i ].youtube || json.works[ i ].vimeo ) {
             // article.attr("data-src", json.works[ i ].url)
-            article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" scrolling="no" frameborder="0" allow="autoplay" muted src="' + json.works[ i ].url + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
+            article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" scrolling="no" frameborder="0" muted src="' + json.works[ i ].url + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
         }
         if (json.works[i].youtubeSync) {
             article.attr("data-youtubeSync", true);
@@ -85,7 +85,7 @@ $.getJSON(showdata, function( json ) {
 
     window.setTimeout(function() {
         load();
-        
+
         document.querySelector(".popUp .enterButton").classList.remove("unloaded");
         document.querySelector(".popUp .enterButton").value = "Enter Futura Tropica";
 
