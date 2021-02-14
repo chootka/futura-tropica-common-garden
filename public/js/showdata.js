@@ -25,15 +25,15 @@ $.getJSON(showdata, function( json ) {
     if (json.textColor) {
         $( 'body' ).css({
             'height': '100vh',
-            'width': json.screensize.width + 'px',
+            'width': json.screensize.width,
             'color': "hsl(" + json.textColor[0] + "," + json.textColor[1] + "%," + json.textColor[2] + "%)",
         } );
     } else {
 
-        $( 'body' ).css({ 'height': '100vh', 'width': json.screensize.width + 'px' } ); //json.screensize.height
+        $( 'body' ).css({ 'height': '100vh', 'width': json.screensize.width } ); //json.screensize.height
     }
 
-    mapscale = undefined; //json.screensize.width / (window.innerWidth / 3);
+    mapscale = json.screensize.width / (window.innerWidth / 3);
     console.log("mapscale", mapscale);
     if (window.innerWidth < window.innerHeight) {
         mapscale = json.screensize.width / (window.innerWidth / 1.5);
@@ -97,18 +97,8 @@ $.getJSON(showdata, function( json ) {
             // horizontal slider
             const slider = $(".horizontal-content");
             slider.slick({
-                dots: false,
-                infinite: true,
-                slidesToShow: 5
+                dots: false
             });
-
-            // slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-            //     var data = { "event":"command", "func":"pauseVideo", "args":"" };
-            //     var message = JSON.stringify(data);
-            //     console.log("currentSlide", slick.$slides[currentSlide]);
-            //     console.log("iframe", $("iframe", slick.$slides[currentSlide])[0]);
-            //     $("iframe", slick.$slides[currentSlide])[0].contentWindow.postMessage(message, '*');
-            // });
 
             slider.on('wheel', (function(e) {
                 e.preventDefault();
