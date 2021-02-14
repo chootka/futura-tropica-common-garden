@@ -25,12 +25,12 @@ $.getJSON(showdata, function( json ) {
     if (json.textColor) {
         $( 'body' ).css({
             'height': '100vh',
-            'width': json.screensize.width,
+            'width': json.screensize.width + 'px',
             'color': "hsl(" + json.textColor[0] + "," + json.textColor[1] + "%," + json.textColor[2] + "%)",
         } );
     } else {
 
-        $( 'body' ).css({ 'height': '100vh', 'width': json.screensize.width } ); //json.screensize.height
+        $( 'body' ).css({ 'height': '100vh', 'width': json.screensize.width + 'px' } ); //json.screensize.height
     }
 
     mapscale = json.screensize.width / (window.innerWidth / 3);
