@@ -22,9 +22,19 @@ function doesFileExist(urlToFile) {
 $.getJSON(showdata, function( json ) {
     console.log("Got show data", json);
 
-    $( 'body' ).css({ 'height': '100vh', 'width': json.screensize.width } ); //json.screensize.height
+    if (json.textColor) {
+        $( 'body' ).css({
+            'height': '100vh',
+            'width': json.screensize.width,
+            'color': "hsl(" + json.textColor[0] + "," + json.textColor[1] + "%," + json.textColor[2] + "%)",
+        } );
+    } else {
+
+        $( 'body' ).css({ 'height': '100vh', 'width': json.screensize.width } ); //json.screensize.height
+    }
 
     mapscale = json.screensize.width / (window.innerWidth / 3);
+    console.log("mapscale", mapscale);
     if (window.innerWidth < window.innerHeight) {
         mapscale = json.screensize.width / (window.innerWidth / 1.5);
     }
@@ -32,6 +42,9 @@ $.getJSON(showdata, function( json ) {
     map.style.width = (json.screensize.width / mapscale) + "px";
     // map.style.height = (json.screensize.height / mapscale) + "px";
     map.style.height = (window.innerheight / mapscale) + "px";
+
+    console.log("map.style.width", map.style.width);
+    console.log("map.style.height", map.style.height);
 
     if (json.title) {
         document.head.querySelector("title").innerHTML = json.title;
