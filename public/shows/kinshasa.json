@@ -21,7 +21,8 @@
          "description":"",
          "artist":"Empty video",
          "url":"https://www.youtube.com/embed/7QwjURBSIPA?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
-         "width":360,
+         "width":560,
+         "height":315,
          "INTERCEPT_videoType":"YouTube",
          "youtubeSync":true,
          "showVolume":false,
@@ -35,12 +36,12 @@
       },
       {
          "imageurl":"/img/dither1.jpg",
-         "width":360,
+         "width":250,
          "image":true
       },
       {
-         "src":"/video/TvTestCard_512kb.mp4",
-         "width":360,
+         "src":"/img/daisy-gif-1.gif",
+         "width":560,
          "localVideo":true
       },
       {
@@ -55,12 +56,12 @@
       },
       {
          "imageurl":"/img/dither5.png",
-         "width":360,
+         "width":450,
          "image":true
       },
       {
          "imageurl":"/img/dither7.png",
-         "width":360,
+         "width":400,
          "image":true
       }
    ],

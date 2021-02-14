@@ -66,7 +66,7 @@ $.getJSON(showdata, function( json ) {
         } else if ( json.works[ i ].localVideo ) {
             article.append( '<video src="' + json.works[i].src + '" autoplay muted class="iframe"></video>' );
         } else if ( json.works[ i ].youtube || json.works[ i ].vimeo ) {
-            article.attr("data-src", json.works[ i ].url)
+            // article.attr("data-src", json.works[ i ].url)
             article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" scrolling="no" frameborder="0" allow="autoplay" muted src="' + json.works[ i ].url + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
         }
         if (json.works[i].youtubeSync) {
@@ -80,28 +80,6 @@ $.getJSON(showdata, function( json ) {
         }
 
         $( ".horizontal-content" ).append( article );
-
-        // if (json.works[i].hideMap != true) {
-        //     let mapIcon = document.createElement("div");
-        //     mapIcon.className = "mapIcon artmenu menu menu" + (i + 1);
-        //     mapIcon.dataset.id = (i + 1);
-        //     mapIcon.innerHTML = "<p>" + json.works[ i ].artist + "</p>";
-        //     mapIcon.style.top = json.works[ i ].top / mapscale;
-        //     mapIcon.style.left = json.works[ i ].left / mapscale;
-        //     mapIcon.style.width = json.works[ i ].width / mapscale;
-        //     mapIcon.style.height = json.works[ i ].height / mapscale;
-        //     if (window.innerWidth < window.innerHeight) {
-        //         mapIcon.querySelector("p").style.fontSize = "1.4vw";
-        //     }
-
-        //     document.querySelector(".map").appendChild(mapIcon);
-        // }
-
-        // if (json.works[i].borderless && json.works[i].hideMap != true) {
-        //     document.querySelector(".menu" + (i + 1)).style.border = "none";
-        //     document.querySelector(".menu" + (i + 1)).style.background = "none";
-        //     document.querySelector(".menu" + (i + 1)).style.color = "hsl(" + json.textColor[0] + "," + json.textColor[1] + "%," + json.textColor[2] + "%)";
-        // }
 
     }
 
