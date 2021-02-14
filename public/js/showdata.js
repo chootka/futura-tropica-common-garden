@@ -104,7 +104,7 @@ $.getJSON(showdata, function( json ) {
                     var data = {"event":"command","func":"pauseVideo","args":""};
                     var message = JSON.stringify(data);
                     $("iframe", slick.$slides[currentSlide])[0].contentWindow.postMessage(message, '*');
-                });
+                }
 
             slider.on('wheel', (function(e) {
                 e.preventDefault();
