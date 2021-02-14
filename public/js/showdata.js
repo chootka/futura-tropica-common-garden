@@ -65,13 +65,10 @@ $.getJSON(showdata, function( json ) {
             article.addClass("text");
         } else if ( json.works[ i ].localVideo ) {
             article.append( '<video src="' + json.works[i].src + '" autoplay muted class="iframe"></video>' );
-        } else if ( json.works[ i ].youtube ) {
+        } else if ( json.works[ i ].youtube || json.works[ i ].vimeo ) {
             article.attr("data-src", json.works[ i ].url)
-            article.append( '<div class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" data-showVolume="true" data-volume="100" scrolling="no" frameborder="0" allow="autoplay" muted width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
-        } else if ( json.works[ i ].vimeo ) {
-            article.attr("data-src", json.works[ i ].url)
-            article.append( '<div class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" data-showVolume="true" data-volume="1" scrolling="no" frameborder="0" allow="autoplay" muted width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
-        } 
+            article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" scrolling="no" frameborder="0" allow="autoplay" muted width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
+        }
         if (json.works[i].youtubeSync) {
             article.attr("data-youtubeSync", true);
         }
