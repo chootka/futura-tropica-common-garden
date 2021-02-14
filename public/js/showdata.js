@@ -97,7 +97,7 @@ $.getJSON(showdata, function( json ) {
             // horizontal slider
             const slider = $(".horizontal-content");
             slider.slick({
-                dots: false
+                dots: false,
                 infinite: true,
                 slidesToShow: 4
             });
