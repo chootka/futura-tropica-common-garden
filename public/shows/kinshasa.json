@@ -16,13 +16,12 @@
    },
    "works":[
       {
-         "title":"YOUUUUUUUUUUUUUUUUUUUUUTUUUUUUUUUUUUUUUUUUUBE",
+         "title":"KINSHASA",
          "subtitle":"",
          "description":"",
          "artist":"Empty video",
          "url":"https://www.youtube.com/embed/7QwjURBSIPA?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
          "width":360,
-         "height":270,
          "INTERCEPT_videoType":"YouTube",
          "youtubeSync":true,
          "showVolume":false,
@@ -36,14 +35,12 @@
       },
       {
          "imageurl":"/img/dither1.jpg",
-         "width":"100%",
-         "height":300,
+         "width":360,
          "image":true
       },
       {
          "src":"/video/TvTestCard_512kb.mp4",
-         "width":"100%",
-         "height":300,
+         "width":360,
          "localVideo":true
       },
       {
@@ -53,20 +50,17 @@
       },
       {
          "imageurl":"/img/dither3.jpg",
-         "width":"100%",
-         "height":300,
+         "width":360,
          "image":true
       },
       {
          "imageurl":"/img/dither5.png",
-         "width":"100%",
-         "height":300,
+         "width":360,
          "image":true
       },
       {
          "imageurl":"/img/dither7.png",
-         "width":"100%",
-         "height":300,
+         "width":360,
          "image":true
       }
    ],
