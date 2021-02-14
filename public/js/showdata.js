@@ -88,6 +88,8 @@ $.getJSON(showdata, function( json ) {
         document.querySelector(".popUp .enterButton").classList.remove("unloaded");
         document.querySelector(".popUp .enterButton").value = "Enter Futura Tropica";
 
+        getPeers();
+
         if (!json.private) {
             let articles = document.querySelectorAll(".article");
             for (let i=0; i<articles.length; i++) {
@@ -96,28 +98,32 @@ $.getJSON(showdata, function( json ) {
 
             // horizontal slider
             const slider = $(".horizontal-content");
-            slider.slick({
-                dots: false,
-                infinite: true,
-                slidesToShow: 5
-            });
 
-            slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-                var data = { "event":"command", "func":"pauseVideo", "args":"" };
-                var message = JSON.stringify(data);
-                const iframe = $("iframe", slick.$slides[currentSlide])[0];
-                if (iframe) iframe.contentWindow.postMessage(message, '*');
-            });
+            if (slider) {
+                slider.slick({
+                    dots: false,
+                    infinite: true,
+                    slidesToShow: 5
+                });
 
-            slider.on('wheel', (function(e) {
-                e.preventDefault();
+                slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                    var data = { "event":"command", "func":"pauseVideo", "args":"" };
+                    var message = JSON.stringify(data);
+                    const iframe = $("iframe", slick.$slides[currentSlide])[0];
+                    console.log("iframe", iframe);
+                    if (iframe) iframe.contentWindow.postMessage(message, '*');
+                });
 
-                    if (e.originalEvent.deltaY < 0) {
-                        $(this).slick('slickNext');
-                    } else {
-                        $(this).slick('slickPrev');
-                    }
-            }));
+                slider.on('wheel', (function(e) {
+                    e.preventDefault();
+
+                        if (e.originalEvent.deltaY < 0) {
+                            $(this).slick('slickNext');
+                        } else {
+                            $(this).slick('slickPrev');
+                        }
+                }));
+            }
         }
     }, 50);
 });

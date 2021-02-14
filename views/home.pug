@@ -128,13 +128,9 @@ body
         source(src="/static/still_there_2.ogg")
         source(src="/static/still_there_2.mp3")
 
-
-    //- script(src="/js/jquery-1.7.1.min.js")
-    //- script(src="/js/jquery-ui-1.8.17.custom.min.js")
     script(src="//code.jquery.com/jquery-1.11.0.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
     script(src="/js/youtube_sync.js")
-    //- script(src="js/kurento-utils.js")
     script(src="https://www.youtube.com/iframe_api")
     script(src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
     script.
@@ -143,7 +139,7 @@ body
         // Set this to true to turn off audio feature
         const disableAudio = false;
         let subdomainAlias = "#{subdomainAlias}";
-        let username = "#{username}";
+        let username = "";
 
         const body = document.getElementsByTagName('body')[0];
         const info = document.getElementsByClassName('info')[0];
