@@ -136,7 +136,6 @@ body
     script(src="//code.jquery.com/jquery-1.11.0.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
     script(src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
-
     script.
         const socket = io('/');
 
@@ -158,8 +157,15 @@ body
             overlay.classList.toggle("visible");
             
             setTimeout(() => { body.addEventListener('click', hideOverlay) }, 1000);
-        })
-
+        });
+    script(src="/js/script005.min.js")
+    script(src="/js/dataSignalling.js")
+    script(src="/js/avatars.js")
+    script(src="/js/audiochat.js")
+    script(src="/js/staticAudioRooms.js")
+    script(src="/js/popUp.js")
+    script(src="/js/showdata.js")
+    script.
         // horizontal slider
         const slider = $(".horizontal-content");
         slider.slick({
@@ -178,14 +184,7 @@ body
                     $(this).slick('slickPrev');
                 }
         }));
-    script(src="/js/script005.min.js")
-    script(src="/js/dataSignalling.js")
-    script(src="/js/avatars.js")
-    script(src="/js/audiochat.js")
-    script(src="/js/staticAudioRooms.js")
-    script(src="/js/popUp.js")
-    script(src="/js/showdata.js")
     script(src="/js/youtube_sync.js")
     //- script(src="js/kurento-utils.js")
     script(src="https://www.youtube.com/iframe_api")
-        
+    
