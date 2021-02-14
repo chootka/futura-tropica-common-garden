@@ -11,8 +11,7 @@
    "borderColor":"none",
    "frameBackground":"none",
    "screensize":{
-      "width":"3840px",
-      "height":"2160px"
+      "width":3840,
    },
    "works":[
       {
