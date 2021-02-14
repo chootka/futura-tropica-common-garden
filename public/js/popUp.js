@@ -2,7 +2,6 @@ let form = document.querySelector(".popUp form");
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 });
-let username;
 
 if (window.location.search.includes("username")) {
     const urlParams = new URLSearchParams(window.location.search);
