@@ -85,6 +85,7 @@ $.getJSON(showdata, function( json ) {
 
     window.setTimeout(function() {
         load();
+        
         document.querySelector(".popUp .enterButton").classList.remove("unloaded");
         document.querySelector(".popUp .enterButton").value = "Enter Futura Tropica";
 
@@ -97,9 +98,9 @@ $.getJSON(showdata, function( json ) {
             // horizontal slider
             const slider = $(".horizontal-content");
 
-            console.log("slider", slider);
+            console.log("slider.slick", slider.slick);
 
-            if (slider) {
+            if (slider.slick) {
                 slider.slick({
                     dots: false,
                     infinite: true,
