@@ -99,8 +99,12 @@ $.getJSON(showdata, function( json ) {
             slider.slick({
                 dots: false,
                 infinite: true,
-                slidesToShow: 4
-            });
+                slidesToShow: 5,
+                beforeChange: function(event, slick, currentSlide, nextSlide) {
+                    var data = {"event":"command","func":"pauseVideo","args":""};
+                    var message = JSON.stringify(data);
+                    $("iframe", slick.$slides[currentSlide])[0].contentWindow.postMessage(message, '*');
+                });
 
             slider.on('wheel', (function(e) {
                 e.preventDefault();
