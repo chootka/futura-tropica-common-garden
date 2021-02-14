@@ -18,11 +18,11 @@ let maxRoomSize = 200;
 
 let slideshows = [];
 
-let subdomain = 'bengaluru';
+let subdomain = 'public';
     // subdomain = "join";
     // subdomain = "bogota";
     // subdomain = "kinshasa";
-    // subdomain = "public";
+    // subdomain = "bengaluru";
 
 let subdomains = [];
 
