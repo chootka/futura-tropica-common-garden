@@ -88,8 +88,6 @@ $.getJSON(showdata, function( json ) {
         document.querySelector(".popUp .enterButton").classList.remove("unloaded");
         document.querySelector(".popUp .enterButton").value = "Enter Futura Tropica";
 
-        getPeers();
-
         if (!json.private) {
             let articles = document.querySelectorAll(".article");
             for (let i=0; i<articles.length; i++) {
