@@ -98,6 +98,8 @@ $.getJSON(showdata, function( json ) {
             const slider = $(".horizontal-content");
             slider.slick({
                 dots: false
+                infinite: true,
+                slidesToShow: 4
             });
 
             slider.on('wheel', (function(e) {
