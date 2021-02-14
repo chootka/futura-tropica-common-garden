@@ -321,10 +321,10 @@ input.terms {
     z-index: 999;
 
     height: 150vh;
-    
+
     overflow-x: hidden;
 
-    transform: rotate(-90deg) translateY(-150vh) translateX(-50vh);
+    transform: rotate(-90deg) translateY(-195vh) translateX(-50vh);
     transform-origin: top;
 }
 .content > article {
