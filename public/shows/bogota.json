@@ -1,7 +1,7 @@
 {
    "opening":false,
    "hideTour":true,
-   "title":"Futura Tropica Netroots #BOGOTA",
+   "title":"Futura Tropica Netroots #BOGOTÁ",
    "backgroundColor":"none",
    "textColor":[
       "0",
@@ -16,7 +16,7 @@
    },
    "works":[
       {
-         "title":"BOGOTA",
+         "title":"BOGOTÁ",
          "subtitle":"",
          "description":"",
          "artist":"Empty video",
@@ -30,7 +30,7 @@
          "lock4_3":true
       },
       {
-         "title":"TXT for BOGOTA",
+         "title":"TXT for BOGOTÁ",
          "description":"0-O-O-O-O-O",
          "text":true
       },
