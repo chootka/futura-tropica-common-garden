@@ -165,25 +165,6 @@ body
     script(src="/js/staticAudioRooms.js")
     script(src="/js/popUp.js")
     script(src="/js/showdata.js")
-    script.
-        // horizontal slider
-        const slider = $(".horizontal-content");
-        slider.slick({
-            dots: false
-        });
-
-        console.log("slider", slider);
-
-        slider.on('wheel', (function(e) {
-            console.log("wheel");
-            e.preventDefault();
-
-                if (e.originalEvent.deltaY < 0) {
-                    $(this).slick('slickNext');
-                } else {
-                    $(this).slick('slickPrev');
-                }
-        }));
     script(src="/js/youtube_sync.js")
     //- script(src="js/kurento-utils.js")
     script(src="https://www.youtube.com/iframe_api")

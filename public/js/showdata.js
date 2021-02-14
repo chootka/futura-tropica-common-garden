@@ -103,6 +103,25 @@ $.getJSON(showdata, function( json ) {
             for (let i=0; i<articles.length; i++) {
                 articles[i].classList.remove("hidden");
             }
+
+            // horizontal slider
+            const slider = $(".horizontal-content");
+            slider.slick({
+                dots: false
+            });
+
+            console.log("slider", slider);
+
+            slider.on('wheel', (function(e) {
+                console.log("wheel");
+                e.preventDefault();
+
+                    if (e.originalEvent.deltaY < 0) {
+                        $(this).slick('slickNext');
+                    } else {
+                        $(this).slick('slickPrev');
+                    }
+            }));
         }
     }, 50);
 });
