@@ -105,6 +105,7 @@ $.getJSON(showdata, function( json ) {
                     var message = JSON.stringify(data);
                     $("iframe", slick.$slides[currentSlide])[0].contentWindow.postMessage(message, '*');
                 }
+            });
 
             slider.on('wheel', (function(e) {
                 e.preventDefault();
