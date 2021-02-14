@@ -130,6 +130,14 @@ body
         source(src="/static/still_there_2.mp3")
 
     
+    
+
+    script(src="/js/jquery-1.7.1.min.js")
+    script(src="/js/jquery-ui-1.8.17.custom.min.js")
+    //- script(src="//code.jquery.com/jquery-1.11.0.min.js")
+    //- script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script(src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js")
+
     script.
         const socket = io('/');
 
@@ -169,12 +177,6 @@ body
             $(this).slick('slickPrev');
           }
         }));
-
-    script(src="/js/jquery-1.7.1.min.js")
-    script(src="/js/jquery-ui-1.8.17.custom.min.js")
-    //- script(src="//code.jquery.com/jquery-1.11.0.min.js")
-    //- script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
-    script(src="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js")
     script(src="/js/script005.min.js")
     script(src="/js/dataSignalling.js")
     script(src="/js/avatars.js")
