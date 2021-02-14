@@ -321,6 +321,11 @@ input.terms {
     width: 80%;
 }
 
+.slick-slider {
+    z-index: -1; /* keep it behind the nav */
+}
+}
+
 .slick-track {
     display: flex;
     align-items: center;
