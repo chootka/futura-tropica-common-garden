@@ -102,13 +102,13 @@ $.getJSON(showdata, function( json ) {
                 slidesToShow: 5
             });
 
-            slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-                var data = { "event":"command", "func":"pauseVideo", "args":"" };
-                var message = JSON.stringify(data);
-                console.log("currentSlide", slick.$slides[currentSlide]);
-                console.log("iframe", $("iframe", slick.$slides[currentSlide])[0]);
-                $("iframe", slick.$slides[currentSlide])[0].contentWindow.postMessage(message, '*');
-            });
+            // slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            //     var data = { "event":"command", "func":"pauseVideo", "args":"" };
+            //     var message = JSON.stringify(data);
+            //     console.log("currentSlide", slick.$slides[currentSlide]);
+            //     console.log("iframe", $("iframe", slick.$slides[currentSlide])[0]);
+            //     $("iframe", slick.$slides[currentSlide])[0].contentWindow.postMessage(message, '*');
+            // });
 
             slider.on('wheel', (function(e) {
                 e.preventDefault();
