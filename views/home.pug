@@ -123,7 +123,7 @@ body
             input.username(type="text" pattern="[^'\x22\x3c\x3e\x3b]+" placeholder="your name" maxlength="25" name="username" required)
             input.enterButton.disabled(type="submit" value="Enter Futura Tropica" name="enter")
     .content-wrapper
-        .content
+        .horizontal-content
     audio.alert
         source(src="/static/still_there_2.ogg")
         source(src="/static/still_there_2.mp3")
@@ -161,20 +161,22 @@ body
         })
 
         // horizontal slider
-        const slider = $(".content");
-        slider
-          .slick({
+        const slider = $(".horizontal-content");
+        slider.slick({
             dots: false
-          });
+        });
+
+        console.log("slide", slide);
 
         slider.on('wheel', (function(e) {
-          e.preventDefault();
+            console.log("wheel");
+            e.preventDefault();
 
-          if (e.originalEvent.deltaY < 0) {
-            $(this).slick('slickNext');
-          } else {
-            $(this).slick('slickPrev');
-          }
+                if (e.originalEvent.deltaY < 0) {
+                    $(this).slick('slickNext');
+                } else {
+                    $(this).slick('slickPrev');
+                }
         }));
     script(src="/js/script005.min.js")
     script(src="/js/dataSignalling.js")
