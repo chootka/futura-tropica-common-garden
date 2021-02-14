@@ -12,16 +12,15 @@
    "frameBackground":"none",
    "screensize":{
       "width":3840,
+      "height":2160
    },
    "works":[
       {
-         "title":"YOUUUUUUUUUUUUUUUUUUUUUTUUUUUUUUUUUUUUUUUUUBE",
+         "title":"BOGOTA",
          "subtitle":"",
          "description":"",
          "artist":"Empty video",
          "url":"https://www.youtube.com/embed/35yQ8ZQZgwg?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
-         "top":"254",
-         "left":"479",
          "width":360,
          "height":270,
          "INTERCEPT_videoType":"YouTube",
@@ -32,42 +31,32 @@
       },
       {
          "title":"TXT for BOGOTA",
-         "description":"bloops",
+         "description":"0-O-O-O-O-O",
          "text":true
       },
       {
          "imageurl":"/img/dither2.png",
-         "width":360,
-         "height":270,
+         "width":250,
          "image":true
       },
       {
          "imageurl":"/img/dither4.png",
-         "width":360,
-         "height":270,
+         "width":560,
          "image":true
       },
       {
          "imageurl":"/img/dither6.png",
          "width":360,
-         "height":270,
          "image":true
       },
       {
          "imageurl":"/img/dither8.jpg",
-         "width":360,
-         "height":270,
+         "width":250,
          "image":true
-      },
-      {
-         "src":"/video/TvTestCard_512kb.mp4",
-         "width":360,
-         "height":270,
-         "localVideo":true
       }
    ],
    "borderWidth":"1px",
    "customCss":"",
-   "visitors":226,
+   "visitors":300,
    "private":false
 }
