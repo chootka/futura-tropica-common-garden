@@ -107,6 +107,14 @@ $.getJSON(showdata, function( json ) {
                     slidesToShow: 5
                 });
 
+                slider.on('afterChange', function(event, slick, currentSlide, nextSlide){
+                    var data = { "event":"command", "func":"playVideo", "args":"" };
+                    var message = JSON.stringify(data);
+                    const iframe = $("iframe", slick.$slides[currentSlide])[0];
+                    console.log("iframe", iframe);
+                    if (iframe) iframe.contentWindow.postMessage(message, '*');
+                });
+
                 slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
                     var data = { "event":"command", "func":"pauseVideo", "args":"" };
                     var message = JSON.stringify(data);
