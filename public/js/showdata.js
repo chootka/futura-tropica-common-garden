@@ -39,7 +39,7 @@ $.getJSON(showdata, function( json ) {
 
     for ( var i = 0; i < json.works.length; i++ ) {
 
-        let article = $('<article id="artwork' + (i + 1) + '" class="hidden">');
+        let article = $('<div id="artwork' + (i + 1) + '" class="article hidden">');
 
         if ( json.works[ i ].imagelink || json.works[ i ].image ) {
             if (json.works[i].url != null && json.works[i].url != "") {
@@ -92,14 +92,14 @@ $.getJSON(showdata, function( json ) {
         // }
 
     }
-    
+
     window.setTimeout(function() {
         load();
         document.querySelector(".popUp .enterButton").classList.remove("unloaded");
         document.querySelector(".popUp .enterButton").value = "Enter Futura Tropica";
 
         if (!json.private) {
-            let articles = document.querySelectorAll("article");
+            let articles = document.querySelectorAll(".article");
             for (let i=0; i<articles.length; i++) {
                 articles[i].classList.remove("hidden");
             }
