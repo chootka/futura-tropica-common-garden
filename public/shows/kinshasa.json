@@ -36,14 +36,14 @@
       },
       {
          "imageurl":"/img/dither1.jpg",
-         "width":360,
-         "height":270,
+         "width":"100%",
+         "height":300,
          "image":true
       },
       {
          "src":"/video/TvTestCard_512kb.mp4",
-         "width":360,
-         "height":270,
+         "width":"100%",
+         "height":300,
          "localVideo":true
       },
       {
@@ -53,25 +53,25 @@
       },
       {
          "imageurl":"/img/dither3.jpg",
-         "width":360,
-         "height":270,
+         "width":"100%",
+         "height":300,
          "image":true
       },
       {
          "imageurl":"/img/dither5.png",
-         "width":360,
-         "height":270,
+         "width":"100%",
+         "height":300,
          "image":true
       },
       {
          "imageurl":"/img/dither7.png",
-         "width":360,
-         "height":270,
+         "width":"100%",
+         "height":300,
          "image":true
       }
    ],
    "borderWidth":"1px",
    "customCss":"",
-   "visitors":249,
+   "visitors":300,
    "private":false
 }
