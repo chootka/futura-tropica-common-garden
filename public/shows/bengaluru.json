@@ -4,9 +4,9 @@
    "title":"Futura Tropica Netroots #BENGALURU",
    "backgroundColor":"none",
    "textColor":[
-      "0",
-      "0",
-      "0"
+      "238",
+      "200",
+      "96"
    ],
    "borderColor":"none",
    "frameBackground":"none",
@@ -31,33 +31,96 @@
       },
       {
          "title":"TXT for BENGALURU",
-         "description":"/-/-/-/-/-/",
+         "description":"..............",
          "text":true
       },
       {
-         "imageurl":"/img/dither6.png",
+         "title":"The Urdu Project | Aastha Gupt & Prateek Shankar",
+         "description":"The Urdu Project is a New Delhi-based mixed-media storytelling collective exploring the dialectical relationship between language and identity. Fundamentally, the project uses Urdu as a metaphor for the cross-cultural transgression that has defined Delhi and its people. Our work explores syncretic South Asian identity across time, using film, writing, and new media experiences in both Urdu as well as English. The first phase of the project, a documentary short titled ‘Guftagu’ (or 'Conversations'), explores Urdu poetry in old Delhi, told through the lives of three nearly century-old shayars in Chandni Chowk. The film, shot over a three month period in 2017",
+         "text":true
+      },
+      {
+         "imageurl":"/img/bengaluru/UrduProject.gif",
          "width":560,
          "image":true
       },
       {
-         "imageurl":"/img/dither8.jpg",
+         "title":"BENGALURU",
+         "subtitle":"",
+         "description":"",
+         "artist":"Urdu Project",
+         "url":"https://www.youtube.com/embed/1QQyoHeSbLk?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"YouTube",
+         "youtubeSync":true,
+         "showVolume":false,
+         "youtube":true,
+         "lock4_3":true
+      },
+      {
+         "title":"FOOD CYCLE | Deepikah Bhardwaj",
+         "description":"The interdependencies of culture, history, science and policy are so intricate yet under defined and abstract. I will attempt to illustrate the interconnectedness using a detailed hand-drawn painting. When you hover on the parts of the painting, a new layer of meaning would be revealed through animation or written narratives.",
+         "text":true
+      },
+      {
+         "imageurl":"/img/bengaluru/Deepikah1.png",
          "width":360,
          "image":true
       },
       {
-         "imageurl":"/img/dither1.jpg",
-         "width":250,
+         "imageurl":"/img/bengaluru/Deepikah2.png",
+         "width":650,
          "image":true
       },
       {
-         "imageurl":"/img/daisy-gif-1.gif",
+         "title":"Design Minus Design / Indian Ephimera | Kevin Angelus & Vedant Sharma",
+         "description":"The interdependencies of culture, history, science and policy are so intricate yet under defined and abstract. I will attempt to illustrate the interconnectedness using a detailed hand-drawn painting. When you hover on the parts of the painting, a new layer of meaning would be revealed through animation or written narratives.",
+         "text":true
+      },
+      {
+         "imageurl":"/img/bengaluru/IndianEphemera0.png",
          "width":560,
          "image":true
       },
       {
-         "title":"MORE TXT for BENGALURU",
-         "description":"y0y0y0y0y",
+         "imageurl":"/img/bengaluru/IndianEphemera1.png",
+         "width":560,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bengaluru/IndianEphemera2.png",
+         "width":560,
+         "image":true
+      },
+      {
+         "title":"Formlessness to Form | Karthika Sakthivel",
+         "description":"The decline in the number of Sacred Groves in India happens alongside a shift in narrative association, from one that was rooted in implicit belief in the divinity of nature, and awareness of cause and effect to one that must be explicitly enforced by law. <br> This project explores the role of narratives in the effective conservation and preservation of these groves, with an emphasis on decentralized, community centered practices with a bottom up approach. It will involve studying and documenting the various aspects of the myths and legends that safeguard these spaces and speculate on their narrative applications in current conservation efforts.<br> This investigation will result in the installation of a small shrine at the foot of a tree as a story object that compiles and communicates the research narratively. This interactive object would potentially contain visual, textual and sonic material drawn from the findings. This identifiable structure will thus serve as a remote point of access to the knowledge assimilated, much like the real shrines found across groves that access collective memories, oral histories and traditional knowledge.<br> (Image: Karthika Sakthivel & Natasha Ranganath)",
          "text":true
+      },
+      {
+         "imageurl":"/img/bengaluru/Karthika.gif",
+         "width":560,
+         "image":true
+      },
+       {
+         "title":"Curating Culture | Ishita Shah",
+         "description":"In collaboration with The Kishkinda Trust (TKT), we at Curating for Culture had proposed to create a community-led archive in Hampi-Anegundi. The intention was to create a space for participation and ownership of the local community members in preserving and promoting their local historical, heritage and cultural narratives.<br><br> Two decades of work done by TKT, its sister organisations and other collaborators in Hampi-Anegundi has led to knowledge production in diverse forms. The community led archive was envisaged to be a platform for documentation, record management and dissemination of data related to the work carried out in and around this region.",
+         "text":true
+      },
+       {
+         "title":"BENGALURU",
+         "subtitle":"",
+         "description":"",
+         "artist":"Urdu Project",
+         "url":"https://www.youtube.com/embed/xE5NNKZ8n8k?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"YouTube",
+         "youtubeSync":true,
+         "showVolume":false,
+         "youtube":true,
+         "lock4_3":true
       }
    ],
    "borderWidth":"1px",
