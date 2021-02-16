@@ -4,9 +4,9 @@
    "title":"Futura Tropica Netroots #BOGOTÁ",
    "backgroundColor":"none",
    "textColor":[
-      "0",
-      "0",
-      "0"
+      "238",
+      "200",
+      "96"
    ],
    "borderColor":"none",
    "frameBackground":"none",
@@ -30,28 +30,113 @@
          "lock4_3":true
       },
       {
-         "title":"TXT for BOGOTÁ",
+         "title":"BOGOTÁ",
          "description":"0-O-O-O-O-O",
          "text":true
       },
       {
-         "imageurl":"/img/dither2.png",
-         "width":250,
+         "title":"Paisajes BioCulturales | Diana Pizano",
+         "description":"una cercanía que siento hacia la magia que vive en este territorio. Una magia popular, silenciosa y resiliente, que vive encarnada en imágenes y relaciones cotidianas. De un momento para otro comencé a ver que en la cultura popular contemporánea, mestiza y sincrética, vivían imágenes y relaciones robustas con la magia. Parte de mi ceguera venía de un velo heredado de unas nociones tabú y del buen gusto importadas por 'la clase alta' desde lugares foráneos (residiendo ellos en espacios vacíos de relación sacra en esta tierra- sin pata aquí ni allá, lo tibio), que marginaba y discriminaba ese pulso rotundo que acompañaba a la mayoría de la gente a mi alrededor. Una marginación sobre todo que evidencio en el desdén y el juicio con carga de valor (lo lobo, guiso, pedrero, perrata, asqueroso, barato) hacia iconos e imágenes, texturas y perfiles sensoriales (gustativos y olfativos) que violentan las posibilidades de concebir una vida sacra en esta tierra. <br> Comencé a encontrarme el culto a la virgen y al Divino Niño, las frazadas de cuatro tigres, el olor de la leche recién ordeñada, la sangre de chulo, los borracheros-los tabacos-y las rudas acompañando las entradas de las casas campesinas, las enfermedades causadas por el frío, las esencias florales, las cenizas y las sales de plantas, el rezo del tabaco, el olor del incienso, los licores macerados con hierbas, los puestos de yerbatería en las plazas, las hierbas abortivas, los baños de hierbas... ",
+         "text":true
+      },
+      {
+         "title":"",
+         "description":"Este paisaje mágico se comienza a develar en mí a través de la relación con las plantas, donde comenzamos a construir una relación desde un anhelo por conocer acerca de sus cualidades y su ser en vida. La posibilidad de verlas dentro de la huerta y la vida en el campo, como seres en relación dentro del paisaje, las posibilidades de matices de sabores y propiedades organolépticas generándose potencialmente y desde las relaciones ecológicas y alelopáticas vivas de estos seres en la huerta; y que a través de los rituales de cuidado y bienestar nos presentan sus cualidades. Adicionalmente, una memoria antigua se despertó en mí a través de los baños de hierbas amargas y dulces. <br> Mi idea sería explorar el camino de entrar en relación con estas plantas y con las posibilidades mágicas que presentan y permiten, y las imágenes que acompañan. ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/bogota/DianaPizano0.png",
+         "width":950,
          "image":true
       },
       {
-         "imageurl":"/img/dither4.png",
+         "imageurl":"/img/bogota/DianaPizanoPlantas1.png",
+         "width":850,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/DianaPizanoPlantas2.png",
+         "width":850,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/DianaPizano3.jpg",
+         "width":850,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/DianaPizano4.jpg",
+         "width":850,
+         "image":true
+      },
+      {
+         "title":"Neo Amazonean | Eliana Muchachasoy",
+         "description":"0-O-O-O-O-O",
+         "text":true
+      },
+      {
+         "imageurl":"/img/bogota/ElianaMuchachasoy1.jpg",
          "width":560,
          "image":true
       },
       {
-         "imageurl":"/img/dither6.png",
+         "imageurl":"/img/bogota/ElianaMuchachasoy2.jpg",
          "width":360,
          "image":true
       },
       {
-         "imageurl":"/img/dither8.jpg",
+         "imageurl":"/img/bogota/ElianaMuchachasoy3.jpg",
+         "width":450,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/ElianaMuchachasoy4.png",
+         "width":560,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/ElianaMuchachasoy5.jpg",
+         "width":560,
+         "image":true
+      },
+       {
+         "title":"Espejismos | Juan Covelli",
+         "description":"........",
+         "text":true
+      },
+      {
+         "imageurl":"/img/bogota/.png",
          "width":250,
+         "image":true
+      },
+      {
+         "title":"Café Internet | Wilmer Rodríguez",
+         "description":"Café Internet XYZ is an archival and curatorial project run by Wilmer Rodriguez (1992,CO), with the purpose of registering context-specific dynamics and phenomena that tie together elements such as the Internet, telecommunications and general technology. It directs itself toward possible futures and the multiple realities found within the digital world and how these corresponding visions affect our daily lives. This project compiles images in a systematic fashion with the aim of referencing events happening around technological progress and indexing projects that, situated in the space of the visual arts, are able to review the function of the digital and the analogue.",
+         "text":true
+      },
+      {
+         "imageurl":"/img/bogota/CafeInternet.png",
+         "width":950,
+         "image":true
+      },
+      {
+         "title":"A Pluriverse | Paulo Cesar Acosta",
+         "description":"As the Zapatistas: A World where many Worlds fit and coexist",
+         "text":true
+      },
+      {
+         "imageurl":"/img/bogota/PauloCesarAcosta1.jpg",
+         "width":550,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/PauloCesarAcosta2.jpg",
+         "width":350,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/PauloCesarAcosta3.png",
+         "width":450,
          "image":true
       }
    ],
