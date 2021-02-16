@@ -20,13 +20,13 @@
          "subtitle":"",
          "description":"",
          "artist":"Empty video",
-         "url":"https://www.youtube.com/embed/35yQ8ZQZgwg?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
-         "width":360,
-         "height":270,
-         "INTERCEPT_videoType":"YouTube",
+         "url":"https://player.vimeo.com/video/512867608?title=0&byline=0&portrait=0?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"Vimeo",
          "youtubeSync":true,
          "showVolume":false,
-         "youtube":true,
+         "vimeo":true,
          "lock4_3":true
       },
       {
@@ -115,7 +115,17 @@
          "text":true
       },
       {
-         "imageurl":"/img/bogota/CafeInternet.png",
+         "imageurl":"/img/bogota/CafeInternet1.png",
+         "width":950,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/CafeInternet2.png",
+         "width":950,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/CafeInternet3.png",
          "width":950,
          "image":true
       },
@@ -138,6 +148,69 @@
          "imageurl":"/img/bogota/PauloCesarAcosta3.png",
          "width":450,
          "image":true
+      },
+      {
+         "title":"Fibres and Construction Techniques | Sebastián Lema & Organizmo",
+         "description":"",
+         "text":true
+      },
+      {
+         "imageurl":"/img/bogota/Organizmo.png",
+         "width":1050,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/Lema1.png",
+         "width":850,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/Lema2.png",
+         "width":850,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/Lema3.png",
+         "width":850,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/Lema4.png",
+         "width":850,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/Lema5.png",
+         "width":850,
+         "image":true
+      },
+      {
+         "title":"BOGOTÁ",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"https://www.youtube.com/embed/-dU21LzwMKA?title=0&byline=0&portrait=0?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"YouTube",
+         "youtubeSync":true,
+         "showVolume":false,
+         "youtube":true,
+         "lock4_3":true
+      },
+      {
+         "title":"BOGOTÁ",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"https://www.youtube.com/embed/jf6IBJNs7Fc?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"YouTube",
+         "youtubeSync":true,
+         "showVolume":false,
+         "youtube":true,
+         "lock4_3":true
       }
    ],
    "borderWidth":"1px",

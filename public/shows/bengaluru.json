@@ -35,6 +35,25 @@
          "text":true
       },
       {
+         "title":"Corona Patachitra",
+         "description":"a painted and singed story on Coronavirus by Prabir Chitrakar<br> He is singing in Bengali and this art form is called Patachitra, which originates in Bengal/Odisha states of India. Patachitra means sheet of images. The narrator takes you through the image by singing about different elements of the painting. Like an art appreciation course.",
+         "text":true
+      },
+      {
+         "title":"BENGALURU",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"https://player.vimeo.com/video/512860506?title=0&byline=0&portrait=0?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
+         "width":360,
+         "height":270,
+         "INTERCEPT_videoType":"Vimeo",
+         "youtubeSync":true,
+         "showVolume":false,
+         "vimeo":true,
+         "lock4_3":true
+      },
+      {
          "title":"The Urdu Project | Aastha Gupt & Prateek Shankar",
          "description":"The Urdu Project is a New Delhi-based mixed-media storytelling collective exploring the dialectical relationship between language and identity. Fundamentally, the project uses Urdu as a metaphor for the cross-cultural transgression that has defined Delhi and its people. Our work explores syncretic South Asian identity across time, using film, writing, and new media experiences in both Urdu as well as English. The first phase of the project, a documentary short titled ‘Guftagu’ (or 'Conversations'), explores Urdu poetry in old Delhi, told through the lives of three nearly century-old shayars in Chandni Chowk. The film, shot over a three month period in 2017",
          "text":true
@@ -75,7 +94,7 @@
       },
       {
          "title":"Design Minus Design / Indian Ephimera | Kevin Angelus & Vedant Sharma",
-         "description":"The interdependencies of culture, history, science and policy are so intricate yet under defined and abstract. I will attempt to illustrate the interconnectedness using a detailed hand-drawn painting. When you hover on the parts of the painting, a new layer of meaning would be revealed through animation or written narratives.",
+         "description":"The baggage that the word “Design” carries along with it often clouds the true potential that it holds. By creating resources (at present, a six-episode season of videos and an exhibition) covering little explored and oft-ignored aspects of design, and hacking the “WhatsApp University” phenomenon of family group forwards. We aim to remove barriers around design and allow it to be a tool to build futures.",
          "text":true
       },
       {
