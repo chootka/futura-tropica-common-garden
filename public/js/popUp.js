@@ -51,6 +51,8 @@ function closePopUp(event) {
     // setupChatboxes();
     unMuteYouTube();
 
+    console.log("getPeers", getPeers);
+
     if (getPeers) getPeers();
 
     inShow = true;
