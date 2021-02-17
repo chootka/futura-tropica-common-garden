@@ -39,7 +39,7 @@
          "width":950,
          "image":true
       },
-       {
+      {
          "imageurl":"/img/kinshasa/Timbela2w.png",
          "width":950,
          "image":true
@@ -180,6 +180,6 @@
    ],
    "borderWidth":"1px",
    "customCss":"",
-   "visitors":300,
+   "visitors":310,
    "private":false
 }

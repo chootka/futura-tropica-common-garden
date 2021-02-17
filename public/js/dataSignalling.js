@@ -105,8 +105,8 @@ socket.on("setId", function(data) {
 //        console.log(" ");
 //        console.log(" ");
 //        console.log(" ");
-//        alert("NEW ID RECIVED!!!!!");
-        window.location.reload();
+       alert("reload: NEW ID RECIVED!!!!!");
+        // window.location.reload();
     }
 })
 
