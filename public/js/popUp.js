@@ -51,7 +51,7 @@ function closePopUp(event) {
     // setupChatboxes();
     unMuteYouTube();
 
-    getPeers();
+    if (getPeers) getPeers();
 
     inShow = true;
     document.querySelector(".map").classList.remove("hidden");
