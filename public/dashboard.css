@@ -20,6 +20,7 @@
 }*/
 body {
     background: linear-gradient(270deg, #efefef, #100d0d, #efefef);
+    background: blue;
     background-size: cover;
     background-attachment: fixed;
 
