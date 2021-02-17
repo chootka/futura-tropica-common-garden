@@ -4,9 +4,9 @@
    "title":"Futura Tropica #KINSHASA",
    "backgroundColor":"none",
    "textColor":[
-      "0",
-      "0",
-      "0"
+      "238",
+      "200",
+      "96"
    ],
    "borderColor":"none",
    "frameBackground":"none",
@@ -30,39 +30,152 @@
          "lock4_3":true
       },
       {
-         "title":"TXT for KINSHASA",
-         "description":"x0x0x0x0x",
+         "title":"KINSHASA",
+         "description":"",
          "text":true
       },
       {
-         "imageurl":"/img/dither1.jpg",
-         "width":250,
+         "imageurl":"/img/kinshasa/Timbela1w.png",
+         "width":950,
+         "image":true
+      },
+       {
+         "imageurl":"/img/kinshasa/Timbela2w.png",
+         "width":950,
          "image":true
       },
       {
-         "imageurl":"/img/daisy-gif-1.gif",
-         "width":560,
+         "imageurl":"/img/kinshasa/Timbela3w.png",
+         "width":750,
          "image":true
       },
       {
-         "title":"MORE TXT for KINSHASA",
-         "description":"y0y0y0y0y",
-         "text":true
-      },
-      {
-         "imageurl":"/img/dither3.jpg",
-         "width":360,
-         "image":true
-      },
-      {
-         "imageurl":"/img/dither5.png",
+         "imageurl":"/img/kinshasa/Timbela4w.png",
          "width":450,
          "image":true
       },
       {
-         "imageurl":"/img/dither7.png",
-         "width":400,
+         "imageurl":"/img/kinshasa/Timbela3.png",
+         "width":450,
          "image":true
+      },
+      {
+         "title":"KINSHASA",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"https://player.vimeo.com/video/513089009?title=0&byline=0&portrait=0",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"Vimeo",
+         "youtubeSync":true,
+         "showVolume":false,
+         "vimeo":true,
+         "lock4_3":true
+      },
+      {
+         "title":"KINSHASA",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"https://player.vimeo.com/video/513088838?title=0&byline=0&portrait=0",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"Vimeo",
+         "youtubeSync":true,
+         "showVolume":false,
+         "vimeo":true,
+         "lock4_3":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Timbela4.png",
+         "width":750,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Costumes.png",
+         "width":900,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/UrbanGarden.png",
+         "width":700,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Performance.png",
+         "width":900,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Visuals.png",
+         "width":700,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Visuals2.png",
+         "width":700,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/OpenCall.png",
+         "width":700,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Food4w.png",
+         "width":450,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Food5w.png",
+         "width":500,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Food6w.png",
+         "width":600,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/MamanIza.png",
+         "width":700,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
       }
    ],
    "borderWidth":"1px",
