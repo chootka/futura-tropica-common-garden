@@ -78,9 +78,9 @@ app.get("/", (req, res) => {
     customLog("Subdomain: " + subdomain);
 });
 
-app.get("/about", (req, res) => {
-    res.render("about");
-});
+// app.get("/about", (req, res) => {
+//     res.render("about");
+// });
 
 
 function renderPage(req, res, subdomain) {
