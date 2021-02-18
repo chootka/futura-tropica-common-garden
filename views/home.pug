@@ -8,31 +8,9 @@ head
     meta(name='description' content='Futura Tropica Public Dashboard')
     meta(name='viewport' content='initial-scale=0.5, width=device-width')
 
-    //- link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css')
     link(rel='stylesheet' href='./avatars.css')
     link(rel='stylesheet' href='./show.css')
     link(rel='stylesheet' href='./dashboard.css')
-
-    style.
-        .menu {
-            position: fixed;
-            top: 0;
-            left: -140px;
-            padding-top: 50px;
-            padding-left: 10px;
-            width: 140px;
-            height: 100vh;
-            background: hsl(133,50%,68%);
-            z-index: 1;
-            box-sizing: border-box;
-            transition: left 0.3s;
-        }
-        .menu.active {
-            left: 0;
-        }
-        .menuItem {
-            padding: 3px;
-        }
 
     script(src="./js/adapter-latest.js")
     script(src="https://public.futura-tropica.network/socket.io/socket.io.js")
@@ -43,6 +21,7 @@ body
     .avatarContainer
     .layout
         .wrapper
+            .titleimg
             #overlay
                 .header
                 .lang-wrapper

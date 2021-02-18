@@ -1,10 +1,10 @@
-let showdata = '/shows/showdata.json';
+let showdata = './shows/showdata.json';
 
 let mapscale;
 
 console.log("showdata.js, subdomain", subdomain);
 if(subdomain) {
-    showdata = `/shows/${subdomain}.json`;
+    showdata = `./shows/${subdomain}.json`;
 }
 
 function doesFileExist(urlToFile) {
@@ -45,6 +45,10 @@ $.getJSON(showdata, function( json ) {
 
     if (json.title) {
         document.head.querySelector("title").innerHTML = json.title;
+    }
+
+    if (json.titleimg) {
+        document.querySelector(".titleimg").innerHTML = '<img src="' + json.titleimg.url + '" width="' + json.titleimg.width + '" height="' + json.titleimg.height + '">';
     }
 
     for ( var i = 0; i < json.works.length; i++ ) {
