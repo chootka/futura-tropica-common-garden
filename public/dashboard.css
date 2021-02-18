@@ -1,4 +1,4 @@
-er@font-face {
+@font-face {
     font-family: "EHNormalBold";
     src: url("fonts/EHNormal-Bold.otf") format("truetype");
 }
@@ -20,8 +20,6 @@ er@font-face {
 }*/
 body {
     background: linear-gradient(270deg, #efefef, #100d0d, #efefef);
-    background-size: cover;
-    background-attachment: fixed;
 
     /*-webkit-animation: dashboard 28s ease infinite;
     -moz-animation: dashboard 28s ease infinite;
@@ -33,7 +31,7 @@ body {
     line-height: 1.2em;
 
     height: 100vh;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 img {
     margin: 0 auto;
