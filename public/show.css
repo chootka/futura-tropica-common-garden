@@ -326,7 +326,7 @@ input.terms {
     padding-top: 100px;
 
     transform-origin: right top; 
-    transform: rotate(-90deg) translateX(-50px) translateY(-450px);
+    transform: rotate(-90deg) translateX(-250px) translateY(-450px);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -340,12 +340,12 @@ input.terms {
     align-items: center;
     justify-content: center;
 
-    width: 500px;
+    width: 650px;
     height: 500px;
     
     margin-top: 50px;
 
-    transform: rotate(90deg) translate(350px);
+    transform: rotate(90deg) translate(500px);
     transform-origin: right top;
 }
 
