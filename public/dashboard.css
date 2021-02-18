@@ -225,7 +225,8 @@ ul li {
     align-items: center;
     justify-content: center;
 
-    margin: 0 auto;
+    margin: auto;
+    height: 20vh;
     max-width: 80vw;
 
     z-index: 11;
