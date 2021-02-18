@@ -47,29 +47,33 @@ body
                 .lang-wrapper
                     .lang
                         .en
-                        || Futura Trōpica | is an InterTropical Network of Grass-Root Local Networks for the lateral flow of local resources and other forms of knowledges, designs and technologies. from a *Tropikós perspective. *Tropikós—> greek roots of the word ‘tropics’ - it means ‘to turn’
+                        || Futura Trōpica | is an InterTropical Network of Grass-Root Local Networks for the lateral flow of local resources and other forms of knowledges, designs and technologies. from a *Tropikós perspective. <br>*Tropikós—> greek roots of the word ‘tropics’ - it means ‘to turn’<br>
+                        | + Please give permission to your mic and get close to other visitors (dots) if you would like to talk to them.
                     .lang
                         .es
-                        || Futura Trōpica | es una Red InterTropical de Redes Locales desde abajo para el intercambio lateral de otras formas de conocimientos y saberes, diseños y tecnologías. desde una perspectiva *Tropikós. *Tropikós—> las raíces griegas de la palabra “trópico” - significa “dar un giro”
+                        || Futura Trōpica | es una Red InterTropical de Redes Locales desde abajo para el intercambio lateral de otras formas de conocimientos y saberes, diseños y tecnologías. desde una perspectiva *Tropikós. <br>*Tropikós—> las raíces griegas de la palabra “trópico” - significa “dar un giro”<br>
+                        | + Por favor dale permiso a tu micrófono y acercate a otros visitantes (puntos) si quieres hablar con ellos.
                     .lang
                         .fr
-                        | Futura Trōpica est un réseau intertropical de réseaux locaux pour l'échange latéral d'autres formes de connaissances et de savoir-faire, de conceptions et de technologies. Du point de vue *Tropikós. *Tropikós-> racine grecque du mot "tropique" - qui signifie "tourner".
+                        | | Futura Trōpica | est un réseau intertropical de réseaux locaux pour l'échange latéral d'autres formes de connaissances et de savoir-faire, de conceptions et de technologies. Du point de vue *Tropikós. <br>*Tropikós-> racine grecque du mot "tropique" - qui signifie "tourner".<br>
+                        | + S’il te plaît, autorise ton micro et rapproche-toi des autres visiteurs (points) si tu veux leur parler.
 
                     .contributors
                         h1 CONTRIBUTORS
                         p 
-                            | Initiated by
+                            | INITIATED BY
                             br 
-                            | Juan Pablo García Sossa — jpgs
+                            | <a href="https://www.puntojpgs.com/" target="_blank">Juan Pablo García Sossa — jpgs</a>
 
                         p
-                            | Technical Support
+                            | TECH SUPPORT
                             br
-                            | Sarah Grant — chootka — Radical Networks
+                            | <a href="https://chootka.com/" target="_blank">Sarah Grant — chootka — Radical Networks</a>
                             br 
-                            | Constant Dullaart — Common Garden
+                            | Tropical Common Garden is a fork of Constant Dullaart's <a href="https://common.garden/" target="_blank">Common Garden</a><br><br>
                         .names
                             ul
+                                li BOGOTÁ
                                 li Estación Terrena Bogotá
                                 li Valentina Medina
                                 li Álvaro Rodríguez Badel
@@ -77,22 +81,23 @@ body
                                 li Diana Pizano — Comiendo Cuento
                                 li Sebastián Lema x Organizmo
                                 li Paulo Cesar Acosta
-                                li Eliana Muchachasoy — Benach
-                                li Galería Sibundoy
+                                li Eliana Muchachasoy — Benach Galería Sibundoy
                                 li Juan Covelli
                                 li Wilmer Rodríguez
                                 li EL PAISA
                             ul
+                                li.ss03 BENGALURU
                                 li Yatharth
                                 li Komal Jain
                                 li Deepikah Bhardwaj
-                                li Kevin Angelus &amp; Vedant Sharma — Indian Ephemera
+                                li Kevin Angelus &amp; Vedant Sharma — Indian Ephemera / Design Minus Design
                                 li Ishita Shah — Curating for Culture
                                 li Aastha Gupta &amp; Prateek Shankar — The Urdu Project
                                 li Debanshu Bhaumik
                                 li Karthika Sakthivel
                                 li Prabir Chitrakar
                             ul
+                                li.ss02 KINSHASA
                                 li Nada Tshibwabwa
                                 li Elsa Westreicher
                                 li Timbela Batimbela Yo (Collective)
@@ -109,6 +114,9 @@ body
                 .homeButton
                     a(href="https://public.futura-tropica.network/")
                         img(src="/img/HomeButton.svg", width="151", height="75")
+                .timer
+                    span.ss03.timer PUBLIC GATEWAY  <p class="timer" id="demo"> </p>
+
                 .info
 
             .title
@@ -120,8 +128,8 @@ body
     .fade
     .popUp
         form
-            input.username(type="text" pattern="[^'\x22\x3c\x3e\x3b]+" placeholder="your name" maxlength="25" name="username" required)
-            input.enterButton.disabled(type="submit" value="Enter Futura Tropica" name="enter")
+            input.username(type="text" pattern="[^'\x22\x3c\x3e\x3b]+" placeholder="your name | tu nombre | ton nom" maxlength="25" name="username" required)
+            input.enterButton.disabled(type="submit" value="Enter Futura Trōpica" name="enter")
     .content
     audio.alert
         source(src="/static/still_there_2.ogg")
@@ -150,6 +158,37 @@ body
             
             setTimeout(() => { body.addEventListener('click', hideOverlay) }, 1000);
         })
+
+    script.
+        // Set the date we're counting down to
+        var countDownDate = new Date("Feb 22, 2021 22:02:22").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+              
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+              
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+              
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+              
+            // If the count down is over, write some text 
+            if (distance < 0) {
+              clearInterval(x);
+              document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 
     script(src="/js/jquery-1.7.1.min.js")
     script(src="/js/jquery-ui-1.8.17.custom.min.js")

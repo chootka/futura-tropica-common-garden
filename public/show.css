@@ -4,15 +4,18 @@
 }
 
 body {
-    position: absolute;
+    /*position: absolute;*/
     width: 100vw;
     height: 100vh;
-    background: hsl(133,50%,68%);
+    /*background: hsl(133,50%,68%);*/
+    background: linear-gradient(270deg, #efefef, #100d0d, #efefef);
 /*    background: linear-gradient(0deg, hsl(133, 50%, 50%) 0%, hsl(133, 50%, 86%) 100%);*/
 /*    overflow: hidden;*/
     font-family: sans-serif;
     color: #fff;
     border-color: #aaa;
+
+    overflow-y: hidden;
 }
 
 .avatarContainer {
@@ -175,7 +178,7 @@ body {
 
 .popUp .username, .popUp .password, .popUp .enterButton {
     margin-top: 5px;
-    width: 300px;
+    width: 350px;
     font-size: 20px;
     border: 0;
     border-radius: 20px;
@@ -310,7 +313,49 @@ input.terms {
     font-size: 18px;
 }
 
-.content-wrapper {
+.horizontal-content {
+    width: 650px;
+    height: 90vw;
+
+    overflow-y: scroll;
+    overflow-x: hidden; 
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    padding-top: 100px;
+
+    transform-origin: right top; 
+    transform: rotate(-90deg) translateX(-50px) translateY(-450px);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.horizontal-content::-webkit-scrollbar {
+    display: none;
+}
+
+.horizontal-content > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 500px;
+    height: 500px;
+    
+    margin-top: 50px;
+
+    transform: rotate(90deg) translate(350px);
+    transform-origin: right top;
+}
+
+.article > div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/*.content-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -319,9 +364,9 @@ input.terms {
 
     height: 100vh;
     width: 80%;
-}
+}*/
 
-.slick-track {
+/*.slick-track {
     display: flex;
     align-items: center;
 }
@@ -332,7 +377,7 @@ input.terms {
 
 .slick-slide {
     height: auto !important;
-}
+}*/
 
 /*article {
     position: absolute;

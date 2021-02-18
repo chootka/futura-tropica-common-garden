@@ -18,7 +18,7 @@ let maxRoomSize = 200;
 
 let slideshows = [];
 
-let subdomain = 'bengaluru';
+let subdomain = 'public';
     // subdomain = "join";
     // subdomain = "bogota";
     // subdomain = "kinshasa";
@@ -78,9 +78,9 @@ app.get("/", (req, res) => {
     customLog("Subdomain: " + subdomain);
 });
 
-app.get("/about", (req, res) => {
-    res.render("about");
-});
+// app.get("/about", (req, res) => {
+//     res.render("about");
+// });
 
 
 function renderPage(req, res, subdomain) {

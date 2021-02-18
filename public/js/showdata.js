@@ -43,9 +43,6 @@ $.getJSON(showdata, function( json ) {
     // map.style.height = (json.screensize.height / mapscale) + "px";
     map.style.height = (window.innerheight / mapscale) + "px";
 
-    console.log("map.style.width", map.style.width);
-    console.log("map.style.height", map.style.height);
-
     if (json.title) {
         document.head.querySelector("title").innerHTML = json.title;
     }
@@ -64,10 +61,10 @@ $.getJSON(showdata, function( json ) {
             article.append( "<h1>" + json.works[i].title + "</h1><p>" + json.works[ i ].description + "</p>" );
             article.addClass("text");
         } else if ( json.works[ i ].localVideo ) {
-            article.append( '<video src="' + json.works[i].src + '" autoplay muted class="iframe"></video>' );
+            article.append( '<video src="' + json.works[i].src + '" muted class="iframe"></video>' );
         } else if ( json.works[ i ].youtube || json.works[ i ].vimeo ) {
             // article.attr("data-src", json.works[ i ].url)
-            article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" scrolling="no" frameborder="0" allow="autoplay" muted src="' + json.works[ i ].url + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
+            article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" scrolling="no" frameborder="0" autoplay="true" muted src="' + json.works[ i ].url + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
         }
         if (json.works[i].youtubeSync) {
             article.attr("data-youtubeSync", true);
@@ -85,7 +82,7 @@ $.getJSON(showdata, function( json ) {
 
     window.setTimeout(function() {
         load();
-        
+
         document.querySelector(".popUp .enterButton").classList.remove("unloaded");
         document.querySelector(".popUp .enterButton").value = "Enter Futura Tropica";
 
@@ -96,35 +93,43 @@ $.getJSON(showdata, function( json ) {
             }
 
             // horizontal slider
-            const slider = $(".horizontal-content");
+            // const slider = $(".horizontal-content");
 
-            console.log("slider.slick", slider.slick);
+            // console.log("slider.slick", slider.slick);
 
-            if (slider.slick) {
-                slider.slick({
-                    dots: false,
-                    infinite: true,
-                    slidesToShow: 5
-                });
+            // if (slider.slick) {
+            //     slider.slick({
+            //         dots: false,
+            //         infinite: true,
+            //         slidesToShow: 5
+            //     });
 
-                slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-                    var data = { "event":"command", "func":"pauseVideo", "args":"" };
-                    var message = JSON.stringify(data);
-                    const iframe = $("iframe", slick.$slides[currentSlide])[0];
-                    console.log("iframe", iframe);
-                    if (iframe) iframe.contentWindow.postMessage(message, '*');
-                });
+            //     slider.on('afterChange', function(event, slick, currentSlide, nextSlide){
+            //         var data = { "event":"command", "func":"playVideo", "args":"" };
+            //         var message = JSON.stringify(data);
+            //         const iframe = $("iframe", slick.$slides[currentSlide])[0];
+            //         console.log("iframe", iframe);
+            //         if (iframe) iframe.contentWindow.postMessage(message, '*');
+            //     });
 
-                slider.on('wheel', (function(e) {
-                    e.preventDefault();
+            //     slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            //         var data = { "event":"command", "func":"pauseVideo", "args":"" };
+            //         var message = JSON.stringify(data);
+            //         const iframe = $("iframe", slick.$slides[currentSlide])[0];
+            //         console.log("iframe", iframe);
+            //         if (iframe) iframe.contentWindow.postMessage(message, '*');
+            //     });
 
-                        if (e.originalEvent.deltaY < 0) {
-                            $(this).slick('slickNext');
-                        } else {
-                            $(this).slick('slickPrev');
-                        }
-                }));
-            }
+            //     slider.on('wheel', (function(e) {
+            //         e.preventDefault();
+
+            //             if (e.originalEvent.deltaY < 0) {
+            //                 $(this).slick('slickNext');
+            //             } else {
+            //                 $(this).slick('slickPrev');
+            //             }
+            //     }));
+            // }
         }
     }, 50);
 });

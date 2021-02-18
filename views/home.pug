@@ -8,10 +8,10 @@ head
     meta(name='description' content='Futura Tropica Public Dashboard')
     meta(name='viewport' content='initial-scale=0.5, width=device-width')
 
-    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css')
-    link(rel='stylesheet' href='/avatars.css')
-    link(rel='stylesheet' href='/show.css')
-    link(rel='stylesheet' href='/dashboard.css')
+    //- link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css')
+    link(rel='stylesheet' href='./avatars.css')
+    link(rel='stylesheet' href='./show.css')
+    link(rel='stylesheet' href='./dashboard.css')
 
     style.
         .menu {
@@ -34,7 +34,7 @@ head
             padding: 3px;
         }
 
-    script(src="/js/adapter-latest.js")
+    script(src="./js/adapter-latest.js")
     script(src="https://public.futura-tropica.network/socket.io/socket.io.js")
     
     //- script(src="js/vimeo-player.js")
@@ -105,16 +105,14 @@ body
                                 li and many many more
                     .footer
                         a(href="https://www.eyebeam.org/residents/juan-pablo-garcia-sossa/") SUPPORTED BY EYEBEAM’S RAPID RESPONSE FOR A BETTER DIGITAL FUTURE 2020
+            .title
+                .up
+                .down
             .nav
                 .homeButton
                     a(href="https://public.futura-tropica.network/")
                         img(src="/img/HomeButton.svg", width="151", height="75")
                 .info
-
-            .title
-                .up
-                .down
-
     .map
     .GUIcontainer
     .fade
@@ -122,17 +120,16 @@ body
         form
             input.username(type="text" pattern="[^'\x22\x3c\x3e\x3b]+" placeholder="your name" maxlength="25" name="username" required)
             input.enterButton.disabled(type="submit" value="Enter Futura Tropica" name="enter")
-    .content-wrapper
-        .horizontal-content
+    .horizontal-content
     audio.alert
-        source(src="/static/still_there_2.ogg")
-        source(src="/static/still_there_2.mp3")
+        source(src="./static/still_there_2.ogg")
+        source(src="./static/still_there_2.mp3")
 
     script(src="//code.jquery.com/jquery-1.11.0.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
-    script(src="/js/youtube_sync.js")
+    script(src="./js/youtube_sync.js")
     script(src="https://www.youtube.com/iframe_api")
-    script(src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
+    //- script(src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
     script.
         const socket = io('/');
 
@@ -156,11 +153,11 @@ body
             
             setTimeout(() => { body.addEventListener('click', hideOverlay) }, 1000);
         });
-    script(src="/js/script005.min.js")
-    script(src="/js/dataSignalling.js")
-    script(src="/js/avatars.js")
-    script(src="/js/audiochat.js")
-    script(src="/js/staticAudioRooms.js")
-    script(src="/js/popUp.js")
-    script(src="/js/showdata.js")
+    script(src="./js/script005.min.js")
+    script(src="./js/dataSignalling.js")
+    script(src="./js/avatars.js")
+    script(src="./js/audiochat.js")
+    script(src="./js/staticAudioRooms.js")
+    script(src="./js/popUp.js")
+    script(src="./js/showdata.js")
     

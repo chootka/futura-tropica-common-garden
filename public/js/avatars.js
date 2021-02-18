@@ -142,8 +142,8 @@ if (window.location.search != "?admin") {
         } else if (lastUpdate <= Math.floor(Date.now() / 1000) - disconnectTimeout && inShow) {
             document.querySelector(".disconectGUI").style.opacity = 1;
             document.querySelector(".disconectGUI").innerHTML = "Disconnecting...";
-            console.log("Timeout, disconnect user!");
-            window.location.reload();
+            console.log("Reload: Timeout, disconnect user!");
+            // window.location.reload();
         } else {
             document.querySelector(".disconectGUI").classList.add("inactive");
         }
