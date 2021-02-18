@@ -4,9 +4,9 @@
    "title":"Futura Tropica Netroots #BENGALURU",
    "backgroundColor":"none",
    "textColor":[
-      "0",
-      "0",
-      "0"
+      "238",
+      "200",
+      "96"
    ],
    "borderColor":"none",
    "frameBackground":"none",
@@ -31,7 +31,7 @@
       },
       {
          "title":"TXT for BENGALURU",
-         "description":"/-/-/-/-/-/",
+         "description":"..............",
          "text":true
       },
       {
