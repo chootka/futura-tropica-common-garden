@@ -19,7 +19,8 @@
     src: url("fonts/EHNormal-Thin.otf") format("truetype");
 }*/
 body {
-    background: linear-gradient(270deg, #efefef, #100d0d, #efefef);
+    /*background: linear-gradient(270deg, #efefef, #100d0d, #efefef);*/
+    background-image: url(/img/backgroundW.png);
     background-size: cover;
     background-attachment: fixed;
 
