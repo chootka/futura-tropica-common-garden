@@ -343,9 +343,9 @@ input.terms {
     width: 650px;
     height: 500px;
     
-    margin-top: 50px;
+    margin-top: 220px;
 
-    transform: rotate(90deg) translate(500px);
+    transform: rotate(90deg) translate(300px);
     transform-origin: right top;
 }
 
