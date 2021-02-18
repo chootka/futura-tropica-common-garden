@@ -50,6 +50,16 @@ p {
     margin-top: 2px;
 }
 
+.ss02 {
+  font-feature-settings: "ss02" 2;
+  display: inline-block;
+}
+
+.ss03 {
+  font-feature-settings: "ss03" 3;
+  display: inline-block;
+}
+
 h1 {
     font-family: EHNormalBold, sans-serif;
     font-size: 18px;
