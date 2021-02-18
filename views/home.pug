@@ -119,16 +119,19 @@ body
 
         const body = document.getElementsByTagName('body')[0];
         const info = document.getElementsByClassName('info')[0];
+        const layout = document.getElementsByClassName('layout')[0];
         const overlay = document.getElementById('overlay');
 
         function hideOverlay() {
             body.removeEventListener('click', hideOverlay);
             if (overlay.classList.contains("visible")) overlay.classList.toggle("visible");
+            if (layout.classList.contains("visible")) layout.classList.toggle("visible");
         }
 
         // button click
         info.addEventListener('click', function() {
             overlay.classList.toggle("visible");
+            layout.classList.toggle("visible");
             
             setTimeout(() => { body.addEventListener('click', hideOverlay) }, 1000);
         });

@@ -294,7 +294,8 @@ ul li {
     transition: opacity .3s;
 }
 
-#overlay.visible {
+#overlay.visible,
+.layout.visible {
     opacity: 1;
     z-index: 12;
 }
