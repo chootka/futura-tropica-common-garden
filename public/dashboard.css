@@ -181,9 +181,13 @@ ul li {
     background: url(/img/Language-FR.svg) no-repeat;
     background-size: 100%;
 }
+.titleimg {
+    padding: 40px 0;
+    transform: scale(1.5);
+}
 .title {
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 0;
     right: 0;
 
