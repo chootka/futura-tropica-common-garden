@@ -47,6 +47,10 @@ $.getJSON(showdata, function( json ) {
         document.head.querySelector("title").innerHTML = json.title;
     }
 
+    if (json.titleimg) {
+        document.querySelector("titleimg").innerHTML = '<img src="' + json.titleimg + '">';
+    }
+
     for ( var i = 0; i < json.works.length; i++ ) {
 
         let article = $('<div id="artwork' + (i + 1) + '" class="article hidden">');

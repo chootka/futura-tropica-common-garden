@@ -1,1 +1,216 @@
-{"opening":false,"hideTour":true,"title":"Futura Tropica #KINSHASA","backgroundColor":"none","textColor":["238","200","96"],"borderColor":"none","frameBackground":"none","screensize":{"width":3840,"height":2160},"works":[{"title":"KINSHASA","subtitle":"","description":"","artist":"Empty video","url":"https://www.youtube.com/embed/7QwjURBSIPA?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1","width":560,"height":315,"INTERCEPT_videoType":"YouTube","youtubeSync":true,"showVolume":false,"youtube":true,"lock4_3":true},{"title":"KINSHASA","description":"","text":true},{"title":"Timbela Batimbela Yo","description":"(Alphi Bakaschika [founder], Esto Ndjondjo [artistic director, rapper], Pitchou Massels [administration], Serge Muepu [administration], Naomie Muhiti [administration], Heissels Kapata [administration], Guykam Koko [sound Engineering], Ingénieur Lévy [beatmaker], Bebson de la Rue [artist, rapper, experimental instruments], Tissman [artist, rapper]","text":true},{"imageurl":"/img/kinshasa/Timbela1w.png","width":950,"image":true},{"imageurl":"/img/kinshasa/Timbela2w.png","width":950,"image":true},{"imageurl":"/img/kinshasa/Timbela3w.png","width":750,"image":true},{"imageurl":"/img/kinshasa/Timbela5w.png","width":450,"image":true},{"imageurl":"/img/kinshasa/Timbela6w.png","width":450,"image":true},{"imageurl":"/img/kinshasa/Timbela3.png","width":450,"image":true},{"title":"KINSHASA","subtitle":"","description":"","artist":"Empty video","url":"https://player.vimeo.com/video/513089009?title=0&byline=0&portrait=0","width":560,"height":315,"INTERCEPT_videoType":"Vimeo","youtubeSync":true,"showVolume":false,"vimeo":true,"lock4_3":true},{"title":"KINSHASA","subtitle":"","description":"","artist":"Empty video","url":"https://player.vimeo.com/video/513088838?title=0&byline=0&portrait=0","width":560,"height":315,"INTERCEPT_videoType":"Vimeo","youtubeSync":true,"showVolume":false,"vimeo":true,"lock4_3":true},{"title":"                  ","description":"           ","text":true},{"imageurl":"/img/kinshasa/Timbela4.png","width":750,"image":true},{"title":"Kill Bill & Nada Tshibwabwa","description":"Performance Artists, Tombola Art, & musicians","text":true},{"imageurl":"/img/kinshasa/Costumes1.png","width":900,"image":true},{"imageurl":"/img/kinshasa/Costumes2.png","width":900,"image":true},{"title":"                  ","description":"           ","text":true},{"imageurl":"/img/kinshasa/UrbanGarden.png","width":700,"image":true},{"imageurl":"/img/kinshasa/Performance.png","width":900,"image":true},{"title":"                  ","description":"           ","text":true},{"imageurl":"/img/kinshasa/Visuals.png","width":700,"image":true},{"imageurl":"/img/kinshasa/Visuals2.png","width":700,"image":true},{"title":"                  ","description":"           ","text":true},{"imageurl":"/img/kinshasa/OpenCall.png","width":700,"image":true},{"title":"                  ","description":"           ","text":true},{"title":"Maman Adeline Boyube","description":"Culinary art & love","text":true},{"imageurl":"/img/kinshasa/Food4w.png","width":450,"image":true},{"imageurl":"/img/kinshasa/Food5w.png","width":500,"image":true},{"imageurl":"/img/kinshasa/Food6w.png","width":600,"image":true},{"title":"                  ","description":"           ","text":true},{"title":"Maman Iza & Papa Lofo","description":"Vernacular designs, knowledges and artifacts","text":true},{"imageurl":"/img/kinshasa/MamanIza.png","width":700,"image":true},{"title":"                  ","description":"           ","text":true}],"borderWidth":"1px","customCss":"","visitors":304,"private":false}
+{
+   "opening":false,
+   "hideTour":true,
+   "title":"Futura Tropica #KINSHASA",
+   "titleimg": "/img/Rhizomes-Kinshasa.svg",
+   "backgroundColor":"none",
+   "textColor":[
+      "238",
+      "200",
+      "96"
+   ],
+   "borderColor":"none",
+   "frameBackground":"none",
+   "screensize":{
+      "width":3840,
+      "height":2160
+   },
+   "works":[
+      {
+         "title":"KINSHASA",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"https://www.youtube.com/embed/7QwjURBSIPA?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"YouTube",
+         "youtubeSync":true,
+         "showVolume":false,
+         "youtube":true,
+         "lock4_3":true
+      },
+      {
+         "title":"KINSHASA",
+         "description":"",
+         "text":true
+      },
+      {
+         "title":"Timbela Batimbela Yo",
+         "description":"(Alphi Bakaschika [founder], Esto Ndjondjo [artistic director, rapper], Pitchou Massels [administration], Serge Muepu [administration], Naomie Muhiti [administration], Heissels Kapata [administration], Guykam Koko [sound Engineering], Ingénieur Lévy [beatmaker], Bebson de la Rue [artist, rapper, experimental instruments], Tissman [artist, rapper]",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Timbela1w.png",
+         "width":950,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Timbela2w.png",
+         "width":950,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Timbela3w.png",
+         "width":750,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Timbela5w.png",
+         "width":450,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Timbela6w.png",
+         "width":450,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Timbela3.png",
+         "width":450,
+         "image":true
+      },
+      {
+         "title":"KINSHASA",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"https://player.vimeo.com/video/513089009?title=0&byline=0&portrait=0",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"Vimeo",
+         "youtubeSync":true,
+         "showVolume":false,
+         "vimeo":true,
+         "lock4_3":true
+      },
+      {
+         "title":"KINSHASA",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"https://player.vimeo.com/video/513088838?title=0&byline=0&portrait=0",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"Vimeo",
+         "youtubeSync":true,
+         "showVolume":false,
+         "vimeo":true,
+         "lock4_3":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Timbela4.png",
+         "width":750,
+         "image":true
+      },
+      {
+         "title":"Kill Bill & Nada Tshibwabwa",
+         "description":"Performance Artists, Tombola Art, & musicians",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Costumes1.png",
+         "width":900,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Costumes2.png",
+         "width":900,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/UrbanGarden.png",
+         "width":700,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Performance.png",
+         "width":900,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Visuals.png",
+         "width":700,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Visuals2.png",
+         "width":700,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/OpenCall.png",
+         "width":700,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "title":"Maman Adeline Boyube",
+         "description":"Culinary art & love",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Food4w.png",
+         "width":450,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Food5w.png",
+         "width":500,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Food6w.png",
+         "width":600,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      },
+      {
+         "title":"Maman Iza & Papa Lofo",
+         "description":"Vernacular designs, knowledges and artifacts",
+         "text":true
+      },
+      {
+         "imageurl":"/img/kinshasa/MamanIza.png",
+         "width":700,
+         "image":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      }
+   ],
+   "borderWidth":"1px",
+   "customCss":"",
+   "visitors":304,
+   "private":false
+}
