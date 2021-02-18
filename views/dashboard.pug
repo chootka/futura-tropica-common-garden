@@ -12,27 +12,6 @@ head
     link(rel='stylesheet' href='/show.css')
     link(rel='stylesheet' href='/dashboard.css')
 
-    style.
-        .menu {
-            position: fixed;
-            top: 0;
-            left: -140px;
-            padding-top: 50px;
-            padding-left: 10px;
-            width: 140px;
-            height: 100vh;
-            background: hsl(133,50%,68%);
-            z-index: 1;
-            box-sizing: border-box;
-            transition: left 0.3s;
-        }
-        .menu.active {
-            left: 0;
-        }
-        .menuItem {
-            padding: 3px;
-        }
-
     script(src="/js/adapter-latest.js")
     script(src="https://public.futura-tropica.network/socket.io/socket.io.js")
     
@@ -40,6 +19,11 @@ head
 
 body
     .avatarContainer
+    .nav
+        .homeButton
+            a(href="https://public.futura-tropica.network/")
+                img(src="/img/HomeButton.svg", width="151", height="75")
+        .info
     .layout
         .wrapper
             #overlay
@@ -110,12 +94,6 @@ body
                                 li and many many more
                     .footer
                         a(href="https://www.eyebeam.org/residents/juan-pablo-garcia-sossa/") SUPPORTED BY EYEBEAM’S RAPID RESPONSE FOR A BETTER DIGITAL FUTURE 2020
-            .nav
-                .homeButton
-                    a(href="https://public.futura-tropica.network/")
-                        img(src="/img/HomeButton.svg", width="151", height="75")
-                .info
-
             .title
                 .up
                 .down

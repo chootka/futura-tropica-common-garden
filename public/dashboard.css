@@ -118,13 +118,17 @@ ul li {
 .nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
 
     width: 100%;
     height: 100%;
+    max-width: 100vw;
 
     position: absolute;
     z-index: 10;
+}
+.nav > div {
+    margin: 10px 20px;
 }
 .info {
     cursor: pointer;
