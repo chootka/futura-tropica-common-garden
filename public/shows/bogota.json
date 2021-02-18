@@ -2,7 +2,11 @@
    "opening":false,
    "hideTour":true,
    "title":"Futura Tropica Netroots #BOGOTÁ",
-   "titleimg": "/img/Rhizomes-Bogotá.svg",
+   "titleimg": {
+      "url": "/img/Rhizomes-Bogotá.svg",
+      "width": 76,
+      "height": 18
+   },
    "backgroundColor":"none",
    "textColor":[
       "238",

@@ -2,7 +2,11 @@
    "opening":false,
    "hideTour":true,
    "title":"Futura Tropica Netroots #BENGALURU",
-   "titleimg": "/img/Rhizomes-Bengaluru.svg",
+   "titleimg": {
+      "url": "/img/Rhizomes-Bengaluru.svg",
+      "width": 110,
+      "height": 15
+   },
    "backgroundColor":"none",
    "textColor":[
       "238",

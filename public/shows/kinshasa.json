@@ -2,7 +2,11 @@
    "opening":false,
    "hideTour":true,
    "title":"Futura Tropica #KINSHASA",
-   "titleimg": "/img/Rhizomes-Kinshasa.svg",
+   "titleimg": {
+      "url": "/img/Rhizomes-Kinshasa.svg",
+      "width": 96,
+      "height": 15
+   },
    "backgroundColor":"none",
    "textColor":[
       "238",

@@ -48,7 +48,7 @@ $.getJSON(showdata, function( json ) {
     }
 
     if (json.titleimg) {
-        document.querySelector(".titleimg").innerHTML = '<img src="' + json.titleimg + '">';
+        document.querySelector(".titleimg").innerHTML = '<img src="' + json.titleimg.url + '" width="' + json.titleimg.width + '" height="' + json.titleimg.height + '">';
     }
 
     for ( var i = 0; i < json.works.length; i++ ) {
