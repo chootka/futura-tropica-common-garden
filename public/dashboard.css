@@ -126,7 +126,7 @@ ul li {
 .nav {
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
 
     width: 100%;
     height: 100%;
