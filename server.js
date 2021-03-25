@@ -82,10 +82,13 @@ function renderPage(req, res, subdomain) {
     } else if (subdomain == "join") {
         res.render("landing");
     } else if (subdomain == "public") {
-
+	console.log("public exists?", fs.existsSync("public/shows/" + subdomain + ".json"));
         if (fs.existsSync("public/shows/" + subdomain + ".json")) {
             res.render("dashboard", { subdomainAlias: subdomain });
         }
+	else {
+	    res.send("show not found");
+	}
     } else if (subdomain) {
 	console.log("renderPage for subdomain", subdomain);
         if (fs.existsSync("public/shows/" + subdomain + ".json")) {
