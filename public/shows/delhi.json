@@ -1,0 +1,52 @@
+{
+   "opening":false,
+   "hideTour":true,
+   "title":"Futura Tropica Netroots #DELHI",
+   "titleimg":{
+      "url":"/img/Rhizomes-Delhi.svg",
+      "width":110,
+      "height":15
+   },
+   "backgroundColor":"none",
+   "textColor":[
+      "238",
+      "200",
+      "96"
+   ],
+   "borderColor":"none",
+   "frameBackground":"none",
+   "screensize":{
+      "width":3840,
+      "height":2160
+   },
+   "works":[
+      {
+         "title":"DELHI",
+         "description":"Futura Trōpica Delhi TBD.",
+         "text":true
+      },
+      {
+         "title":"DELHI",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"Vimeo",
+         "youtubeSync":true,
+         "showVolume":false,
+         "vimeo":true,
+         "lock4_3":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      }
+   ],
+   "borderWidth":"1px",
+   "customCss":"",
+   "visitors":263,
+   "private":false
+}

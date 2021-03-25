@@ -18,7 +18,7 @@ let maxRoomSize = 200;
 
 let slideshows = [];
 
-let subdomain = 'public';
+let subdomain = 'delhi';
     // subdomain = "join";
     // subdomain = "bogota";
     // subdomain = "kinshasa";
@@ -26,7 +26,7 @@ let subdomain = 'public';
 
 let subdomains = [];
 
-let peer_ids = ['bogota', 'kinshasa', 'bengaluru'];
+let peer_ids = ['delhi', 'bogota', 'kinshasa', 'bengaluru'];
 
 let logStreams = [];
 
@@ -62,14 +62,6 @@ app.get("/", (req, res) => {
     // const domain = req.headers.host;
     // let subdomain = domain.substr(0, domain.indexOf('.'));
 
-
-    // subdomain = "public";
-
-    // subdomain = "join";
-    // subdomain = "bogota";
-    // subdomain = "kinshasa";
-    // subdomain = "bengaluru";
-
     // console.log("Got request for " + domain + ", subdomain was " + subdomain);
 
     console.log("rendering page " + subdomain);
@@ -95,8 +87,9 @@ function renderPage(req, res, subdomain) {
             res.render("dashboard", { subdomainAlias: subdomain });
         }
     } else if (subdomain) {
-
+	console.log("renderPage for subdomain", subdomain);
         if (fs.existsSync("public/shows/" + subdomain + ".json")) {
+	    console.log("found show for ", subdomain);
             res.render("home", { subdomainAlias: subdomain });
         } else {
             res.render("toCms", { name: "test" });

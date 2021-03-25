@@ -326,7 +326,7 @@ input.terms {
     padding-top: 100px;
 
     transform-origin: right top; 
-    transform: rotate(-90deg) translateX(-200px) translateY(-450px);
+    transform: rotate(-90deg) translateX(-140px) translateY(-450px);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
