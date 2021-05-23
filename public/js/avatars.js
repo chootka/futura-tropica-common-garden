@@ -71,8 +71,11 @@ document.body.onscroll = function() {
 }
 
 window.setInterval(function() {
-    if (!myMapUser) return;
-    
+    if (typeof mapscale == 'undefined' || !myMapUser) {
+        console.log("mapscale or myMapUser does not exist");
+        return;
+    }
+
     if (currentX != lastX || currentY != lastY) {
 //        console.log("Updating position to " + currentX, currentY);
         lastX = currentX;
@@ -111,6 +114,8 @@ window.setInterval(function() {
 }, 50);
 
 function updatePosition(message) {
+   if (!mapscale) return;
+
    console.log("Recieved update message:");
    console.log(message);
     try {

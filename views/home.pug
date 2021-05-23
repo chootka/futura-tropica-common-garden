@@ -12,11 +12,12 @@ head
     link(rel='stylesheet' href='./show.css')
     link(rel='stylesheet' href='./dashboard.css')
 
+    //- script(src="https://webrtc.github.io/adapter/adapter-latest.js")
     script(src="./js/adapter-latest.js")
-    script(src="https://common.garden/socket.io/socket.io.js")
-    
-    //- script(src="js/vimeo-player.js")
+    script(src="./js/libs/socket.io.js")
 
+    //- script(src="https://player.vimeo.com/api/player.js")
+    
 body
     .avatarContainer
     .nav
@@ -108,11 +109,10 @@ body
         source(src="./static/still_there_2.ogg")
         source(src="./static/still_there_2.mp3")
 
-    script(src="//code.jquery.com/jquery-1.11.0.min.js")
-    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script(src="./js/jquery-1.7.1.min.js")
+    script(src="./js/jquery-ui-1.8.17.custom.min.js")
     script(src="./js/youtube_sync.js")
     script(src="https://www.youtube.com/iframe_api")
-    //- script(src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
     script.
         const socket = io('/');
 
@@ -144,6 +144,4 @@ body
     script(src="./js/staticAudioRooms.js")
     script(src="./js/popUp.js")
     script(src="./js/dataSignalling.js")
-    script(src="./js/avatars.js")
     script(src="./js/showdata.js")
-    

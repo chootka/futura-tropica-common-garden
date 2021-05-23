@@ -1,5 +1,4 @@
 let users = [];
-
 let muted = true;
 
 // const parts = location.hostname.split('.');
@@ -75,6 +74,13 @@ socket.on("setId", function(data) {
         myUser = elem;
         myMapUser = mapElem;
 
+	let script = document.createElement("script");
+        script.src = "./js/avatars.js";
+        document.body.appendChild(script);
+
+        //let script2 = document.createElement("script2");
+        //script2.src = "./js/showdata.js";
+        //document.body.appendChild(script2);
 
         if (window.location.search != "?admin") {
             socket.emit("setRoom", { room: subdomain });

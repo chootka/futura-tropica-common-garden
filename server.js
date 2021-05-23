@@ -18,7 +18,7 @@ let maxRoomSize = 200;
 
 let slideshows = [];
 
-let subdomain = 'bengaluru';
+let subdomain = 'kinshasa';
     // subdomain = "join";
     // subdomain = "bogota";
     // subdomain = "kinshasa";
@@ -63,7 +63,6 @@ app.get("/", (req, res) => {
     // let subdomain = domain.substr(0, domain.indexOf('.'));
 
     // console.log("Got request for " + domain + ", subdomain was " + subdomain);
-
     console.log("rendering page " + subdomain);
     renderPage(req, res, subdomain); //req, res, domain, subdomain
 
@@ -81,17 +80,14 @@ function renderPage(req, res, subdomain) {
         res.render("cms", { date: new Date(now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " 23:59:59 GMT+0100").getTime() });
     } else if (subdomain == "join") {
         res.render("landing");
-    } else if (subdomain == "public") {
-	console.log("public exists?", fs.existsSync("public/shows/" + subdomain + ".json"));
-        if (fs.existsSync("public/shows/" + subdomain + ".json")) {
+    } else if (subdomain ==  "public") {
+        if (fs.existsSync(__dirname+"/public/shows/" + subdomain + ".json")) {
+            console.log("found show for ", subdomain);
             res.render("dashboard", { subdomainAlias: subdomain });
-        }
-	else {
-	    res.send("show not found");
 	}
     } else if (subdomain) {
-	console.log("renderPage for subdomain", subdomain);
-        if (fs.existsSync("public/shows/" + subdomain + ".json")) {
+	console.log("looking for data file", fs.existsSync(__dirname+"/public/shows/" + subdomain + ".json"));
+        if (fs.existsSync(__dirname+"/public/shows/" + subdomain + ".json")) {
 	    console.log("found show for ", subdomain);
             res.render("home", { subdomainAlias: subdomain });
         } else {
