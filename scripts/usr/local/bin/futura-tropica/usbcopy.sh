@@ -12,7 +12,7 @@ if [ -d $SRC ]; then
     # to-do: delete files with --delete, fix ownership/perms, why is readme.txt blanked out?
     # read variables in from settings, also for setting server.js and name of show.json and subfolder for media
     rsync -vr $SRC/* $DEST >> $SRC/copy.log && /bin/echo -e "\nrsync completed: $(date)\n" >> $SRC/copy.log
-    chown -R $USER:$USER $DEST
+    chown -R pi:pi $DEST
 else
     echo 'initializing for content'
     # initialize drive as source of futura tropica content

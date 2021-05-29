@@ -6,3 +6,6 @@
 
 _untracked/
 node_modules/
+
+public/copy.log
+public/readme.txt
