@@ -1,0 +1,2 @@
+# Can pick 1, 2, 3, or custom template name "example"
+TEMPLATE=1
