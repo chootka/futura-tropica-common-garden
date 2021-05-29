@@ -1,0 +1,25 @@
+# CAUTION: Change to 'sd[b-z][0-9]' if booting from a USB drive (e.g.: sda)
+KERNEL!="sd[a-z][0-9]", GOTO="abort_rule"
+
+# Skip none USB devices (e.g.: internal SATA drive)
+ENV{ID_PATH}!="*-usb-*", GOTO="abort_rule"
+
+# Import the partition info into the environment variables
+IMPORT{program}="/usr/sbin/blkid -o udev -p %N"
+
+# Exit if partition is not a filesystem
+ENV{ID_FS_USAGE}!="filesystem", GOTO="abort_rule"
+
+# Get the partition name if present, otherwise create one
+ENV{ID_FS_LABEL}!="", ENV{dir_name}="%E{ID_FS_LABEL}"
+ENV{ID_FS_LABEL}=="", ENV{dir_name}="usb-%k"
+
+# Mount the device on 'add' action (a.k.a. plug the USB drive)
+ACTION=="add", RUN{program}+="/usr/bin/mkdir -p /tmp/media/%E{dir_name}/", RUN{program}+="/usr/bin/systemd-mount --no-block --automount=no --collect $devnode /tmp/media/%E{dir_name}/"
+ACTION=="add", SUBSYSTEMS=="scsi", DRIVERS=="sd", SYMLINK+="flash", RUN+="/usr/bin/python3 /usr/local/bin/futura-tropica/flash_drive.py /tmp/media/%E{dir_name}/"
+
+# Umount the device on 'remove' action (a.k.a unplug or eject the USB drive)
+ACTION=="remove", ENV{dir_name}!="", RUN{program}+="/usr/bin/systemd-umount /tmp/media/%E{dir_name}/", RUN{program}+="/bin/rm -rf /tmp/media/"
+
+# Exit
+LABEL="abort_rule"
