@@ -1,7 +1,7 @@
 {
    "opening":false,
    "hideTour":true,
-   "title":"Futura Tropica #KINSHASA",
+   "title":"Futura Tropica ###KINSHASA",
    "backgroundColor":"none",
    "textColor":[
       "238",
@@ -15,6 +15,16 @@
       "height":2160
    },
    "works":[
+      {
+         "title":"KINSHASA !!!",
+         "description":"",
+         "text":true
+      },
+      {
+         "title":"Timbela Batimbela Yo",
+         "description":"(Alphi Bakaschika [founder], Esto Ndjondjo [artistic director, rapper], Pitchou Massels [administration], Serge Muepu [administration], Naomie Muhiti [administration], Heissels Kapata [administration], Guykam Koko [sound Engineering], Ingénieur Lévy [beatmaker], Bebson de la Rue [artist, rapper, experimental instruments], Tissman [artist, rapper]",
+         "text":true
+      },
       {
          "title":"KINSHASA",
          "subtitle":"",
@@ -30,21 +40,11 @@
          "lock4_3":true
       },
       {
-         "title":"KINSHASA",
-         "description":"",
-         "text":true
-      },
-       {
-         "title":"Timbela Batimbela Yo",
-         "description":"(Alphi Bakaschika [founder], Esto Ndjondjo [artistic director, rapper], Pitchou Massels [administration], Serge Muepu [administration], Naomie Muhiti [administration], Heissels Kapata [administration], Guykam Koko [sound Engineering], Ingénieur Lévy [beatmaker], Bebson de la Rue [artist, rapper, experimental instruments], Tissman [artist, rapper]",
-         "text":true
-      },
-      {
-         "imageurl":"/img/kinshasa/Timbela1w.png",
+         "imageurl":"/img/kinshasa/topologies-of-desire.png",
          "width":950,
          "image":true
       },
-       {
+      {
          "imageurl":"/img/kinshasa/Timbela2w.png",
          "width":950,
          "image":true
@@ -167,7 +167,7 @@
          "description":"           ",
          "text":true
       },
-       {
+      {
          "title":"Maman Adeline Boyube",
          "description":"Culinary art & love",
          "text":true
@@ -225,6 +225,6 @@
    ],
    "borderWidth":"1px",
    "customCss":"",
-   "visitors":300,
+   "visitors":303,
    "private":false
 }
