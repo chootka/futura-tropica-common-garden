@@ -115,7 +115,7 @@ ul li {
     justify-content: space-between;
     align-items: flex-end;
 
-    width: 100%;
+    width: 100vw;
     height: auto;
 
     position: absolute;
