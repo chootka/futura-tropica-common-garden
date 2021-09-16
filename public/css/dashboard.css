@@ -1,32 +1,17 @@
 @font-face {
     font-family: "EHNormalBold";
-    src: url("fonts/EHNormal-Bold.otf") format("truetype");
+    src: url("/fonts/EHNormal-Bold.otf") format("truetype");
 }
-/*@font-face {
-    font-family: "EHNormalMed";
-    src: url("fonts/EHNormal-Medium.otf") format("truetype");
-}*/
+
 @font-face {
     font-family: "EHNormal";
-    src: url("fonts/EHNormal-Regular.otf") format("truetype");
+    src: url("/fonts/EHNormal-Regular.otf") format("truetype");
 }
-/*@font-face {
-    font-family: "EHNormalLt";
-    src: url("fonts/EHNormal-Light.otf") format("truetype");
-}
-@font-face {
-    font-family: "EHNormalThin";
-    src: url("fonts/EHNormal-Thin.otf") format("truetype");
-}*/
+
 body {
-    /*background: linear-gradient(270deg, #efefef, #100d0d, #efefef);*/
     background-image: url(/img/backgroundW.png);
     background-size: cover;
     background-attachment: fixed;
-
-    /*-webkit-animation: dashboard 28s ease infinite;
-    -moz-animation: dashboard 28s ease infinite;
-    animation: dashboard 28s ease infinite;*/
 
     color: #eec860;
     font-family: EHNormal, sans-serif;
@@ -49,16 +34,6 @@ p {
     font-size: 18px;
     line-height: 1.2em;
     margin-top: 2px;
-}
-
-.ss02 {
-  font-feature-settings: "ss02" 2;
-  display: inline-block;
-}
-
-.ss03 {
-  font-feature-settings: "ss03" 3;
-  display: inline-block;
 }
 
 h1 {
@@ -101,6 +76,15 @@ ul li {
     0%{background-position:0% 50%}
     50%{background-position:100% 51%}
     100%{background-position:0% 50%}
+}
+.ss02 {
+  font-feature-settings: "ss02" 2;
+  display: inline-block;
+}
+
+.ss03 {
+  font-feature-settings: "ss03" 3;
+  display: inline-block;
 }
 .layout {
     position: fixed;

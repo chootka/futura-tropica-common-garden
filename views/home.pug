@@ -8,13 +8,13 @@ head
     meta(name='description' content='Futura Tropica Public Dashboard')
     meta(name='viewport' content='initial-scale=0.5, width=device-width')
 
-    link(rel='stylesheet' href='./avatars.css')
-    link(rel='stylesheet' href='./show.css')
-    link(rel='stylesheet' href='./dashboard.css')
+    link(rel='stylesheet' href='/css/avatars.css')
+    link(rel='stylesheet' href='/css/show.css')
+    link(rel='stylesheet' href='/css/dashboard.css')
 
     //- script(src="https://webrtc.github.io/adapter/adapter-latest.js")
-    script(src="./js/adapter-latest.js")
-    script(src="./js/libs/socket.io.js")
+    script(src="/js/adapter-latest.js")
+    script(src="/js/libs/socket.io.js")
 
     //- script(src="https://player.vimeo.com/api/player.js")
     
@@ -106,12 +106,12 @@ body
             input.enterButton.disabled(type="submit" value="Enter Futura Tropica" name="enter")
     .horizontal-content
     audio.alert
-        source(src="./static/still_there_2.ogg")
-        source(src="./static/still_there_2.mp3")
+        source(src="/static/still_there_2.ogg")
+        source(src="/static/still_there_2.mp3")
 
-    script(src="./js/jquery-1.7.1.min.js")
-    script(src="./js/jquery-ui-1.8.17.custom.min.js")
-    script(src="./js/youtube_sync.js")
+    script(src="/js/jquery-1.7.1.min.js")
+    script(src="/js/jquery-ui-1.8.17.custom.min.js")
+    script(src="/js/youtube_sync.js")
     script(src="https://www.youtube.com/iframe_api")
     script.
         const socket = io('/');
@@ -139,9 +139,9 @@ body
             
             setTimeout(() => { body.addEventListener('click', hideOverlay) }, 1000);
         });
-    script(src="./js/script005.min.js")
-    script(src="./js/audiochat.js")
-    script(src="./js/staticAudioRooms.js")
-    script(src="./js/popUp.js")
-    script(src="./js/dataSignalling.js")
-    script(src="./js/showdata.js")
+    script(src="/js/script005.min.js")
+    script(src="/js/audiochat.js")
+    script(src="/js/staticAudioRooms.js")
+    script(src="/js/popUp.js")
+    script(src="/js/dataSignalling.js")
+    script(src="/js/showdata.js")

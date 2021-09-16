@@ -4,18 +4,13 @@
 }
 
 body {
-    /*position: absolute;*/
+    position: absolute;
     width: 100vw;
     height: 100vh;
-    /*background: hsl(133,50%,68%);*/
     background: linear-gradient(270deg, #efefef, #100d0d, #efefef);
-/*    background: linear-gradient(0deg, hsl(133, 50%, 50%) 0%, hsl(133, 50%, 86%) 100%);*/
-/*    overflow: hidden;*/
     font-family: sans-serif;
     color: #fff;
     border-color: #aaa;
-
-    overflow-y: hidden;
 }
 
 .avatarContainer {
@@ -23,7 +18,6 @@ body {
     height: 100%;
     position: absolute;
     overflow: hidden;
-/*    background: red;*/
 }
 
 .GUIcontainer {
@@ -120,7 +114,7 @@ body {
     height: 20px;
     top: 9px;
     left: 9px;
-    background-image: url(static/mic_icon.png);
+    background-image: url(/static/mic_icon.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

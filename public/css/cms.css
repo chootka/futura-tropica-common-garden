@@ -107,13 +107,13 @@ body {
     background-position: center;
 }
 .passWindowBox article.icon.empty {
-    background-image: url(static/empty_icon.jpg);
+    background-image: url(/static/empty_icon.jpg);
 }
 .passWindowBox article.icon.party {
-    background-image: url(static/party_icon.jpg);
+    background-image: url(/static/party_icon.jpg);
 }
 .passWindowBox article.icon.presentation {
-    background-image: url(static/presentation_icon.jpg);
+    background-image: url(/static/presentation_icon.jpg);
 }
 .passWindowBox article.icon.selected {
     border: 2px solid #888;
