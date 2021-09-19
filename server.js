@@ -18,7 +18,7 @@ let maxRoomSize = 200;
 
 let slideshows = [];
 
-let subdomain = 'kinshasa';
+let subdomain = 'bengaluru';
     // subdomain = "join";
     // subdomain = "bogota";
     // subdomain = "kinshasa";
@@ -26,7 +26,7 @@ let subdomain = 'kinshasa';
 
 let subdomains = [];
 
-let peer_ids = ['delhi', 'bogota', 'kinshasa', 'bengaluru'];
+let peer_ids = ['bogota', 'kinshasa', 'bengaluru'];
 
 let logStreams = [];
 
