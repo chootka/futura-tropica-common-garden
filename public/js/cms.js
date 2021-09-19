@@ -5,7 +5,7 @@ const socket = io('/');
 
 let showJSON;
 let showdata = "../shows/" + subdomain + ".json";
-let mouseX;
+//let mouseX;
 let mouseY;
 let mouseOffsetX;
 let mouseOffsetY;

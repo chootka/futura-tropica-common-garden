@@ -25,9 +25,6 @@ let subdomain = 'bengaluru';
     // subdomain = "bengaluru";
 
 let subdomains = [];
-
-let peer_ids = ['bogota', 'kinshasa', 'bengaluru'];
-
 let logStreams = [];
 
 app.set('port', port);

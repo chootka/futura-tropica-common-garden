@@ -1,0 +1,54 @@
+{
+   "opening":false,
+   "hideTour":true,
+   "domain":"futura-tropica-rhizome.com",
+   "title":"Futura Tropica Netroots #RHIZOME",
+   "titleimg":{
+      "url":"/img/Rhizome.svg",
+      "width":130,
+      "height":17
+   },
+   "backgroundColor":"none",
+   "textColor":[
+      "0",
+      "0",
+      "0"
+   ],
+   "borderColor":"none",
+   "frameBackground":"none",
+   "screensize":{
+      "width":3840,
+      "height":2160
+   },
+   "works":[
+      {
+         "title":"RHIZOME",
+         "description":"Futura Trōpica RHIZOME.",
+         "text":true
+      },
+      {
+         "title":"RHIZOME",
+         "subtitle":"",
+         "description":"",
+         "artist":"",
+         "url":"",
+         "width":560,
+         "height":315,
+         "INTERCEPT_videoType":"Vimeo",
+         "youtubeSync":true,
+         "showVolume":false,
+         "vimeo":true,
+         "lock4_3":true
+      },
+      {
+         "title":"                  ",
+         "description":"           ",
+         "text":true
+      }
+   ],
+   "borderWidth":"1px",
+   "customCss":"",
+   "visitors":200,
+   "private":false
+}
+
