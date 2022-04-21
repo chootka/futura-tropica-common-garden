@@ -43,7 +43,9 @@ function closePopUp(event) {
 
     // update username
     username = document.body.querySelector(".popUp .username").value;
-    document.body.querySelector(".homeButton a").href = "/?username=" + username;
+
+    const homeButton = document.body.querySelector(".homeButton a");
+    if (homeButton) homeButton.href = "/?username=" + username;
     socket.emit("setUsername", username);
 
     console.log("username", username);
