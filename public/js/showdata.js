@@ -34,6 +34,9 @@ $.getJSON(showdata, function( json ) {
         $( 'body' ).css({ 'height': json.screensize.height + 'px', 'width': json.screensize.width + 'px' } );
     }
 
+    console.log('json.screensize.width', json.screensize.width);
+    
+
     mapscale = json.screensize.width / (window.innerWidth / 3);
     console.log("mapscale", mapscale);
     if (window.innerWidth < window.innerHeight) {
