@@ -74,9 +74,8 @@ socket.on("setId", function(data) {
         myUser = elem;
         myMapUser = mapElem;
 
-        console.log("including avatar.js");
 	let script = document.createElement("script");
-        script.src = "/js/avatars.js";
+        script.src = "./js/avatars.js";
         document.body.appendChild(script);
 
         //let script2 = document.createElement("script2");
@@ -95,7 +94,7 @@ socket.on("setId", function(data) {
             closePopUp();
         }
 
-        // joinUser();
+        joinUser();
 
     } else {
 //        console.log(" ");
