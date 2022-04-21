@@ -385,7 +385,7 @@ input.terms {
     height: auto !important;
 }*/
 
-article {
+.article {
     position: absolute;
     background: #fff;
     border-width: 2px;
