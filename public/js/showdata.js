@@ -48,10 +48,6 @@ $.getJSON(showdata, function( json ) {
         document.head.querySelector("title").innerHTML = json.title;
     }
 
-    if (json.titleimg) {
-        document.querySelector(".titleimg").innerHTML = '<img src="' + json.titleimg.url + '" width="' + json.titleimg.width + '" height="' + json.titleimg.height + '">';
-    }
-
     for ( var i = 0; i < json.works.length; i++ ) {
 
         let articleHeight = json.works[i].height ? json.works[i].height + 'px' : 'auto';
