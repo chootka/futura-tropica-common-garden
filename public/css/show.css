@@ -387,11 +387,15 @@ input.terms {
 
 .article {
     position: absolute;
-    background: #fff;
-    border-width: 2px;
-    border-style: solid;
-    border-color: inherit;
     z-index: 5;
+}
+.article p {
+    text-align: left;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: normal;
 }
 /*
 article.hidden {
@@ -423,14 +427,6 @@ article h2 {
     margin-bottom: 5px;
     margin-top: -5px;
     font-size: 20px;
-    font-weight: normal;
-}
-article p {
-    text-align: left;
-    padding-bottom: 10px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    font-size: 16px;
     font-weight: normal;
 }
 article a, article .info a {
