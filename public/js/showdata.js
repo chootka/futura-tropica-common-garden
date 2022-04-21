@@ -19,6 +19,7 @@ function doesFileExist(urlToFile) {
     }
 }
 
+console.log("SHOW DATA", showdata)
 $.getJSON(showdata, function( json ) {
     console.log("Got show data", json);
 
@@ -35,7 +36,6 @@ $.getJSON(showdata, function( json ) {
     }
 
     console.log('json.screensize.width', json.screensize.width);
-    
 
     mapscale = json.screensize.width / (window.innerWidth / 3);
     console.log("mapscale", mapscale);
