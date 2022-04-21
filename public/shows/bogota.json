@@ -26,6 +26,13 @@
    "works":[
       {
          "imageurl":"/img/bogota/wave2.svg",
+         "top":-7,
+         "left":1406,
+         "width":1188,
+         "image":true
+      },
+      {
+         "imageurl":"/img/bogota/wave2.svg",
          "top":-24,
          "left":2587,
          "width":1188,

@@ -37,9 +37,9 @@ p {
 
 h1 {
     font-family: EHNormalBold, sans-serif;
-    font-size: 18px;
-    line-height: 1.2em;
-    margin-bottom: 0;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 22px;
 }
 
 ul {
