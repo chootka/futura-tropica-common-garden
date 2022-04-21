@@ -31,6 +31,8 @@ let config = {
 //        }
 //    ]
 }
+let myUser;
+let myMapUser;
 
 function joinUser() {
     // automatically running the functions that would be run on  close of pop up
