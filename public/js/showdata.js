@@ -24,13 +24,14 @@ $.getJSON(showdata, function( json ) {
 
     if (json.textColor) {
         $( 'body' ).css({
-            'height': '100vh',
+            'height': json.screensize.height + 'px',
             'width': json.screensize.width + 'px',
-            'color': "hsl(" + json.textColor[0] + "," + json.textColor[1] + "%," + json.textColor[2] + "%)",
+            'background': "rgb(" + json.backgroundColor[0] + "," + json.backgroundColor[1] + "," + json.backgroundColor[2] + ") none repeat scroll 0% 0%",
+            'color': "rgb(" + json.textColor[0] + "," + json.textColor[1] + "," + json.textColor[2] + ")",
         } );
     } else {
 
-        $( 'body' ).css({ 'height': '100vh', 'width': json.screensize.width + 'px' } ); //json.screensize.height
+        $( 'body' ).css({ 'height': json.screensize.height + 'px', 'width': json.screensize.width + 'px' } );
     }
 
     mapscale = json.screensize.width / (window.innerWidth / 3);
@@ -40,8 +41,8 @@ $.getJSON(showdata, function( json ) {
     }
     let map = document.querySelector(".map");
     map.style.width = (json.screensize.width / mapscale) + "px";
-    // map.style.height = (json.screensize.height / mapscale) + "px";
-    map.style.height = (window.innerheight / mapscale) + "px";
+    map.style.height = (json.screensize.height / mapscale) + "px";
+    //map.style.height = (window.innerheight / mapscale) + "px";
 
     if (json.title) {
         document.head.querySelector("title").innerHTML = json.title;
@@ -53,13 +54,14 @@ $.getJSON(showdata, function( json ) {
 
     for ( var i = 0; i < json.works.length; i++ ) {
 
-        let article = $('<div id="artwork' + (i + 1) + '" class="article hidden">');
+        let articleHeight = json.works[i].height ? json.works[i].height + 'px' : 'auto';
+        let article = $('<div id="artwork' + (i + 1) + '" class="article hidden" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + 'px" >');
 
         if ( json.works[ i ].imagelink || json.works[ i ].image ) {
             if (json.works[i].url != null && json.works[i].url != "") {
                 article.append( '<div class="imagelink"><a href="' + json.works[ i ].url + '" target="_blank"><img src="' + json.works[ i ].imageurl + '"></a></div>' );
             } else {
-                article.append( '<div class="imagelink"><img src="' + json.works[ i ].imageurl + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></div>' );
+                article.append( '<div class="imagelink"><img src="' + json.works[ i ].imageurl + '" width="100%" height="100%"></div>' );
             }
         } else if (json.works[i].text) {
             article.append( "<h1>" + json.works[i].title + "</h1><p>" + json.works[ i ].description + "</p>" );
@@ -80,7 +82,7 @@ $.getJSON(showdata, function( json ) {
             article.attr("data-vimeo", true);
         }
 
-        $( ".horizontal-content" ).append( article );
+        $( ".content" ).append( article );
 
     }
 
@@ -95,45 +97,6 @@ $.getJSON(showdata, function( json ) {
             for (let i=0; i<articles.length; i++) {
                 articles[i].classList.remove("hidden");
             }
-
-            // horizontal slider
-            // const slider = $(".horizontal-content");
-
-            // console.log("slider.slick", slider.slick);
-
-            // if (slider.slick) {
-            //     slider.slick({
-            //         dots: false,
-            //         infinite: true,
-            //         slidesToShow: 5
-            //     });
-
-            //     slider.on('afterChange', function(event, slick, currentSlide, nextSlide){
-            //         var data = { "event":"command", "func":"playVideo", "args":"" };
-            //         var message = JSON.stringify(data);
-            //         const iframe = $("iframe", slick.$slides[currentSlide])[0];
-            //         console.log("iframe", iframe);
-            //         if (iframe) iframe.contentWindow.postMessage(message, '*');
-            //     });
-
-            //     slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-            //         var data = { "event":"command", "func":"pauseVideo", "args":"" };
-            //         var message = JSON.stringify(data);
-            //         const iframe = $("iframe", slick.$slides[currentSlide])[0];
-            //         console.log("iframe", iframe);
-            //         if (iframe) iframe.contentWindow.postMessage(message, '*');
-            //     });
-
-            //     slider.on('wheel', (function(e) {
-            //         e.preventDefault();
-
-            //             if (e.originalEvent.deltaY < 0) {
-            //                 $(this).slick('slickNext');
-            //             } else {
-            //                 $(this).slick('slickPrev');
-            //             }
-            //     }));
-            // }
         }
     }, 50);
 });
