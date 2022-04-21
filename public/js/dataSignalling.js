@@ -94,7 +94,7 @@ socket.on("setId", function(data) {
             closePopUp();
         }
 
-        joinUser();
+        //joinUser();
 
     } else {
 //        console.log(" ");
