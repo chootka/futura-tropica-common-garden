@@ -1,10 +1,10 @@
-let showdata = './shows/showdata.json';
+let showdata = '/shows/showdata.json';
 
 let mapscale;
 
 console.log("showdata.js, subdomain", subdomain);
 if(subdomain) {
-    showdata = `./shows/${subdomain}.json`;
+    showdata = `/shows/${subdomain}.json`;
 }
 
 function doesFileExist(urlToFile) {
