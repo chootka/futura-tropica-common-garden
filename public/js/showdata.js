@@ -54,14 +54,14 @@ $.getJSON(showdata, function( json ) {
 
     for ( var i = 0; i < json.works.length; i++ ) {
 
-        let articleHeight = json.works[i].height ? json.works[i].height : 'auto';
-        let article = $('<div id="artwork' + (i + 1) + '" class="article hidden" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + '" >');
+        let articleHeight = json.works[i].height ? json.works[i].height + 'px' : 'auto';
+        let article = $('<div id="artwork' + (i + 1) + '" class="article hidden" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + 'px" >');
 
         if ( json.works[ i ].imagelink || json.works[ i ].image ) {
             if (json.works[i].url != null && json.works[i].url != "") {
                 article.append( '<div class="imagelink"><a href="' + json.works[ i ].url + '" target="_blank"><img src="' + json.works[ i ].imageurl + '"></a></div>' );
             } else {
-                article.append( '<div class="imagelink"><img src="' + json.works[ i ].imageurl + '" width="100%" height="100%"></div>' );
+                article.append( '<div class="imagelink"><img src="' + json.works[ i ].imageurl + '"></div>' );
             }
         } else if (json.works[i].text) {
             article.append( "<h1>" + json.works[i].title + "</h1><p>" + json.works[ i ].description + "</p>" );
@@ -70,7 +70,7 @@ $.getJSON(showdata, function( json ) {
             article.append( '<video src="' + json.works[i].src + '" muted class="iframe"></video>' );
         } else if ( json.works[ i ].youtube || json.works[ i ].vimeo ) {
             // article.attr("data-src", json.works[ i ].url)
-            article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + '" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" scrolling="no" frameborder="0" autoplay="true" muted src="' + json.works[ i ].url + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
+            article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" scrolling="no" frameborder="0" autoplay="true" muted src="' + json.works[ i ].url + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
         }
         if (json.works[i].youtubeSync) {
             article.attr("data-youtubeSync", true);
