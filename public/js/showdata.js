@@ -67,7 +67,7 @@ $.getJSON(showdata, function( json ) {
             article.addClass("text");
         } else if ( json.works[ i ].localVideo ) {
             article.append( '<video src="' + json.works[i].src + '" muted class="iframe"></video>' );
-        } else if ( json.works[ i ].youtube || json.works[ i ].vimeo ) {
+        } else if ( json.works[ i ].youtube || json.works[ i ].vimeo || json.works[ i ].iframe) {
             // article.attr("data-src", json.works[ i ].url)
             article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" scrolling="no" frameborder="0" autoplay="true" muted src="' + json.works[ i ].url + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
         }
