@@ -561,7 +561,6 @@ article.talking .room:before {
     background: #fff;
     border: 1px solid #aaa;
     pointer-events: all;
-    font-size: 11px;
     padding: 3px;
     display: flex;
     align-items: center;
@@ -572,6 +571,11 @@ article.talking .room:before {
     hyphens: auto;
     color: #000;
     box-sizing: border-box;
+}
+
+.mapIcon p {
+    font-size: 11px;
+    line-height: 1em;
 }
 
 .tourInterface {
