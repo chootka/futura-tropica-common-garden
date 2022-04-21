@@ -75,7 +75,7 @@ socket.on("setId", function(data) {
         myMapUser = mapElem;
 
 	let script = document.createElement("script");
-        script.src = "./js/avatars.js";
+        script.src = "/js/avatars.js";
         document.body.appendChild(script);
 
         //let script2 = document.createElement("script2");
