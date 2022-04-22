@@ -61,7 +61,7 @@ $.getJSON(showdata, function( json ) {
         if (json.works[i].shape) {
             classList += ' shape ' + json.works[i].shapeType;
         }
-        if (json.works[i].room) {
+        if (json.works[i].ownRoom) {
             classList += ' room';
         }
 
