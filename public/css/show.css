@@ -11,6 +11,7 @@ body {
     font-family: sans-serif;
     color: #fff;
     border-color: #aaa;
+    font-family: sans-serif;
 }
 
 .showContainer {
@@ -394,7 +395,8 @@ input.terms {
     padding-bottom: 10px;
     margin-bottom: 5px;
     margin-top: 5px;
-    font-size: 17px;
+    font-family: sans-serif;
+    font-size: 16px;
     font-weight: normal;
 }
 /*

@@ -54,7 +54,8 @@ $.getJSON(showdata, function( json ) {
     for ( var i = 0; i < json.works.length; i++ ) {
 
         let articleHeight = json.works[i].height ? json.works[i].height + 'px' : 'auto';
-        let article = $('<div id="artwork' + (i + 1) + '" class="article hidden" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + 'px" >');
+        let articleRotation = json.works[i].rotation ? json.works[i].rotation + 'deg' : '0';
+        let article = $('<div id="artwork' + (i + 1) + '" class="article hidden" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + 'px; transform: rotate(' + articleRotation + ');" >');
 
         if ( json.works[ i ].imagelink || json.works[ i ].image ) {
             if (json.works[i].url != null && json.works[i].url != "") {
