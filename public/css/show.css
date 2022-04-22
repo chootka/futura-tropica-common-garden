@@ -390,6 +390,10 @@ input.terms {
     position: absolute;
     z-index: 5;
 }
+.article h1 {
+    font-family: sans-serif;
+    font-size: 22px;
+}
 .article p {
     text-align: left;
     padding-bottom: 10px;
@@ -398,6 +402,10 @@ input.terms {
     font-family: sans-serif;
     font-size: 16px;
     font-weight: normal;
+}
+.article a {
+    color: inherit;
+    text-decoration: underline;
 }
 /*
 article.hidden {
