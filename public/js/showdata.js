@@ -55,7 +55,8 @@ $.getJSON(showdata, function( json ) {
 
         let articleHeight = json.works[i].height ? json.works[i].height + 'px' : 'auto';
         let articleRotation = json.works[i].rotation ? json.works[i].rotation + 'deg' : '0';
-        let article = $('<div id="artwork' + (i + 1) + '" class="article hidden" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + 'px; transform: rotate(' + articleRotation + ');" >');
+        let backgroundColor = json.works[i].background ? 'background-color: rgb('+json.works[i].color[0]+', '+json.works[i].color[1]+', '+json.works[i].color[2]+');' : '';
+        let article = $('<div id="artwork' + (i + 1) + '" class="article hidden" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + 'px; transform: rotate(' + articleRotation + ');' + backgroundColor + '" >');
 
         if ( json.works[ i ].imagelink || json.works[ i ].image ) {
             if (json.works[i].url != null && json.works[i].url != "") {
@@ -80,6 +81,9 @@ $.getJSON(showdata, function( json ) {
         }
         if (json.works[i].vimeo) {
             article.attr("data-vimeo", true);
+        }
+        if (json.works[i].shapeType === 'circle') {
+            article.classList.add('shape circle');
         }
 
         $( ".content" ).append( article );
