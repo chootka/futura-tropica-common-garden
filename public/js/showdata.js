@@ -61,12 +61,12 @@ $.getJSON(showdata, function( json ) {
         if (json.works[i].shape) {
             classList += ' shape ' + json.works[i].shapeType;
         }
-        if (json.works[i].ownRoom) {
-            classList += ' room';
-        }
 
         let article = $('<div id="artwork' + (i + 1) + '" class="' + classList + '" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + '; transform: rotate(' + articleRotation + ');' + backgroundColor + '" >');
 
+        if (json.works[i].ownRoom) {
+            article.append( '<div class="room"></div>' );
+        }
         if ( json.works[ i ].imagelink || json.works[ i ].image ) {
             if (json.works[i].url != null && json.works[i].url != "") {
                 article.append( '<div class="imagelink"><a href="' + json.works[ i ].url + '" target="_blank"><img src="' + json.works[ i ].imageurl + '"></a></div>' );
