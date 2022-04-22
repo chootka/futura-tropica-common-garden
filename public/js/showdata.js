@@ -62,7 +62,7 @@ $.getJSON(showdata, function( json ) {
             classList += ' shape circle';
         }
 
-        let article = $('<div id="artwork' + (i + 1) + '" class="' + classList + '" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + 'px; transform: rotate(' + articleRotation + ');' + backgroundColor + '" >');
+        let article = $('<div id="artwork' + (i + 1) + '" class="' + classList + '" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + '; transform: rotate(' + articleRotation + ');' + backgroundColor + '" >');
 
         if ( json.works[ i ].imagelink || json.works[ i ].image ) {
             if (json.works[i].url != null && json.works[i].url != "") {
