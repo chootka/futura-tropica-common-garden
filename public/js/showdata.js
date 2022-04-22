@@ -58,8 +58,11 @@ $.getJSON(showdata, function( json ) {
         let backgroundColor = json.works[i].background ? 'background-color: rgb('+json.works[i].color[0]+', '+json.works[i].color[1]+', '+json.works[i].color[2]+');' : '';
         let classList = 'article hidden';
 
-        if (json.works[i].shapeType === 'circle') {
-            classList += ' shape circle';
+        if (json.works[i].shape) {
+            classList += ' shape ' + json.works[i].shapeType;
+        }
+        if (json.works[i].room) {
+            classList += ' room';
         }
 
         let article = $('<div id="artwork' + (i + 1) + '" class="' + classList + '" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + '; transform: rotate(' + articleRotation + ');' + backgroundColor + '" >');
