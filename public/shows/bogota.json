@@ -113,9 +113,9 @@
          "shape":"true",
          "shapeType":"circle",
          "color":[
-            78.11764705882354,
-            100,
-            50
+            178,
+            255,
+            0
          ],
          "background":true,
          "ownRoom":true

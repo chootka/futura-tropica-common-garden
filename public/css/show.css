@@ -768,24 +768,24 @@ video.screenshare {
     object-fit: cover;
 }
 
-article.shape, .mapIcon.shape {
+.article.shape, .mapIcon.shape {
     border: none;
 }
 
-article.shape.circle, .mapIcon.shape.circle {
+.article.shape.circle, .mapIcon.shape.circle {
     border-radius: 50%;
 }
 
-article.portal, .mapIcon.portal {
+.article.portal, .mapIcon.portal {
     background: radial-gradient(#000, #555);
     transition: margin 1s ease, padding 1s ease, background 1s ease-out;
 }
 
-article.puzzle {
+.article.puzzle {
     background-color: transparent !important;
     z-index: 5;
 }
-article.puzzle .segment {
+.article.puzzle .segment {
     float: left;
     border: inherit;
     border-width: 0px;
@@ -793,11 +793,11 @@ article.puzzle .segment {
     z-index: 5;
     visibility: hidden;
 }
-article.puzzle .segment.visible {
+.article.puzzle .segment.visible {
     border: none;
     visibility: visible;
 }
-article.puzzle .button {
+.article.puzzle .button {
     position: absolute;
     width: 200px;
     height: 32px;
