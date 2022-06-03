@@ -18,7 +18,7 @@ let maxRoomSize = 200;
 
 let slideshows = [];
 
-let subdomain = "weise7";
+let subdomain = "public";
     // subdomain = "join";
     // subdomain = "bogota";
     // subdomain = "kinshasa";
