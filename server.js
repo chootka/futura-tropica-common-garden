@@ -18,11 +18,7 @@ let maxRoomSize = 200;
 
 let slideshows = [];
 
-<<<<<<< HEAD
 let subdomain = "public";
-=======
-let subdomain = "bogota";
->>>>>>> 1cae4b870af0bfa47463743e528ef7df22383218
     // subdomain = "join";
     // subdomain = "bogota";
     // subdomain = "kinshasa";
