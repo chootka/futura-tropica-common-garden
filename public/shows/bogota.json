@@ -26,13 +26,6 @@
    "works":[
       {
          "imageurl":"/img/bogota/wave2.svg",
-         "top":-7,
-         "left":1406,
-         "width":1188,
-         "image":true
-      },
-      {
-         "imageurl":"/img/bogota/wave2.svg",
          "top":-24,
          "left":2587,
          "width":1188,
@@ -54,42 +47,42 @@
       },
       {
          "imageurl":"/img/bogota/wave3.svg",
-         "top":4771,
+         "top":4651,
          "left":-5,
          "width":1046,
          "image":true
       },
       {
          "imageurl":"/img/bogota/wave3.svg",
-         "top":4771,
+         "top":4673,
          "left":1039,
          "width":1046,
          "image":true
       },
       {
          "imageurl":"/img/bogota/wave3.svg",
-         "top":4771,
+         "top":4696,
          "left":2084,
          "width":1046,
          "image":true
       },
       {
          "imageurl":"/img/bogota/wave3.svg",
-         "top":4771,
+         "top":4720,
          "left":3127,
          "width":1046,
          "image":true
       },
       {
          "imageurl":"/img/bogota/wave3.svg",
-         "top":4771,
+         "top":4744,
          "left":4172,
          "width":1046,
          "image":true
       },
       {
          "imageurl":"/img/bogota/wave3.svg",
-         "top":4771,
+         "top":4768,
          "left":5217,
          "width":1046,
          "image":true
@@ -113,9 +106,9 @@
          "shape":"true",
          "shapeType":"circle",
          "color":[
-            178,
-            255,
-            0
+            78.11764705882354,
+            100,
+            50
          ],
          "background":true,
          "ownRoom":true
@@ -198,7 +191,7 @@
          "label":"",
          "artist":"",
          "url":"",
-         "top":342,
+         "top":332,
          "left":1531,
          "width":"498",
          "height":"240",
@@ -219,7 +212,7 @@
          "label":"",
          "artist":"",
          "url":"",
-         "top":625,
+         "top":575,
          "left":1442,
          "width":"507",
          "height":"242",
@@ -324,7 +317,7 @@
          "label":"",
          "artist":"",
          "url":"",
-         "top":1568,
+         "top":1558,
          "left":1538,
          "width":"473",
          "height":"260",
@@ -835,7 +828,7 @@
          "label":"",
          "artist":"",
          "url":"",
-         "top":3027,
+         "top":3010,
          "left":599,
          "width":"416",
          "height":"190",
@@ -982,7 +975,7 @@
          "label":"",
          "artist":"",
          "url":"",
-         "top":4035,
+         "top":4011,
          "left":1159,
          "width":"556",
          "height":"271",
@@ -1174,7 +1167,7 @@
          "label":"",
          "artist":"",
          "url":"",
-         "top":3761,
+         "top":3741,
          "left":1881,
          "width":"556",
          "height":"271",
@@ -1238,7 +1231,7 @@
          "label":"",
          "artist":"",
          "url":"",
-         "top":1224,
+         "top":1254,
          "left":2064,
          "width":"472",
          "height":"267",
@@ -1280,7 +1273,7 @@
          "label":"",
          "artist":"",
          "url":"",
-         "top":920,
+         "top":930,
          "left":2749,
          "width":"671",
          "height":"220",
@@ -1301,7 +1294,7 @@
          "label":"",
          "artist":"Empty iframe",
          "url":"https://docs.google.com/spreadsheets/d/13KY4Y226iKdoZ0EvArT7tcX809J8wVF6tATQRTcL2eE/edit?usp=sharing",
-         "top":2100,
+         "top":2053,
          "left":1127,
          "width":"1055",
          "height":"812",
@@ -1535,6 +1528,27 @@
          "iframe":true,
          "borderless":true,
          "hideMap":true
+      },
+      {
+         "title":"New Image",
+         "subtitle":"",
+         "description":"",
+         "label":"",
+         "artist":"New Image",
+         "url":"",
+         "top":1933,
+         "left":368,
+         "width":"373",
+         "height":"264",
+         "topPercent":32.21666666666667,
+         "leftPercent":6.133333333333333,
+         "widthPercent":6.216666666666667,
+         "heightPercent":4.3999999999999995,
+         "id":"a1649569396725",
+         "image":true,
+         "imageurl":"/img/bogota/instructions-for-bogota.jpg",
+         "hideMap":true,
+         "borderless":true
       }
    ],
    "borderWidth":"1px",
