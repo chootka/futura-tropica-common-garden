@@ -1,1 +1,321 @@
-{"opening":false,"hideTour":true,"title":"Futura Tropica ###KINSHASA","backgroundColor":"none","textColor":["238","200","96"],"borderColor":"none","frameBackground":"none","screensize":{"width":4000,"height":4000},"works":[{"title":"KINSHASA !!!","description":"","text":true},{"title":"Timbela Batimbela Yo","description":"(Alphi Bakaschika [founder], Esto Ndjondjo [artistic director, rapper], Pitchou Massels [administration], Serge Muepu [administration], Naomie Muhiti [administration], Heissels Kapata [administration], Guykam Koko [sound Engineering], Ingénieur Lévy [beatmaker], Bebson de la Rue [artist, rapper, experimental instruments], Tissman [artist, rapper]","text":true},{"title":"KINSHASA","subtitle":"","description":"","artist":"Empty video","url":"https://www.youtube.com/embed/7QwjURBSIPA?autoplay=1&controls=0&rel=0&enablejsapi=1&playsinline=1","width":560,"height":315,"INTERCEPT_videoType":"YouTube","youtubeSync":true,"showVolume":false,"youtube":true,"lock4_3":true},{"imageurl":"/img/kinshasa/artifacts/artifacts1.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/artifacts/artifacts2.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/artifacts/artifacts3.png","width":1555,"image":true},{"title":"KINSHASA","subtitle":"","description":"","artist":"Empty video","url":"https://player.vimeo.com/video/513089009?title=0&byline=0&portrait=0","width":560,"height":315,"INTERCEPT_videoType":"Vimeo","youtubeSync":true,"showVolume":false,"vimeo":true,"lock4_3":true},{"title":"KINSHASA","subtitle":"","description":"","artist":"Empty video","url":"https://player.vimeo.com/video/513088838?title=0&byline=0&portrait=0","width":560,"height":315,"INTERCEPT_videoType":"Vimeo","youtubeSync":true,"showVolume":false,"vimeo":true,"lock4_3":true},{"title":"                  ","description":"           ","text":true},{"imageurl":"/img/kinshasa/construction/construction.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/construction/construction1.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/construction/construction2.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/construction/construction3.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/construction/construction4.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/construction/construction5.png","width":1555,"image":true},{"title":"Kill Bill & Nada Tshibwabwa","description":"Performance Artists, Tombola Art, & musicians","text":true},{"imageurl":"/img/kinshasa/costumes/Costumes1.png","width":1333,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes2.png","width":1067,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes3.png","width":1333,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes4.png","width":1333,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes5.png","width":1333,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes6.png","width":750,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes7.png","width":1333,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes8.png","width":1333,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes9.png","width":816,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes10.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes11.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/costumes/Costumes12.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/costumes/IMG_1022-2.jpg","width":816,"image":true},{"imageurl":"/img/kinshasa/costumes/IMG_1023-2.jpg","width":816,"image":true},{"title":"                  ","description":"           ","text":true},{"imageurl":"/img/kinshasa/sounds/sounds.gif","width":500,"image":true},{"imageurl":"/img/kinshasa/sounds/sounds.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/sounds/sounds2.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/sounds/sounds3.png","width":1555,"image":true},{"title":"                  ","description":"           ","text":true},{"title":"Maman Adeline Boyube","description":"Culinary art & love","text":true},{"imageurl":"/img/kinshasa/food/Food10.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/food/Food11.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/food/Food12.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/food/Food13.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/food/Food14.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/food/FoodStory1.jpg","width":764,"image":true},{"imageurl":"/img/kinshasa/food/FoodStory2.jpg","width":764,"image":true},{"imageurl":"/img/kinshasa/food/FoodStory3.jpg","width":764,"image":true},{"title":"                  ","description":"           ","text":true},{"title":"Maman Iza & Papa Lofo","description":"Vernacular designs, knowledges and artifacts","text":true},{"imageurl":"/img/kinshasa/pico/pico2.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/pico/pico3.png","width":1333,"image":true},{"imageurl":"/img/kinshasa/pico/pico4.png","width":1775,"image":true},{"imageurl":"/img/kinshasa/pico/pico5.png","width":1333,"image":true},{"imageurl":"/img/kinshasa/pico/pico6.png","width":750,"image":true},{"imageurl":"/img/kinshasa/pico/pico9.png","width":1555,"image":true},{"imageurl":"/img/kinshasa/pico/pico10.png","width":1555,"image":true},{"title":"                  ","description":"           ","text":true}],"borderWidth":"1px","customCss":"","visitors":305,"private":false}
+{
+   "opening":false,
+   "hideTour":true,
+   "title":"Futura Tropica Netroots ###KINSHASA",
+   "backgroundColor":[
+      "152",
+      "205",
+      "151"
+   ],
+   "textColor":[
+      "255",
+      "20",
+      "100"
+   ],
+   "borderColor":"none",
+   "frameBackground":"none",
+   "screensize":{
+      "width":6000,
+      "height":4000
+   },
+   "works":[
+      {
+         "imageurl":"/img/kinshasa/FT-Kin.svg",
+         "width": 1069,
+         "height": 666,
+         "top": 22,
+         "left": 27,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/sounds/sounds.gif",
+         "width":468,
+         "top": 101,
+         "left": 1508,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/sounds/sounds2.png",
+         "width":520,
+         "top": 284,
+         "left": 2143,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/sounds/sounds3.png",
+         "width":520,
+         "top":204,
+         "left":2746,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/sounds/Timbela1.png",
+         "width":654,
+         "top": 206,
+         "left": 3294,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/sounds/Timbela2.png",
+         "width":918,
+         "top": 147,
+         "left": 3962,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/sounds/Timbela3.png",
+         "width":397,
+         "top":163,
+         "left":4903,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/costumes/Costumes1.png",
+         "width":520,
+         "top": 914,
+         "left": 553,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/costumes/Costumes2.png",
+         "width":520,
+         "top": 954,
+         "left": 1109,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/costumes/Costumes3.png",
+         "width":520,
+         "top": 895,
+         "left": 1646,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/costumes/Costumes4.png",
+         "width":520,
+         "top": 1356,
+         "left": 765,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/costumes/Costumes5.png",
+         "width":520,
+         "top": 1357,
+         "left": 1313,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/costumes/Costumes7.png",
+         "width":520,
+         "top": 1327,
+         "left": 1863,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/costumes/Costumes8.png",
+         "width":520,
+         "top": 1733,
+         "left": 1863,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/costumes/Costumes9.png",
+         "width":662,
+         "top": 1769,
+         "left": 1174,
+         "image":true
+      },
+      {
+         "title":"KINSHASA",
+         "subtitle":"",
+         "description":"",
+         "artist":"Empty video",
+         "url":"https://player.vimeo.com/video/513088838?title=0&byline=0&portrait=0",
+         "width":288,
+         "height":524,
+         "top": 586,
+         "left":3333,
+         "INTERCEPT_videoType":"Vimeo",
+         "youtubeSync":true,
+         "showVolume":false,
+         "vimeo":true,
+         "lock4_3":true
+      },
+      {
+         "imageurl":"/img/kinshasa/food/Food1.png",
+         "width":849,
+         "top": 1487,
+         "left": 3048,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/food/Food2.png",
+         "width":849,
+         "top": 1599,
+         "left": 3788,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/food/Food3.png",
+         "width":849,
+         "top": 1564,
+         "left": 4572,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/food/Food10.png",
+         "width":591,
+         "top": 2075,
+         "left": 3965,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/food/Food11.png",
+         "width":470,
+         "top": 2037,
+         "left": 4607,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/food/Food12.png",
+         "width":483,
+         "top": 2093,
+         "left": 5114,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/food/Food13.png",
+         "width":501,
+         "top": 2374,
+         "left": 4589,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/food/FoodStory1.jpg",
+         "width":379,
+         "top": 2432,
+         "left": 5122,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/food/FoodStory2.jpg",
+         "width":421,
+         "top": 2536,
+         "left": 5520,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/food/FoodStory3.jpg",
+         "width":380,
+         "top": 2986,
+         "left": 5123,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/artifacts/artifacts1.png",
+         "width":468,
+         "top": 2116,
+         "left": 2722,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/artifacts/artifacts2.png",
+         "width":394,
+         "top": 2446,
+         "left": 2678,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/artifacts/artifacts3.png",
+         "width":573,
+         "top": 2446,
+         "left": 3083,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/OpenCall.png",
+         "width":592,
+         "top": 2728,
+         "left": 1349,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/pico/pico1.png",
+         "width":546,
+         "top": 869,
+         "left": 4573,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/pico/pico9.png",
+         "width":661,
+         "top": 684,
+         "left": 3889,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/pico/pico3.png",
+         "width":302,
+         "top": 1122,
+         "left": 3923,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/pico/pico6.png",
+         "width":308,
+         "top": 1035,
+         "left": 4242,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Visuals.png",
+         "width":601,
+         "top": 3090,
+         "left": 1248,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Visuals2.png",
+         "width":654,
+         "top": 3075,
+         "left": 1668,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/UrbanGarden.png",
+         "width":538,
+         "top": 2462,
+         "left": 227,
+         "image":true
+      },
+      {
+         "imageurl":"/img/kinshasa/Performance.png",
+         "width":648,
+         "top": 2753,
+         "left": 447,
+         "image":true
+      },
+      {
+         "title":"Timbela Batimbela Yo",
+         "description":"Alphi Bakaschika [founder], Esto Ndjondjo [artistic director, rapper], Pitchou Massels [administration], Serge Muepu [administration], Naomie Muhiti [administration], Heissels Kapata [administration], Guykam Koko [sound Engineering], Ingénieur Lévy [beatmaker], Bebson de la Rue [artist, rapper, experimental instruments], Tissman [artist, rapper]",
+         "width":430,
+         "height":212,
+         "top": 426,
+         "left": 1505,
+         "text":true
+      },
+      {
+         "title":"Kill Bill & Nada Tshibwabwa",
+         "description":"Alphi Bakaschika [founder], Esto Ndjondjo [artistic director, rapper], Pitchou Massels [administration], Serge Muepu [administration], Naomie Muhiti [administration], Heissels Kapata [administration], Guykam Koko [sound Engineering], Ingénieur Lévy [beatmaker], Bebson de la Rue [artist, rapper, experimental instruments], Tissman [artist, rapper]",
+         "width":399,
+         "height":217,
+         "top": 1770,
+         "left": 769,
+         "text":true
+      }
+   ],
+   "borderWidth":"1px",
+   "customCss":"",
+   "visitors":234,
+   "private":false
+}
