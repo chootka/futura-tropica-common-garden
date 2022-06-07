@@ -20,16 +20,16 @@ let config = {
 //
 //    Add STUN or TURN servers here if needed
 //    
-//    iceServers: [
-//        {
-//            'urls': 'stun:host.name'
-//        },
-//        {
-//            'urls': 'turn:host.name',
-//            'username': 'username',
-//            'credential': 'password'
-//        }
-//    ]
+   iceServers: [
+       // {
+       //     'urls': 'stun:host.name'
+       // },
+       {
+           'urls': 'turn://turn.ttc.io:443?transport=udp',
+           // 'username': 'username',
+           'credential': 'H8gRd7LWsTaGkHEbD77KpPlozFHhfvwDYd3yiNZVWSyPC5ivxqIf4v9jvMRz5cU5'
+       }
+   ]
 }
 let myUser;
 let myMapUser;
