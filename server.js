@@ -66,10 +66,6 @@ app.get("/", (req, res) => {
     customLog("Subdomain: " + subdomain);
 });
 
-// app.get("/about", (req, res) => {
-//     res.render("about");
-// });
-
 
 function renderPage(req, res, subdomain) {
     if (subdomain === "cms") {
@@ -92,41 +88,6 @@ function renderPage(req, res, subdomain) {
         }
     }
 }
-
-// app.post("/fileupload", (req, res) => {
-//     customLog("Uploading file...");
-//     var form = new formidable.IncomingForm();
-//     form.parse(req, async function (err, fields, files) {
-
-//         let oldpath = files.filetoupload.path;
-//         let subdomain = fields.subdomain;
-//         let newpath = "public/shows/" + subdomain + "/" + files.filetoupload.name;
-
-//         console.log("Saving file to " + newpath);
-
-//         try {
-//             await fs.promises.access("public/shows/" + subdomain);
-//             console.log("folder exist!");
-//             fs.rename(oldpath, newpath, function (err) {
-//                 if (err) throw err;
-//                 res.write('File uploaded and moved!');
-//                 res.end();
-//                 customLog("File saved!");
-//             });
-//         } catch (error) {
-//             customLog("No image folder yet for this subdomain, creating it...")
-//             fs.mkdir("public/shows/" + subdomain, err => {
-//                 if (err) console.log(err);
-//                 fs.rename(oldpath, newpath, function (err) {
-//                     if (err) throw err;
-//                     res.write('File uploaded and moved!');
-//                     res.end();
-//                     customLog("File saved!");
-//                 });
-//             });
-//         }
-//     });
-// });
 
 function socketsInRoom(room) {
     if (io.sockets.adapter.rooms[room]) {

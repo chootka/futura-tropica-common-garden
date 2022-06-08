@@ -81,8 +81,6 @@ socket.on("setId", function(data) {
         script.src = "/js/avatars.js";
         document.body.appendChild(script);
 
-        console.log("APPENDED AVATARS.JS!!!!!!!!!!!!!!!")
-
         //let script2 = document.createElement("script2");
         //script2.src = "./js/showdata.js";
         //document.body.appendChild(script2);
