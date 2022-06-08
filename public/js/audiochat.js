@@ -12,7 +12,7 @@ let localStream;
 
 let constraints = {
     audio: true,
-    video: false
+    video: true
 };
 
 
