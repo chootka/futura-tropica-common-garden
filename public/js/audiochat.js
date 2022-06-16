@@ -19,31 +19,6 @@ let constraints = {
     video: true
 };
 
-
-/*if (!disableAudio && !window.location.search.includes("preview")) {
-    try {
-        navigator.mediaDevices.getUserMedia(constraints)
-        .then(function(stream) {
-            localStream = stream;
-            console.log("Loaded local stream");
-            muted = false;
-            socket.emit("unmute");
-            window.setTimeout(function() {
-                if (myUser) {
-                    myUser.classList.remove("muted");
-                }
-            }, 500);
-        })
-
-        .catch(function(err) {
-            alert("Unable to retrieve audio! Make sure to allow microphone access to get the full experience! Reload, or try opening this page in a different browser.")
-            console.log("ERROR: Failed to getUserMedia(), err: " + err);
-        });
-    } catch(err) {
-        console.log(err);
-    }
-}*/
-
 function checkPass(event) {
     event.preventDefault();
     pass = document.querySelector(".passWindowBox form input[type=password]").value;
@@ -104,8 +79,6 @@ function getLocalStream(resignal) {
         }
     }
 }
-
-
 
 socket.on("unmute", function(socketId) {
     console.log(socketId + " has unmuted!");
@@ -185,8 +158,6 @@ function setupStreaming() {
     let form = document.querySelector(".popUp form");
     form.addEventListener('submit', closePopUp);
 }
-
-
 
 function updateRooms() {
 
@@ -268,7 +239,6 @@ function updateRooms() {
     let shortestDist = 99999;
     let closestRoom;
     let closestUser;
-
 
     // loop over all rooms to remove empty ones and find the closest one to join
     for (let i=0; i<rooms.length; i++) {
@@ -531,12 +501,12 @@ function handleRemoteStreamAdded(event) {
         }
     }, 500);
 }
+
 function handleRemoteStreamRemoved(event) {
     console.log("Remote stream removed, closing connection...");
     this.close();
     console.log(event);
 }
-
 
 function printPeers() {
     let pcmUsers = [];
