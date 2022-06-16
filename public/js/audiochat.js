@@ -2,11 +2,15 @@ let rooms = [];
 let currentRoom = "none";
 let adminGUI;
 let openRoomGUI;
+let isAdmin = false;
 let passOk = false;
 let pass;
 let joinThreshhold = 125;
 let createThreshhold = 50;
+let adminOpenState = false;
 let roomWaitCounter = 0;
+let globalConnection = false;
+let videoAvatar = true;
 
 let localStream;
 
@@ -16,7 +20,7 @@ let constraints = {
 };
 
 
-if (!disableAudio && !window.location.search.includes("preview")) {
+/*if (!disableAudio && !window.location.search.includes("preview")) {
     try {
         navigator.mediaDevices.getUserMedia(constraints)
         .then(function(stream) {
@@ -38,7 +42,103 @@ if (!disableAudio && !window.location.search.includes("preview")) {
     } catch(err) {
         console.log(err);
     }
+}*/
+
+function checkPass(event) {
+    event.preventDefault();
+    pass = document.querySelector(".passWindowBox form input[type=password]").value;
+    if (pass === null) {
+        exitAdmin();
+    }
+    socket.emit("checkPass", pass);
 }
+
+function getLocalStream(resignal) {
+    if (!disableAudio && !window.location.search.includes("preview")) {
+        try {
+            navigator.mediaDevices.getUserMedia(constraints)
+            .then(function(stream) {
+                //if (!document.querySelector(".settingsGUI")) {
+                //    createSettingsButton();
+                //}
+                localStream = stream;
+                console.log("Loaded local stream");
+                muted = false;
+                socket.emit("unmute");
+                window.setTimeout(function() {
+                    if (myUser) {
+                        myUser.classList.remove("muted");
+
+
+                        if (myUser.querySelector("video.localAudio")) {
+                            myUser.querySelector("video.localAudio").remove();
+                        }
+
+                        if (videoAvatar) {
+                            let player = document.createElement("video");
+                            player.srcObject = localStream;
+                            player.classList.add("remoteAudio");
+                            player.classList.add("localAudio");
+                            player.setAttribute("playsinline", "");
+                            player.muted = true;
+                            player.autoplay = true;
+                            myUser.appendChild(player);
+                            myUser.classList.add("video");
+                        }
+                    }
+
+                    if (globalConnection && resignal) {
+                        for (let i=0; i<users.length; i++) {
+                            sendStaticRoom(users[i], true);
+                        }
+                    }
+                }, 500);
+            })
+
+            .catch(function(err) {
+                alert("Unable to retrieve audio! Make sure to allow microphone access to get the full experience! Reload, or try opening this page in a different browser.")
+                console.log("ERROR: Failed to getUserMedia(), err: " + err);
+            });
+        } catch(err) {
+            console.log(err);
+        }
+    }
+}
+
+
+
+socket.on("unmute", function(socketId) {
+    console.log(socketId + " has unmuted!");
+    let user = document.querySelector("#user" + socketId);
+    if (user) {
+        document.querySelector("#user" + socketId).classList.remove("muted");
+
+        window.setTimeout(function() {
+            if (socketId == id) {
+                muted = false;
+                console.log("I have unmuted");
+            }
+        }, 100);
+    }
+
+});
+
+socket.on("mute", function(socketId) {
+    console.log(socketId + " has muted!");
+    let user = document.querySelector("#user" + socketId);
+    if (user) {
+        document.querySelector("#user" + socketId).classList.add("muted");
+
+        window.setTimeout(function() {
+            if (socketId == id) {
+                muted = true;
+                console.log("I have muted, getting new stream...");
+                getLocalStream();
+            }
+        }, 100);
+    }
+
+});
 
 
 socket.on("setupStreaming", setupStreaming);
@@ -316,8 +416,17 @@ function sendRoom(roomName) {
 
 
 function setRoom(roomName, socketId) {
-    console.log("User " + socketId + " has joined room " + roomName);
+   console.log("User " + socketId + " has joined room " + roomName);
     let index = users.map(e => e.name).indexOf(socketId);
+
+    if (index>= 0 && users[index].room.includes("OpenAdmin")) {
+        if (users[index].element.querySelector("audio")) {
+            users[index].element.querySelector("audio").remove();
+        }
+        if (users[index].element.querySelector("video")) {
+            users[index].element.querySelector("video").remove();
+        }
+    }
 
     if (index >= 0) {
         users[index].room = roomName;
@@ -451,3 +560,5 @@ function printPeers() {
         }
     }
 }
+
+getLocalStream()
