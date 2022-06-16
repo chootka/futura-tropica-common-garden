@@ -26,8 +26,8 @@ let config = {
        // },
        {
             'urls': 'turn://turn.weise7.org',
-            'username': 'sturn',
-            'credential': 'turn.weise7.org'
+            'username': 'futuratropica',
+            'credential': 'OcFeghes6Wrynmak'
        }
    ]
 }
