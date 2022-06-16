@@ -19,7 +19,7 @@ let color;
 let config = {
 //
 //    Add STUN or TURN servers here if needed
-//    
+//
    iceServers: [
        // {
        //     'urls': 'stun:host.name'
