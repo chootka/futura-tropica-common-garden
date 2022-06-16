@@ -472,11 +472,33 @@ function handleRemoteStreamAdded(event) {
         if (index >= 0) {
             console.log("Found element to add stream to: " + users[index].name);
             let player = document.createElement("audio");
+            if (videoAvatar) {
+                player = document.createElement("video");
+                player.setAttribute("playsinline", "");
+            }
+            if (users[index].element.classList.contains("adminUser")) {
+                player = document.createElement("video");
+                player.classList.add("adminAudio");
+                player.setAttribute("playsinline", "");
+            }
             player.srcObject = event.stream;
             player.classList.add("remoteAudio");
             player.autoplay = true;
             player.id = "player" + users[index].name;
+
+            // sometimes when the connection is unstable, a new stream si added but the old one recoonects automaticaly, causing duplicate media elements. So before adding the new media element, check for existing players and remove them.
+            let existingPlayers = users[index].element.querySelectorAll("video, audio");
+            for (let i=0; i<existingPlayers.length; i++) {
+                existingPlayers[i].remove();
+                console.log("Removed old player element");
+            }
+
             users[index].element.appendChild(player);
+            if (videoAvatar) {
+                window.setTimeout(function() {
+                    users[index].element.classList.add("video");
+                }, 100);
+            }
         } else {
             console.log("didnt find element to add stream to yet, trying again with the fallback option...");
             // fallback for oler safari version
@@ -490,18 +512,39 @@ function handleRemoteStreamAdded(event) {
             if (index >= 0) {
                 console.log("Found element to add stream to via fallback: " + users[index].name);
                 let player = document.createElement("audio");
+                if (videoAvatar) {
+                    player = document.createElement("video");
+                    player.setAttribute("playsinline", "");
+                }
+                if (users[index].element.classList.contains("adminUser")) {
+                    player = document.createElement("video");
+                    player.classList.add("adminAudio");
+                    player.setAttribute("playsinline", "");
+                }
                 player.srcObject = event.stream;
                 player.classList.add("remoteAudio");
                 player.autoplay = true;
                 player.id = "player" + users[index].name;
+
+                // sometimes when the connection is unstable, a new stream si added but the old one recoonects automaticaly, causing duplicate media elements. So before adding the new media element, check for existing players and remove them.
+                let existingPlayers = users[index].element.querySelectorAll("video, audio");
+                for (let i=0; i<existingPlayers.length; i++) {
+                    existingPlayers[i].remove();
+                    console.log("Removed old player element");
+                }
+
                 users[index].element.appendChild(player);
+                if (videoAvatar) {
+                    window.setTimeout(function() {
+                        users[index].element.classList.add("video");
+                    }, 100);
+                }
             } else {
                 console.error("Unable to locate element to add stream to! Perhaps the user has already disconected?");
             }
         }
     }, 500);
 }
-
 function handleRemoteStreamRemoved(event) {
     console.log("Remote stream removed, closing connection...");
     this.close();
