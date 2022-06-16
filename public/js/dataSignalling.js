@@ -25,9 +25,9 @@ let config = {
        //     'urls': 'stun:host.name'
        // },
        {
-           'urls': 'turn://turn.ttc.io:443?transport=udp',
-           // 'username': 'username',
-           'credential': 'H8gRd7LWsTaGkHEbD77KpPlozFHhfvwDYd3yiNZVWSyPC5ivxqIf4v9jvMRz5cU5'
+            'urls': 'turn://turn.weise7.org',
+            'username': 'sturn',
+            'credential': 'turn.weise7.org'
        }
    ]
 }
@@ -279,8 +279,8 @@ socket.on("offer", function(offer, socketId) {
 });
 
 async function createAswer(offer, socketId, user) {
-//    console.log("User:");
-//    console.log(user.pc);
+   console.log("CreateAnswer, User:");
+   console.log(user.pc);
     await user.pc.setLocalDescription(await user.pc.createAnswer());
     user.dc = user.pc.createDataChannel("chat", {negotiated: true, id: 0});
     user.dc.onmessage = function(message) {
@@ -288,8 +288,8 @@ async function createAswer(offer, socketId, user) {
     }
     user.pc.onicecandidate = ({candidate}) => {
         if (candidate) return;
-//        console.log("Generated answer for " + socketId);
-//        console.log(user.pc.localDescription.sdp);
+       console.log("Generated answer for " + socketId);
+       console.log(user.pc.localDescription.sdp);
         socket.emit("answer", socketId, user.pc.localDescription.sdp);
         console.log("Signaling done, ready to chat!");
     }
