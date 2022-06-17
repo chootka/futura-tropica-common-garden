@@ -141,6 +141,8 @@ body
         let subdomainAlias = "#{subdomainAlias}";
         let username = "";
 
+        socket.emit("getPages");
+
         const body = document.getElementsByTagName('body')[0];
         const info = document.getElementsByClassName('info')[0];
         const overlay = document.getElementById('overlay');
@@ -151,11 +153,13 @@ body
         }
 
         // button click
-        info.addEventListener('click', function() {
-            overlay.classList.toggle("visible");
+        if (info) {
+            info.addEventListener('click', function() {
+                overlay.classList.toggle("visible");
             
-            setTimeout(() => { body.addEventListener('click', hideOverlay) }, 1000);
-        })
+                setTimeout(() => { body.addEventListener('click', hideOverlay) }, 1000);
+            })
+        }
 
     script.
         // Set the date we're counting down to

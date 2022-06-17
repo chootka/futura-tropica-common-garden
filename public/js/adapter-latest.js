@@ -12,8 +12,6 @@
 
 var _adapter_factory = require('./adapter_factory.js');
 
-console.log("inside adapter-latest.js");
-
 var adapter = (0, _adapter_factory.adapterFactory)({ window: typeof window === 'undefined' ? undefined : window });
 module.exports = adapter; // this is the difference from adapter_core.
 

@@ -19,13 +19,13 @@ function doesFileExist(urlToFile) {
     }
 }
 
-console.log("SHOW DATA", showdata)
+//console.log("SHOW DATA", showdata)
 $.getJSON(showdata, function( json ) {
-    console.log("Got show data", json);
+    //console.log("Got show data", json);
 
     let ht = json.screensize.height;
     let wd = json.screensize.width;
-    console.log('isMobile', isMobile);
+    //console.log('isMobile', isMobile);
 
     if (isMobile){
         ht = window.screen.availHeight;
@@ -43,12 +43,16 @@ $.getJSON(showdata, function( json ) {
         $( 'body' ).css({ 'height': ht+ 'px', 'width': wd + 'px' } );
     }
 
-    console.log('wd', wd);
+    //console.log('wd', wd);
 
     mapscale = wd / (window.innerWidth / 3);
-    console.log("mapscale", mapscale);
+    //console.log("mapscale", mapscale);
+    //console.log('wd', wd);
+    //console.log('window.innerWidth', window.innerWidth);
+    //console.log('window.innerHeight', window.innerHeight);
     if (window.innerWidth < window.innerHeight) {
         mapscale = wd / (window.innerWidth / 1.5);
+        console.log('innerWidth < innerHeight, mapscale', mapscale);
     }
     let map = document.querySelector(".map");
     map.style.width = (wd / mapscale) + "px";

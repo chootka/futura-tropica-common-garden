@@ -4,7 +4,7 @@ let muted = true;
 // const parts = location.hostname.split('.');
 // let subdomain = parts.shift();
 
-console.log("dataSignalling.js, subdomainAlias", subdomainAlias);
+//console.log("dataSignalling.js, subdomainAlias", subdomainAlias);
 
 if (typeof subdomainAlias !== 'undefined') {
     subdomain = subdomainAlias;
@@ -21,11 +21,8 @@ let config = {
 //    Add STUN or TURN servers here if needed
 //
    iceServers: [
-       // {
-       //     'urls': 'stun:host.name'
-       // },
        {
-            'urls': 'turn://turn.weise7.org',
+            'urls': 'turn:turn.weise7.org',
             'username': 'futuratropica',
             'credential': 'OcFeghes6Wrynmak'
        }
@@ -46,16 +43,16 @@ function joinUser() {
 }
 
 socket.on("setId", function(data) {
-    console.log("dataSignalling, setId, data", data);
+    //console.log("dataSignalling, setId, data", data);
     reqTime = data.reqTime;
     localReqTime = new Date().getTime();
     if (!id) {
         id = data.id;
         let gradient = "linear-gradient(" + data.angle * 45 + "deg, hsl(" + data.hue + ",100%," + data.bright + "%) 49%, hsl(" + data.hue2 + ",100%," + data.bright2 + "%) 50%)";
-        console.log("Id and collor have been assigned by server: " + id, gradient);
+        //console.log("Id and collor have been assigned by server: " + id, gradient);
         let elem = document.createElement("div");
         elem.id = "user" + id;
-        console.log(data.angle);
+        //console.log(data.angle);
         elem.style.background = gradient;
         elem.className = "user myUser muted";
         if (!muted) {
@@ -68,22 +65,15 @@ socket.on("setId", function(data) {
         mapElem.className = "mapUser myMapUser";
         document.body.querySelector(".map").appendChild(mapElem);
 
-        console.log("elem for myUser", elem);
-        console.log("elem for myMapUser", mapElem);
+        //console.log("elem for myUser", elem);
+        //console.log("elem for myMapUser", mapElem);
 
         myUser = elem;
         myMapUser = mapElem;
 
-        console.log("line 77 myUser", myUser);
-        console.log("line 78 myMapUser", myMapUser);
-
 	let script = document.createElement("script");
         script.src = "/js/avatars.js";
         document.body.appendChild(script);
-
-        //let script2 = document.createElement("script2");
-        //script2.src = "./js/showdata.js";
-        //document.body.appendChild(script2);
 
         if (window.location.search != "?admin") {
             socket.emit("setRoom", { room: subdomain });
@@ -100,27 +90,13 @@ socket.on("setId", function(data) {
         //joinUser();
 
     } else {
-//        console.log(" ");
-//        console.log(" ");
-//        console.log("NEW ID RECIVED!!!");
-//        console.log(" ");
-//        console.log(" ");
-//        console.log(" ");
-//        console.log(" ");
-//        console.log(" ");
-//        console.log(" ");
-//        console.log(" ");
-//        console.log(" ");
-//        console.log(" ");
-//        console.log(" ");
-//        console.log(" ");
        console.log("reload: NEW ID RECIVED!!!!!");
         // window.location.reload();
     }
 })
 
 socket.on("newUser", function(data) {
-    console.log("Creating new user");
+    //console.log("Creating new user");
     let elem = document.createElement("div");
     elem.id = "user" + data.id;
     elem.className = "user";
@@ -148,7 +124,7 @@ socket.on("newUser", function(data) {
     mapElem.className = "mapUser";
     document.body.querySelector(".map").appendChild(mapElem);
 
-    console.log("New user admin status: " + data.admin)
+    //console.log("New user admin status: " + data.admin)
     if (data.admin) {
         elem.classList.add("adminUser");
         mapElem.classList.add("adminMapUser");
@@ -157,13 +133,13 @@ socket.on("newUser", function(data) {
     let user = {
         name: data.id,
         element: elem,
-        room: "none"
+        room: subdomain
     }
     users.push(user);
 });
 
 socket.on("existingUser", function(data) {
-    console.log("Creating existing user " + data.id);
+    //console.log("Creating existing user " + data.id);
     let elem = document.createElement("div");
     elem.id = "user" + data.id;
     elem.className = "user";
@@ -180,7 +156,7 @@ socket.on("existingUser", function(data) {
     mapElem.className = "mapUser";
     document.body.querySelector(".map").appendChild(mapElem);
 
-    console.log("Existing user admin status: " + data.admin)
+    //console.log("Existing user admin status: " + data.admin)
     if (data.admin) {
         elem.classList.add("adminUser");
         mapElem.classList.add("adminMapUser");
@@ -189,16 +165,16 @@ socket.on("existingUser", function(data) {
     if (data.presenterId) {
         elem.classList.add("admin" + data.presenterId);
     }
-
+    //console.log('existing user, id and config', data.id, config)
     let user = {
         name: data.id,
         element: elem,
-        room: "none",
+        room: subdomain,
         pc: new RTCPeerConnection(config)
     }
     user.dc = user.pc.createDataChannel("chat", {negotiated: true, id: 0});
     user.dc.onmessage = function(message) {
-        console.log("existingUser, onmessage", message, user.name);
+        //console.log("existingUser, onmessage", message, user.name);
         dataChannelMessage(message.data, user.name);
     }
 //    user.pc.oniceconnectionstatechange = e => console.log(user.pc.iceConnectionState);
@@ -215,7 +191,7 @@ socket.on("existingUser", function(data) {
 });
 
 socket.on("unmute", function(socketId) {
-    console.log(socketId + " has unmuted!");
+    //console.log(socketId + " has unmuted!");
     let user = document.querySelector("#user" + socketId);
     if (user) {
         document.querySelector("#user" + socketId).classList.remove("muted");
@@ -223,7 +199,7 @@ socket.on("unmute", function(socketId) {
         window.setTimeout(function() {
             if (socketId == id) {
                 muted = false;
-                console.log("I have unmuted");
+                //console.log("I have unmuted");
             }
         }, 100);
     }
@@ -232,7 +208,7 @@ socket.on("unmute", function(socketId) {
 
 socket.on("disconnectedUser", function(socketId) {
     if (inShow) {
-        console.log("#### Removing disconnected user " + socketId);
+        //console.log("#### Removing disconnected user " + socketId);
 
         let index = users.map(e => e.name).indexOf(socketId);
         if (index >= 0) {
@@ -255,7 +231,7 @@ socket.on("disconnectedUser", function(socketId) {
 
 
 async function createOffer(pc, socketId) {
-    console.log("Creating new offer for user " + socketId);
+    //console.log("Creating new offer for user " + socketId);
     await pc.setLocalDescription(await pc.createOffer());
     pc.onicecandidate = ({candidate}) => {
         if (candidate) return;
@@ -264,7 +240,7 @@ async function createOffer(pc, socketId) {
 }
 
 socket.on("offer", function(offer, socketId) {
-    console.log("New offer from " + socketId);
+    //console.log("New offer from " + socketId);
 //    console.log(offer);
 
     let user = users.filter(obj => {
@@ -279,8 +255,8 @@ socket.on("offer", function(offer, socketId) {
 });
 
 async function createAswer(offer, socketId, user) {
-   console.log("CreateAnswer, User:");
-   console.log(user.pc);
+   //console.log("CreateAnswer, User:");
+   //console.log(user.pc);
     await user.pc.setLocalDescription(await user.pc.createAnswer());
     user.dc = user.pc.createDataChannel("chat", {negotiated: true, id: 0});
     user.dc.onmessage = function(message) {
@@ -288,8 +264,8 @@ async function createAswer(offer, socketId, user) {
     }
     user.pc.onicecandidate = ({candidate}) => {
         if (candidate) return;
-       console.log("Generated answer for " + socketId);
-       console.log(user.pc.localDescription.sdp);
+       //console.log("Generated answer for " + socketId);
+       //console.log(user.pc.localDescription.sdp);
         socket.emit("answer", socketId, user.pc.localDescription.sdp);
         console.log("Signaling done, ready to chat!");
     }
@@ -308,7 +284,7 @@ socket.on("answer", function(answer, socketId) {
 function dataChannelMessage(message, socketId) {
     message = JSON.parse(message);
     if (message.type == "update") {
-        console.log("dataChannelMessage, update");
+        //console.log("dataChannelMessage, update");
         updatePosition(message, socketId);
     } else if (message.type == "setRoom") {
         setRoom(message.roomName, socketId);
@@ -322,7 +298,7 @@ function dataChannelMessage(message, socketId) {
 }
 
 function handleIceConnectionStateChange() {
-    console.log("IceConnectionState has changed, state is now: " + this.iceConnectionState);
+    //console.log("IceConnectionState has changed, state is now: " + this.iceConnectionState);
     let pc = this
     if (pc.iceConnectionState == "connected") {
         window.setTimeout(function() {
@@ -333,18 +309,18 @@ function handleIceConnectionStateChange() {
 }
 
 function sendInitialUpdate(pc) {
-    console.log("A datachannel has been opened!");
-    console.log("iceConnectionState is " + pc.iceConnectionState)
-    console.log(pc);
+    //console.log("A datachannel has been opened!");
+    //console.log("iceConnectionState is " + pc.iceConnectionState)
+    //console.log(pc);
     let index = users.map(e => e.pc).indexOf(pc);
     let targetSdp = pc.currentLocalDescription.sdp;
 
     if (index >= 0) {
         window.setTimeout(function() {
-            console.log("DataChannel status is: " + users[index].dc.readyState);
+            //console.log("DataChannel status is: " + users[index].dc.readyState);
 
             if (users[index].dc.readyState == "open") {
-                console.log("Sending update to " + users[index].name);
+                //console.log("Sending update to " + users[index].name);
                 let message = {
                     type: "update",
                     id: id,
@@ -360,7 +336,7 @@ function sendInitialUpdate(pc) {
             }
         }, 50);
     } else {
-        console.log("didnt fint user that matches this dataChannel yet, trying again with the fallback option...");
+        //console.log("didnt fint user that matches this dataChannel yet, trying again with the fallback option...");
         // fallback for oler safari version
         let index = -1;
         for (let i=0; i<users.length; i++) {
@@ -371,10 +347,10 @@ function sendInitialUpdate(pc) {
         }
         if (index >= 0) {
             window.setTimeout(function() {
-                console.log("DataChannel status is: " + users[index].dc.readyState);
+                //console.log("DataChannel status is: " + users[index].dc.readyState);
 
                 if (users[index].dc.readyState == "open") {
-                    console.log("Sending update to " + users[index].name);
+                    //console.log("Sending update to " + users[index].name);
                     let message = {
                         type: "update",
                         id: id,

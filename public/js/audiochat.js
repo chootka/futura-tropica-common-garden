@@ -157,6 +157,8 @@ function setupStreaming() {
 
     let form = document.querySelector(".popUp form");
     form.addEventListener('submit', closePopUp);
+
+    getLocalStream();
 }
 
 function updateRooms() {
@@ -574,4 +576,3 @@ function printPeers() {
     }
 }
 
-getLocalStream()

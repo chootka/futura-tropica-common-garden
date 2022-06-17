@@ -38,12 +38,8 @@ document.onmousemove = function(e) {
         currentY = window.scrollY + mouseY - yOffset;
     }
     if (inShow) {
-        map.classList.remove("hidden");        
+        map.classList.remove("hidden");
     }
-//    myUser.style.left = currentX + "px";
-//    myUser.style.top = currentY + "px";
-//    myMapUser.style.left = (currentX/mapscale) + "px";
-//    myMapUser.style.top = (currentY/mapscale) + "px";
 }
 
 document.body.addEventListener("touchstart", setMobile);
@@ -51,9 +47,22 @@ document.body.addEventListener("touchstart", setMobile);
 function setMobile() {
     console.log("Mobile browser");
     mobile = true;
-    currentX = window.scrollX + window.innerWidth / 2;
-    currentY = window.scrollY + window.innerHeight / 2;
+    //currentX = window.scrollX + window.innerWidth / 2;
+    //currentY = window.scrollY + window.innerHeight / 2;
     document.body.removeEventListener("touchstart", setMobile);
+
+    document.body.addEventListener("touchmove", (e) => {
+        if (e.touches.length) {
+            mouseX = e.touches[0].clientX;
+            mouseY = e.touches[0].clientY;
+            currentX = window.scrollX + mouseX;
+            currentY = window.scrollY + mouseY - yOffset;
+        }
+    });
+
+    if (inShow) {
+        map.classList.remove("hidden");
+    }
 }
 
 document.body.onscroll = function() {
@@ -64,10 +73,6 @@ document.body.onscroll = function() {
         currentX = window.scrollX + window.innerWidth / 2;
         currentY = window.scrollY + window.innerHeight / 2;
     }
-//    myUser.style.left = currentX + "px";
-//    myUser.style.top = currentY + "px";
-//    myMapUser.style.left = (currentX/mapscale) + "px";
-//    myMapUser.style.top = (currentY/mapscale) + "px";
 }
 
 window.setInterval(function() {
@@ -101,7 +106,6 @@ window.setInterval(function() {
     } else if (lastUpdate <= Math.floor(Date.now() / 1000) - mapTimeout && inShow) {
         map.classList.add("hidden");
     }
-
 
     updateRooms();
 }, 200);
