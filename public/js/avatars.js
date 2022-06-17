@@ -45,7 +45,7 @@ document.onmousemove = function(e) {
 document.body.addEventListener("touchstart", setMobile);
 
 function setMobile() {
-    console.log("Mobile browser");
+    //console.log("Mobile browser");
     mobile = true;
     //currentX = window.scrollX + window.innerWidth / 2;
     //currentY = window.scrollY + window.innerHeight / 2;
@@ -120,8 +120,8 @@ window.setInterval(function() {
 function updatePosition(message) {
    if (!mapscale) return;
 
-   console.log("Recieved update message:");
-   console.log(message);
+   //console.log("Recieved update message:");
+   //console.log(message);
     try {
         document.querySelector("#user" + message.id).style.left = message.x + "px";
         document.querySelector("#user" + message.id).style.top = message.y + "px";
