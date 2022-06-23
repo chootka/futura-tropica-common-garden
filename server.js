@@ -118,30 +118,22 @@ io.on("connection", function(socket) {
     socket.emit("setId", { id: socket.id, hue: hue, hue2: hue2, bright: bright, bright2: bright2, angle: angle, reqTime: Date.now() });
 
     socket.on("setRoom", function(data) {
-        if (socketsInRoom(data.room) < maxRoomSize || data.admin) {
-            customLog("Socket wants to join room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room");
-            socket.join(data.room);
-            customLog("Socket has joined room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room. " + socket.room);
-            socket.room = data.room;
-    //        socket.subdomain = data.room;
-            customLog(socket.id + " is on subdomain '" + socket.room + "'");
-            let subdomainIndex = subdomains.map(e => e.name).indexOf(data.room);
+        customLog("Socket wants to join room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room");
+        socket.join(data.room);
+        customLog("Socket has joined room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room. " + socket.room);
+        socket.room = data.room;
+        customLog(socket.id + " is on subdomain '" + socket.room + "'");
+        let subdomainIndex = subdomains.map(e => e.name).indexOf(data.room);
 
-            if (subdomainIndex < 0) {
-                let subdomain = {
-                    name: data.room,
-                    admins: [],
-                    viewers: []
-                }
-                subdomains.push(subdomain);
+        if (subdomainIndex < 0) {
+            let subdomain = {
+                name: data.room,
+                admins: [],
+                viewers: []
             }
-
-            customLog("Subdomains:");
-            customLog(JSON.stringify(subdomains));
-            socket.emit("setupStreaming");
-        } else {
-            socket.emit("roomFull");
+            subdomains.push(subdomain);
         }
+        socket.emit("setupStreaming");
     });
 
     socket.on("test", function() {
