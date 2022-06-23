@@ -24,7 +24,7 @@ let muted = true;
 // let subdomain = parts.shift();
 
 if (typeof subdomainAlias !== 'undefined') {
-    subdomain = subdomainAlias;
+    currentRoom = subdomain = subdomainAlias;
 }
 
 
@@ -471,6 +471,7 @@ function sendRoom(roomName) {
            }
        }
     }
+    console.log("sendRoom, roomName", roomName);
     if (roomName != "none") {
         console.log("Looking for other users in room " + roomName + " to send signalling offer to for media stream");
         console.log("how many users", users);
