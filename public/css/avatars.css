@@ -88,20 +88,28 @@
 
 .user video,
 .myUser video {
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
+ /*    width: 80px;
+    height: 80px; */
+    width: 12em;
+    height: 12em;
+     /* border-radius: 40px; */
+    border-radius: 10em;
     opacity: 1;
     object-fit: cover;
 }
 
 .user.video,
 .myUser.video {
+    /*
     width: 80px;
     height: 80px;
+    */
+    width: 12em;
+    height: 12em;
     margin-left: -40px;
     margin-top: -40px;
-    border-radius: 40px;
+    /* border-radius: 40px; */
+    border-radius: 10em;
     overflow: hidden;
 }
 
