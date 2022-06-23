@@ -99,15 +99,13 @@ window.setInterval(function() {
             }
         }
         lastUpdate = Math.floor(Date.now() / 1000);
-//        myUser.style.left = currentX + "px";
-//        myUser.style.top = currentY + "px";
         myMapUser.style.left = (currentX/mapscale) + "px";
         myMapUser.style.top = (currentY/mapscale) + "px";
     } else if (lastUpdate <= Math.floor(Date.now() / 1000) - mapTimeout && inShow) {
         map.classList.add("hidden");
     }
 
-    updateRooms();
+    // updateRooms();
 }, 200);
 
 window.setInterval(function() {
