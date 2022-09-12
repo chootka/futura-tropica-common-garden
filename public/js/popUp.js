@@ -6,7 +6,7 @@ form.addEventListener('submit', function(e) {
 if (window.location.search.includes("username")) {
     const urlParams = new URLSearchParams(window.location.search);
     document.body.querySelector(".popUp .username").value = urlParams.get("username");
-    document.body.querySelector(".homeButton a").href = "/?username=" + urlParams.get("username");
+//    document.body.querySelector(".homeButton a").href = "/?username=" + urlParams.get("username");
 }
 
 if (window.location.search.includes("preview")) {
