@@ -18,7 +18,7 @@ let maxRoomSize = 200;
 
 let slideshows = [];
 
-let subdomain = "bengaluru";
+let subdomain = "public";
     // subdomain = "join";
     // subdomain = "bogota";
     // subdomain = "kinshasa";
@@ -66,10 +66,6 @@ app.get("/", (req, res) => {
     customLog("Subdomain: " + subdomain);
 });
 
-// app.get("/about", (req, res) => {
-//     res.render("about");
-// });
-
 
 function renderPage(req, res, subdomain) {
     if (subdomain === "cms") {
@@ -92,41 +88,6 @@ function renderPage(req, res, subdomain) {
         }
     }
 }
-
-// app.post("/fileupload", (req, res) => {
-//     customLog("Uploading file...");
-//     var form = new formidable.IncomingForm();
-//     form.parse(req, async function (err, fields, files) {
-
-//         let oldpath = files.filetoupload.path;
-//         let subdomain = fields.subdomain;
-//         let newpath = "public/shows/" + subdomain + "/" + files.filetoupload.name;
-
-//         console.log("Saving file to " + newpath);
-
-//         try {
-//             await fs.promises.access("public/shows/" + subdomain);
-//             console.log("folder exist!");
-//             fs.rename(oldpath, newpath, function (err) {
-//                 if (err) throw err;
-//                 res.write('File uploaded and moved!');
-//                 res.end();
-//                 customLog("File saved!");
-//             });
-//         } catch (error) {
-//             customLog("No image folder yet for this subdomain, creating it...")
-//             fs.mkdir("public/shows/" + subdomain, err => {
-//                 if (err) console.log(err);
-//                 fs.rename(oldpath, newpath, function (err) {
-//                     if (err) throw err;
-//                     res.write('File uploaded and moved!');
-//                     res.end();
-//                     customLog("File saved!");
-//                 });
-//             });
-//         }
-//     });
-// });
 
 function socketsInRoom(room) {
     if (io.sockets.adapter.rooms[room]) {
@@ -157,30 +118,22 @@ io.on("connection", function(socket) {
     socket.emit("setId", { id: socket.id, hue: hue, hue2: hue2, bright: bright, bright2: bright2, angle: angle, reqTime: Date.now() });
 
     socket.on("setRoom", function(data) {
-        if (socketsInRoom(data.room) < maxRoomSize || data.admin) {
-            customLog("Socket wants to join room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room");
-            socket.join(data.room);
-            customLog("Socket has joined room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room. " + socket.room);
-            socket.room = data.room;
-    //        socket.subdomain = data.room;
-            customLog(socket.id + " is on subdomain '" + socket.room + "'");
-            let subdomainIndex = subdomains.map(e => e.name).indexOf(data.room);
+        customLog("Socket wants to join room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room");
+        socket.join(data.room);
+        customLog("Socket has joined room " + data.room + ", there are currently " + socketsInRoom(data.room) + " other clients in that room. " + socket.room);
+        socket.room = data.room;
+        customLog(socket.id + " is on subdomain '" + socket.room + "'");
+        let subdomainIndex = subdomains.map(e => e.name).indexOf(data.room);
 
-            if (subdomainIndex < 0) {
-                let subdomain = {
-                    name: data.room,
-                    admins: [],
-                    viewers: []
-                }
-                subdomains.push(subdomain);
+        if (subdomainIndex < 0) {
+            let subdomain = {
+                name: data.room,
+                admins: [],
+                viewers: []
             }
-
-            customLog("Subdomains:");
-            customLog(JSON.stringify(subdomains));
-            socket.emit("setupStreaming");
-        } else {
-            socket.emit("roomFull");
+            subdomains.push(subdomain);
         }
+        socket.emit("setupStreaming");
     });
 
     socket.on("test", function() {

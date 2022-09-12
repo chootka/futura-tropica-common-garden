@@ -115,12 +115,10 @@ ul li {
     align-items: flex-end;
 
     width: 100vw;
-    height: auto;
+    height: 100vh;
 
     position: absolute;
     z-index: 10;
-
-    bottom: 20px;
 }
 .homeButton {
     margin: 0 50px;

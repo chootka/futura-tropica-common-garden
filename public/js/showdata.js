@@ -1,6 +1,6 @@
 let showdata = '/shows/showdata.json';
-
 let mapscale;
+let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
 console.log("showdata.js, subdomain", subdomain);
 if(subdomain) {
@@ -19,32 +19,44 @@ function doesFileExist(urlToFile) {
     }
 }
 
-console.log("SHOW DATA", showdata)
+//console.log("SHOW DATA", showdata)
 $.getJSON(showdata, function( json ) {
-    console.log("Got show data", json);
+    //console.log("Got show data", json);
+
+    let ht = json.screensize.height;
+    let wd = json.screensize.width;
+    //console.log('isMobile', isMobile);
+
+    if (isMobile){
+        ht = window.screen.availHeight;
+        wd = window.screen.availWidth;
+    }
 
     if (json.textColor) {
         $( 'body' ).css({
-            'height': json.screensize.height + 'px',
-            'width': json.screensize.width + 'px',
+            'height': ht + 'px',
+            'width': wd+ 'px',
             'background': "rgb(" + json.backgroundColor[0] + "," + json.backgroundColor[1] + "," + json.backgroundColor[2] + ") none repeat scroll 0% 0%",
             'color': "rgb(" + json.textColor[0] + "," + json.textColor[1] + "," + json.textColor[2] + ")",
         } );
     } else {
-
-        $( 'body' ).css({ 'height': json.screensize.height + 'px', 'width': json.screensize.width + 'px' } );
+        $( 'body' ).css({ 'height': ht+ 'px', 'width': wd + 'px' } );
     }
 
-    console.log('json.screensize.width', json.screensize.width);
+    //console.log('wd', wd);
 
-    mapscale = json.screensize.width / (window.innerWidth / 3);
-    console.log("mapscale", mapscale);
+    mapscale = wd / (window.innerWidth / 3);
+    //console.log("mapscale", mapscale);
+    //console.log('wd', wd);
+    //console.log('window.innerWidth', window.innerWidth);
+    //console.log('window.innerHeight', window.innerHeight);
     if (window.innerWidth < window.innerHeight) {
-        mapscale = json.screensize.width / (window.innerWidth / 1.5);
+        mapscale = wd / (window.innerWidth / 1.5);
+        console.log('innerWidth < innerHeight, mapscale', mapscale);
     }
     let map = document.querySelector(".map");
-    map.style.width = (json.screensize.width / mapscale) + "px";
-    map.style.height = (json.screensize.height / mapscale) + "px";
+    map.style.width = (wd / mapscale) + "px";
+    map.style.height = (ht / mapscale) + "px";
     //map.style.height = (window.innerheight / mapscale) + "px";
 
     if (json.title) {

@@ -20,3 +20,6 @@ dist/
 public/copy.log
 public/readme.txt
 
+device/scripts/etc/etc
+device/scripts/etc/ft1-localnet-cert.tar
+device/scripts/etc/letsencrypt-futura-tropica.network/
