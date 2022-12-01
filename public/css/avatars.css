@@ -7,7 +7,7 @@
     margin-top: -11px;
     background: red;
     transition: all 0.2s linear;
-    opacity: 0;
+    opacity: 1;
     z-index: 5;
 }
 
@@ -84,6 +84,33 @@
     transition: all 50ms linear;
     opacity: 1;
     pointer-events: none;
+}
+
+.user video,
+.myUser video {
+ /*    width: 80px;
+    height: 80px; */
+    width: 12em;
+    height: 12em;
+     /* border-radius: 40px; */
+    border-radius: 10em;
+    opacity: 1;
+    object-fit: cover;
+}
+
+.user.video,
+.myUser.video {
+    /*
+    width: 80px;
+    height: 80px;
+    */
+    width: 12em;
+    height: 12em;
+    margin-left: -40px;
+    margin-top: -40px;
+    /* border-radius: 40px; */
+    border-radius: 10em;
+    overflow: hidden;
 }
 
 .myUser.muted:before {

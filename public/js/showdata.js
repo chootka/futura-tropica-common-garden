@@ -1,6 +1,6 @@
 let showdata = '/shows/showdata.json';
-
 let mapscale;
+let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
 console.log("showdata.js, subdomain", subdomain);
 if(subdomain) {
@@ -19,54 +19,78 @@ function doesFileExist(urlToFile) {
     }
 }
 
+//console.log("SHOW DATA", showdata)
 $.getJSON(showdata, function( json ) {
-    console.log("Got show data", json);
+    //console.log("Got show data", json);
+
+    let ht = json.screensize.height;
+    let wd = json.screensize.width;
+    //console.log('isMobile', isMobile);
+
+    if (isMobile){
+        ht = window.screen.availHeight;
+        wd = window.screen.availWidth;
+    }
 
     if (json.textColor) {
         $( 'body' ).css({
-            'height': '100vh',
-            'width': json.screensize.width + 'px',
-            'color': "hsl(" + json.textColor[0] + "," + json.textColor[1] + "%," + json.textColor[2] + "%)",
+            'height': ht + 'px',
+            'width': wd+ 'px',
+            'background': "rgb(" + json.backgroundColor[0] + "," + json.backgroundColor[1] + "," + json.backgroundColor[2] + ") none repeat scroll 0% 0%",
+            'color': "rgb(" + json.textColor[0] + "," + json.textColor[1] + "," + json.textColor[2] + ")",
         } );
     } else {
-
-        $( 'body' ).css({ 'height': '100vh', 'width': json.screensize.width + 'px' } ); //json.screensize.height
+        $( 'body' ).css({ 'height': ht+ 'px', 'width': wd + 'px' } );
     }
 
-    mapscale = json.screensize.width / (window.innerWidth / 3);
-    console.log("mapscale", mapscale);
+    //console.log('wd', wd);
+
+    mapscale = wd / (window.innerWidth / 3);
+    //console.log("mapscale", mapscale);
+    //console.log('wd', wd);
+    //console.log('window.innerWidth', window.innerWidth);
+    //console.log('window.innerHeight', window.innerHeight);
     if (window.innerWidth < window.innerHeight) {
-        mapscale = json.screensize.width / (window.innerWidth / 1.5);
+        mapscale = wd / (window.innerWidth / 1.5);
+        console.log('innerWidth < innerHeight, mapscale', mapscale);
     }
     let map = document.querySelector(".map");
-    map.style.width = (json.screensize.width / mapscale) + "px";
-    // map.style.height = (json.screensize.height / mapscale) + "px";
-    map.style.height = (window.innerheight / mapscale) + "px";
+    map.style.width = (wd / mapscale) + "px";
+    map.style.height = (ht / mapscale) + "px";
+    //map.style.height = (window.innerheight / mapscale) + "px";
 
     if (json.title) {
         document.head.querySelector("title").innerHTML = json.title;
     }
 
-    if (json.titleimg) {
-        document.querySelector(".titleimg").innerHTML = '<img src="' + json.titleimg.url + '" width="' + json.titleimg.width + '" height="' + json.titleimg.height + '">';
-    }
-
     for ( var i = 0; i < json.works.length; i++ ) {
 
-        let article = $('<div id="artwork' + (i + 1) + '" class="article hidden">');
+        let articleHeight = json.works[i].height ? json.works[i].height + 'px' : 'auto';
+        let articleRotation = json.works[i].rotation ? json.works[i].rotation + 'deg' : '0';
+        let backgroundColor = json.works[i].background ? 'background-color: rgb('+json.works[i].color[0]+', '+json.works[i].color[1]+', '+json.works[i].color[2]+');' : '';
+        let classList = 'article hidden';
 
+        if (json.works[i].shape) {
+            classList += ' shape ' + json.works[i].shapeType;
+        }
+
+        let article = $('<div id="artwork' + (i + 1) + '" class="' + classList + '" style="top: ' + json.works[i].top + 'px; left: ' + json.works[i].left + 'px; width: ' + json.works[i].width + 'px; height: ' + articleHeight + '; transform: rotate(' + articleRotation + ');' + backgroundColor + '" >');
+
+        if (json.works[i].ownRoom) {
+            article.append( '<div class="room"></div>' );
+        }
         if ( json.works[ i ].imagelink || json.works[ i ].image ) {
             if (json.works[i].url != null && json.works[i].url != "") {
                 article.append( '<div class="imagelink"><a href="' + json.works[ i ].url + '" target="_blank"><img src="' + json.works[ i ].imageurl + '"></a></div>' );
             } else {
-                article.append( '<div class="imagelink"><img src="' + json.works[ i ].imageurl + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></div>' );
+                article.append( '<div class="imagelink"><img src="' + json.works[ i ].imageurl + '"></div>' );
             }
         } else if (json.works[i].text) {
             article.append( "<h1>" + json.works[i].title + "</h1><p>" + json.works[ i ].description + "</p>" );
             article.addClass("text");
         } else if ( json.works[ i ].localVideo ) {
             article.append( '<video src="' + json.works[i].src + '" muted class="iframe"></video>' );
-        } else if ( json.works[ i ].youtube || json.works[ i ].vimeo ) {
+        } else if ( json.works[ i ].youtube || json.works[ i ].vimeo || json.works[ i ].iframe) {
             // article.attr("data-src", json.works[ i ].url)
             article.append( '<div style="width:' + json.works[ i ].width + 'px; height:' + json.works[ i ].height + 'px" class="iframe"><iframe id="iframe' + (i+1) + '" class="iframe" scrolling="no" frameborder="0" autoplay="true" muted src="' + json.works[ i ].url + '" width="' + json.works[ i ].width + '" height="' + json.works[ i ].height + '"></iframe></div>' );
         }
@@ -80,7 +104,7 @@ $.getJSON(showdata, function( json ) {
             article.attr("data-vimeo", true);
         }
 
-        $( ".horizontal-content" ).append( article );
+        $( ".content" ).append( article );
 
     }
 
@@ -95,7 +119,6 @@ $.getJSON(showdata, function( json ) {
             for (let i=0; i<articles.length; i++) {
                 articles[i].classList.remove("hidden");
             }
-
         }
     }, 50);
 });

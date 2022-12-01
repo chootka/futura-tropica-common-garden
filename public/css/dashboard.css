@@ -19,7 +19,6 @@ body {
     line-height: 1.2em;
 
     height: 100vh;
-    overflow: hidden;
 }
 img {
     margin: 0 auto;
@@ -38,9 +37,9 @@ p {
 
 h1 {
     font-family: EHNormalBold, sans-serif;
-    font-size: 18px;
-    line-height: 1.2em;
-    margin-bottom: 0;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 22px;
 }
 
 ul {
@@ -116,12 +115,10 @@ ul li {
     align-items: flex-end;
 
     width: 100vw;
-    height: auto;
+    height: 100vh;
 
     position: absolute;
     z-index: 10;
-
-    bottom: 20px;
 }
 .homeButton {
     margin: 0 50px;

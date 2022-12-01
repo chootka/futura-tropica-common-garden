@@ -11,12 +11,13 @@ body {
     font-family: sans-serif;
     color: #fff;
     border-color: #aaa;
+    font-family: sans-serif;
 }
 
 .showContainer {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     margin: auto;
     top: 0;
@@ -25,11 +26,30 @@ body {
     right: 0;
 }
 
-.avatarContainer {
+
+
+/*.avatarContainer {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     overflow: hidden;
+}*/
+
+@media only screen and (max-width: 600px) {
+    .avatarContainer {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
 }
 
 .GUIcontainer {
@@ -319,104 +339,25 @@ input.terms {
     font-size: 18px;
 }
 
-.horizontal-content {
-    width: 650px;
-    height: 90vw;
-
-    overflow-y: scroll;
-    overflow-x: hidden; 
-
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-
-    padding-top: 100px;
-
-    transform-origin: right top; 
-    transform: rotate(-90deg) translateX(-140px) translateY(-450px);
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.horizontal-content::-webkit-scrollbar {
-    display: none;
-}
-
-.horizontal-content > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    width: 650px;
-    height: 500px;
-    
-    margin-top: 220px;
-
-    transform: rotate(90deg) translate(300px);
-    transform-origin: right top;
-}
-
 .article > div {
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-/*.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    margin: 0 auto;
-
-    height: 100vh;
-    width: 80%;
-}*/
-
-/*.slick-track {
-    display: flex;
-    align-items: center;
-}
-
-.slick-arrow {
-    display: none !important;
-}
-
-.slick-slide {
-    height: auto !important;
-}*/
-
-/*article {
+.article {
     position: absolute;
-    background: #fff;
-    border-width: 2px;
-    border-style: solid;
-    border-color: inherit;
     z-index: 5;
 }
-article.hidden {
-    visibility: hidden;
-}
-article.text {
-    padding-left: 10px;
-}
-
-article.borderless {
-    background: rgba(0,0,0,0);
-    border-style: hidden;
-}
-article.borderless.text {
-    padding-left: 0px;
-}
-
-
-article h1 {
+.article h1 {
     text-align: left;
     margin-bottom: 5px;
     margin-top: 10px;
+    font-family: sans-serif;
     font-size: 22px;
 }
 
-article h2 {
+.article h2 {
     text-align: left;
     padding-bottom: 10px;
     margin-bottom: 5px;
@@ -424,20 +365,49 @@ article h2 {
     font-size: 20px;
     font-weight: normal;
 }
-article p {
+.article p {
     text-align: left;
     padding-bottom: 10px;
     margin-bottom: 5px;
     margin-top: 5px;
+    font-family: sans-serif;
     font-size: 16px;
     font-weight: normal;
 }
-article a, article .info a {
+.article a, article .info a {
     color: inherit;
 }
+.article .room {
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    border-radius: 30px;
+    background: rgba(0,0,0,0);
+    border: inherit;
+    border-width: 1px;
+    border-style: dashed;
+    width: calc(100% + 300px);
+    height: calc(100% + 300px);
+    transition: border-color 0.3s;
+    z-index: -10;
+}
 
+.article.hidden {
+    visibility: hidden;
+}
+.article.text {
+    padding-left: 10px;
+}
 
-article .info {
+.article.borderless {
+    background: rgba(0,0,0,0);
+    border-style: hidden;
+}
+.article.borderless.text {
+    padding-left: 0px;
+}
+
+/*article .info {
     padding-top: 8px;
     width: 110%;
     margin-left: -5%;
@@ -462,18 +432,15 @@ article .info p {
 article .info:hover p {
     opacity: 1;
     pointer-events: inherit;
-}
+}*/
 
-article div.iframe {
+.article div.iframe {
     overflow: hidden;
     border: inherit;
     border-width: 0;
 }
 
-article a {
-}
-
-article .mouseBlocker {
+/*article .mouseBlocker {
     position: absolute;
     top: 0;
     left: 0;
@@ -483,9 +450,9 @@ article .mouseBlocker {
 
 article .chatMessage {
     color: #000;
-}
+}*/
 
-article img {
+.article img {
     max-width: 100%;
     max-height: 100%;
     margin-left: auto;
@@ -493,36 +460,23 @@ article img {
     display: block;
 }
 
-article .room {
-    position: absolute;
-    top: -150px;
-    left: -150px;
-    border-radius: 30px;
-    background: rgba(0,0,0,0);
-    border: inherit;
-    border-width: 1px;
-    border-style: dashed;
-    width: calc(100% + 300px);
-    height: calc(100% + 300px);
-    transition: border-color 0.3s;
-    z-index: -10;
-}
-article.talking .room {
+
+.article.talking .room {
     border-color: rgba(0,0,0,0);
 }
 
-article.puzzle .room {
+.article.puzzle .room {
     top: -200px;
     left: -200px;
     width: calc(100% + 400px);
     height: calc(100% + 400px);
 }
 
-article.quiz .room {
+.article.quiz .room {
     visibility: visible;
 }
 
-article .room:before {
+.article .room:before {
     position: absolute;
     top: 25%;
     left: 25%;
@@ -534,14 +488,14 @@ article .room:before {
     transition: all 0.3s;
 }
 
-article.talking .room:before {
+.article.talking .room:before {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.2);
     border-radius: 30px;
-}*/
+}
 .map {
     position: fixed;
     top: 0;
@@ -564,7 +518,6 @@ article.talking .room:before {
     background: #fff;
     border: 1px solid #aaa;
     pointer-events: all;
-    font-size: 11px;
     padding: 3px;
     display: flex;
     align-items: center;
@@ -575,6 +528,11 @@ article.talking .room:before {
     hyphens: auto;
     color: #000;
     box-sizing: border-box;
+}
+
+.mapIcon p {
+    font-size: 11px;
+    line-height: 1em;
 }
 
 .tourInterface {
@@ -757,24 +715,24 @@ video.screenshare {
     object-fit: cover;
 }
 
-article.shape, .mapIcon.shape {
+.article.shape, .mapIcon.shape {
     border: none;
 }
 
-article.shape.circle, .mapIcon.shape.circle {
+.article.shape.circle, .mapIcon.shape.circle {
     border-radius: 50%;
 }
 
-article.portal, .mapIcon.portal {
+.article.portal, .mapIcon.portal {
     background: radial-gradient(#000, #555);
     transition: margin 1s ease, padding 1s ease, background 1s ease-out;
 }
 
-article.puzzle {
+.article.puzzle {
     background-color: transparent !important;
     z-index: 5;
 }
-article.puzzle .segment {
+.article.puzzle .segment {
     float: left;
     border: inherit;
     border-width: 0px;
@@ -782,11 +740,11 @@ article.puzzle .segment {
     z-index: 5;
     visibility: hidden;
 }
-article.puzzle .segment.visible {
+.article.puzzle .segment.visible {
     border: none;
     visibility: visible;
 }
-article.puzzle .button {
+.article.puzzle .button {
     position: absolute;
     width: 200px;
     height: 32px;

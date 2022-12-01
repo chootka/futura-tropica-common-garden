@@ -6,7 +6,7 @@ form.addEventListener('submit', function(e) {
 if (window.location.search.includes("username")) {
     const urlParams = new URLSearchParams(window.location.search);
     document.body.querySelector(".popUp .username").value = urlParams.get("username");
-    document.body.querySelector(".homeButton a").href = "/?username=" + urlParams.get("username");
+//    document.body.querySelector(".homeButton a").href = "/?username=" + urlParams.get("username");
 }
 
 if (window.location.search.includes("preview")) {
@@ -43,7 +43,9 @@ function closePopUp(event) {
 
     // update username
     username = document.body.querySelector(".popUp .username").value;
-    document.body.querySelector(".homeButton a").href = "/?username=" + username;
+
+    const homeButton = document.body.querySelector(".homeButton a");
+    if (homeButton) homeButton.href = "/?username=" + username;
     socket.emit("setUsername", username);
 
     console.log("username", username);
