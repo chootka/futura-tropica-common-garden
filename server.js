@@ -18,11 +18,7 @@ let maxRoomSize = 200;
 
 let slideshows = [];
 
-<<<<<<< HEAD
 let subdomain = "colombia-peer";
-=======
-let subdomain = "bengaluru";
->>>>>>> e4f38425921366012635b66f03e59a4cf7e936c5
     // subdomain = "join";
     // subdomain = "bogota";
     // subdomain = "kinshasa";
